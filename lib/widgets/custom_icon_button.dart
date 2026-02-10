@@ -3,7 +3,7 @@ import 'package:homz/theme/app_colors.dart';
 
 class CustomIconButton extends StatelessWidget {
   final Widget child;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   const CustomIconButton({
     super.key,
     required this.child,

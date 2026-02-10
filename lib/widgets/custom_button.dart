@@ -3,7 +3,7 @@ import 'package:homz/theme/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final bool isPrimary;
   const CustomButton({
     super.key,
@@ -18,8 +18,16 @@ class CustomButton extends StatelessWidget {
       width: double.infinity,
       child: Ink(
         decoration: BoxDecoration(
-          color: isPrimary ? ColorScales.primary[400] : ColorScales.grey[900],
-          border: isPrimary
+          color: onPressed != null
+              ? (isPrimary ? ColorScales.primary[500] : ColorScales.grey[900])
+              : isPrimary
+              ? ColorScales.primary[800]
+              : ColorScales.grey[900],
+          border: onPressed != null
+              ? (isPrimary
+                    ? null
+                    : Border.all(color: ColorScales.grey[50]!, width: 1))
+              : isPrimary
               ? null
               : Border.all(color: ColorScales.grey[600]!, width: 1),
           borderRadius: BorderRadius.circular(8),
@@ -32,13 +40,23 @@ class CustomButton extends StatelessWidget {
             child: Text(
               text,
               textAlign: TextAlign.center,
-              style: isPrimary
+              style: onPressed != null
+                  ? (isPrimary
+                        ? Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontWeight: FontWeight.bold,
+                          )
+                        : Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: ColorScales.grey[50],
+                          ))
+                  : isPrimary
                   ? Theme.of(context).textTheme.bodyMedium!.copyWith(
                       fontWeight: FontWeight.bold,
+                      color: ColorScales.grey[600],
                     )
                   : Theme.of(context).textTheme.bodyMedium!.copyWith(
                       fontWeight: FontWeight.bold,
-                      color: ColorScales.grey[400],
+                      color: ColorScales.grey[600],
                     ),
             ),
           ),

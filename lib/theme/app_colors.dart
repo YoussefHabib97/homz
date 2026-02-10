@@ -7,7 +7,7 @@ class ColorScales {
     200: Color(0xFFC4D0E7),
     300: Color(0xFF4267B2),
     400: Color(0xFF3B5DA0),
-    500: Color(0xFF35528E), // main color
+    500: Color(0xFF35528E),
     600: Color(0xFF324D86),
     700: Color(0xFF283E6B),
     800: Color(0xFF1E2E50),
@@ -35,7 +35,7 @@ class AppAlertColors {
 }
 
 class AppColors {
-  static final primary = ColorScales.primary[400]!;
+  static final primary = ColorScales.primary[500]!;
   static final primaryPressed = ColorScales.primary[700]!;
 
   static final background = ColorScales.grey[900]!;

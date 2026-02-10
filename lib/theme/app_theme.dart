@@ -15,7 +15,7 @@ ThemeData buildAppTheme() {
     colorScheme: ColorScheme(
       brightness: Brightness.dark,
       primary: AppColors.primary,
-      onPrimary: ColorScales.grey[50]!, // text/icons on primary
+      onPrimary: ColorScales.grey[50]!,
       secondary: AppColors.primary,
       onSecondary: ColorScales.grey[50]!,
       surface: AppColors.surface,
