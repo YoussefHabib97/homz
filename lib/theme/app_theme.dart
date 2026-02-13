@@ -6,6 +6,7 @@ ThemeData buildAppTheme() {
   return ThemeData(
     useMaterial3: true,
     fontFamily: 'SpaceGrotesk',
+    brightness: Brightness.dark,
     textTheme: buildTextTheme(),
     primaryColor: AppColors.primary,
     scaffoldBackgroundColor: AppColors.background,

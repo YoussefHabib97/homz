@@ -8,6 +8,8 @@ class CustomTextFormField extends StatefulWidget {
   final TextInputType textInputType;
   final String? Function(String?) validator;
   final Function(String)? onSaved;
+  final Widget? prefixIcon;
+
   const CustomTextFormField({
     super.key,
     required this.hintText,
@@ -16,6 +18,7 @@ class CustomTextFormField extends StatefulWidget {
     required this.onSaved,
     this.textInputType = TextInputType.text,
     this.isObscured = false,
+    this.prefixIcon,
   });
 
   @override
@@ -42,6 +45,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       keyboardAppearance: Brightness.dark,
       readOnly: _isReadOnly,
       decoration: InputDecoration(
+        prefixIcon: widget.prefixIcon,
         hintText: widget.hintText,
         hintStyle: TextStyle(color: ColorScales.grey[400]!),
         border: OutlineInputBorder(),
