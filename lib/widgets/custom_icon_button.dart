@@ -18,11 +18,11 @@ class CustomIconButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: ColorScales.grey[900],
           border: Border.all(color: ColorScales.grey[600]!, width: 1),
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(8.0),
         ),
         child: InkWell(
           onTap: onPressed,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(8.0),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: child,

@@ -4,6 +4,7 @@ import 'package:homz/theme/text_theme.dart';
 
 ThemeData buildAppTheme() {
   return ThemeData(
+    appBarTheme: AppBarTheme(backgroundColor: AppColors.background),
     useMaterial3: true,
     fontFamily: 'SpaceGrotesk',
     brightness: Brightness.dark,

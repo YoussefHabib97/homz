@@ -19,7 +19,7 @@ class CustomButton extends StatelessWidget {
       child: Ink(
         decoration: BoxDecoration(
           color: onPressed != null
-              ? (isPrimary ? ColorScales.primary[500] : ColorScales.grey[900])
+              ? (isPrimary ? ColorScales.primary[400] : ColorScales.grey[900])
               : isPrimary
               ? ColorScales.primary[900]
               : ColorScales.grey[900],
