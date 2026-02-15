@@ -1,0 +1,77 @@
+import 'package:flutter/material.dart';
+import 'package:homz/core/theme/app_colors.dart';
+
+class CustomTextFormField extends StatefulWidget {
+  final TextEditingController textController;
+  final bool isObscured;
+  final String hintText;
+  final TextInputType textInputType;
+  final String? Function(String?) validator;
+  final Function(String)? onSaved;
+  final Widget? prefixIcon;
+
+  const CustomTextFormField({
+    super.key,
+    required this.hintText,
+    required this.textController,
+    required this.validator,
+    required this.onSaved,
+    this.textInputType = TextInputType.text,
+    this.isObscured = false,
+    this.prefixIcon,
+  });
+
+  @override
+  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
+}
+
+class _CustomTextFormFieldState extends State<CustomTextFormField> {
+  late bool _isReadOnly;
+  late bool _isFilled;
+
+  @override
+  void initState() {
+    super.initState();
+    _isReadOnly = false;
+    _isFilled = false;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      controller: widget.textController,
+      keyboardType: widget.textInputType,
+      obscureText: widget.isObscured,
+      keyboardAppearance: Brightness.dark,
+      readOnly: _isReadOnly,
+      decoration: InputDecoration(
+        prefixIcon: widget.prefixIcon,
+        hintText: widget.hintText,
+        hintStyle: TextStyle(color: AppColors.grey[400]!),
+        border: OutlineInputBorder(),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: !_isFilled ? AppColors.grey[600]! : AppColors.grey[400]!,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: AppColors.grey[200]!, width: 2),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: AppAlertColors.error),
+        ),
+      ),
+      //? TODO: Replace onChanged behavior with a textController
+      onChanged: (value) {
+        value.isEmpty
+            ? setState(() {
+                _isFilled = false;
+              })
+            : setState(() {
+                _isFilled = true;
+              });
+      },
+      validator: widget.validator,
+    );
+  }
+}
