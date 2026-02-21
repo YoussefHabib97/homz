@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:homz/core/theme/app_theme.dart';
-import 'package:homz/features/onboarding/presentation/pages/onboarding_page.dart';
+import 'package:homz/core/widgets/placeholder_scaffold.dart';
+import 'package:homz/features/authentication/sign_up/presentation/pages/register_page.dart';
 
 class ApplicationRoot extends StatelessWidget {
   const ApplicationRoot({super.key});
@@ -11,7 +12,7 @@ class ApplicationRoot extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Homz',
       theme: AppTheme.dark,
-      home: OnboardingPage(),
+      home: PlaceholderScaffold(body: RegisterPage()),
     );
   }
 }

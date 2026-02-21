@@ -6,8 +6,9 @@ class CustomTextFormField extends StatefulWidget {
   final bool isObscured;
   final String hintText;
   final TextInputType textInputType;
+  final TextCapitalization textCapitalization;
   final String? Function(String?) validator;
-  final Function(String)? onSaved;
+  final Function(String)? onSubmit;
   final Widget? prefixIcon;
 
   const CustomTextFormField({
@@ -15,7 +16,8 @@ class CustomTextFormField extends StatefulWidget {
     required this.hintText,
     required this.textController,
     required this.validator,
-    required this.onSaved,
+    required this.onSubmit,
+    this.textCapitalization = TextCapitalization.none,
     this.textInputType = TextInputType.text,
     this.isObscured = false,
     this.prefixIcon,
@@ -26,8 +28,7 @@ class CustomTextFormField extends StatefulWidget {
 }
 
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
-  late bool _isReadOnly;
-  late bool _isFilled;
+  late bool _isReadOnly, _isFilled;
 
   @override
   void initState() {
@@ -40,11 +41,13 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: widget.textController,
+      textCapitalization: widget.textCapitalization,
       keyboardType: widget.textInputType,
       obscureText: widget.isObscured,
       keyboardAppearance: Brightness.dark,
       readOnly: _isReadOnly,
       decoration: InputDecoration(
+        counterText: "",
         prefixIcon: widget.prefixIcon,
         hintText: widget.hintText,
         hintStyle: TextStyle(color: AppColors.grey[400]!),
@@ -61,9 +64,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           borderSide: BorderSide(color: AppAlertColors.error),
         ),
       ),
+      maxLength: 50,
       onChanged: (value) {
         widget.textController.text = value;
-
         widget.textController.text.isNotEmpty
             ? setState(() {
                 _isFilled = true;
@@ -73,6 +76,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
               });
       },
       validator: widget.validator,
+      onFieldSubmitted: widget.onSubmit,
     );
   }
 }

@@ -1,18 +1,22 @@
-extension ExtString on String {
-  bool get isValidEmail {
-    final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
-    return emailRegex.hasMatch(this);
-  }
-
-  bool get isValidPassword {
-    final passwordRegex = RegExp(
-      r"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*[#?!@$%^&*-]).{8,}$",
+extension StringExtension on String {
+  bool get isValidName {
+    final nameRegExp = RegExp(
+      r"^[a-zA-Z\p{L} ,.'-]*$",
+      caseSensitive: false,
+      unicode: true,
     );
-    return passwordRegex.hasMatch(this);
+    return nameRegExp.hasMatch(this);
   }
 
-  bool get isValidPhoneNumber {
-    final phoneRegex = RegExp(r"^\+?0[0-9]{10}$");
-    return phoneRegex.hasMatch(this);
+  String capitalizeEach() {
+    if (trim().isEmpty) {
+      return '';
+    }
+    return split(' ')
+        .map(
+          (element) =>
+              "${element[0].toUpperCase()}${element.substring(1).toLowerCase()}",
+        )
+        .join(" ");
   }
 }
