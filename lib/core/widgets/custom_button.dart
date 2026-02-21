@@ -49,7 +49,7 @@ class CustomButton extends StatelessWidget {
                         // If the button is enabled and not primary, use a lighter text color for better contrast
                         : Theme.of(context).textTheme.bodyMedium!.copyWith(
                             fontWeight: FontWeight.bold,
-                            color: AppColors.grey[50],
+                            color: AppColors.grey[400],
                           ))
                   :
                     // If the button is disabled and primary, use a muted text color regardless of primary state for better accessibility

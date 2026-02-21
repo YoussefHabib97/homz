@@ -31,13 +31,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   late bool _isReadOnly, _isFilled;
 
   @override
-  void initState() {
-    super.initState();
-    _isReadOnly = false;
-    _isFilled = false;
-  }
-
-  @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: widget.textController,
@@ -47,6 +40,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       keyboardAppearance: Brightness.dark,
       readOnly: _isReadOnly,
       decoration: InputDecoration(
+        fillColor: AppColors.grey[900],
         counterText: "",
         prefixIcon: widget.prefixIcon,
         hintText: widget.hintText,
@@ -78,5 +72,12 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       validator: widget.validator,
       onFieldSubmitted: widget.onSubmit,
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _isReadOnly = false;
+    _isFilled = false;
   }
 }

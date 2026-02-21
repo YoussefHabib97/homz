@@ -4,8 +4,8 @@ import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart' show StringExtension;
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/widgets/custom_button.dart';
-import 'package:homz/core/widgets/custom_icon_button.dart';
 import 'package:homz/core/widgets/custom_text_form_field.dart';
+import 'package:homz/core/widgets/third_party_authentication_buttons.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -23,29 +23,11 @@ class _RegisterPageState extends State<RegisterPage> {
       _confirmPasswordTextEditingController;
 
   @override
-  void initState() {
-    super.initState();
-    _nameTextEditingController = TextEditingController();
-    _mobileNumberTextEditingController = TextEditingController();
-    _passwordTextEditingController = TextEditingController();
-    _confirmPasswordTextEditingController = TextEditingController();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _nameTextEditingController.dispose();
-    _mobileNumberTextEditingController.dispose();
-    _passwordTextEditingController.dispose();
-    _confirmPasswordTextEditingController.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      autovalidateMode: AutovalidateMode.onUserInteractionIfError,
-      child: SingleChildScrollView(
+    return SingleChildScrollView(
+      child: Form(
+        key: _formKey,
+        autovalidateMode: AutovalidateMode.onUserInteractionIfError,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
           child: Column(
@@ -147,41 +129,29 @@ class _RegisterPageState extends State<RegisterPage> {
                 text: "Sign Up",
               ),
               SizedBox(height: 32),
-              Row(
-                spacing: 8,
-                children: [
-                  Expanded(child: Divider(color: AppColors.grey[400]!)),
-                  Text(
-                    "or continue with",
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: AppColors.grey[400],
-                    ),
-                  ),
-                  Expanded(child: Divider(color: AppColors.grey[400]!)),
-                ],
-              ),
-              Row(
-                spacing: 16,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: CustomIconButton(
-                      onPressed: () {},
-                      child: SvgPicture.asset(kGoogleIcon),
-                    ),
-                  ),
-                  Expanded(
-                    child: CustomIconButton(
-                      onPressed: () {},
-                      child: SvgPicture.asset(kAppleIcon),
-                    ),
-                  ),
-                ],
-              ),
+              ThirdPartyAuthenticationButtons(),
             ],
           ),
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _nameTextEditingController.dispose();
+    _mobileNumberTextEditingController.dispose();
+    _passwordTextEditingController.dispose();
+    _confirmPasswordTextEditingController.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _nameTextEditingController = TextEditingController();
+    _mobileNumberTextEditingController = TextEditingController();
+    _passwordTextEditingController = TextEditingController();
+    _confirmPasswordTextEditingController = TextEditingController();
   }
 }

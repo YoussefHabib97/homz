@@ -6,6 +6,16 @@ class PlaceholderScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: body);
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 128,
+        title: Text(
+          "Welcome to\nHomz",
+          style: Theme.of(context).textTheme.headlineLarge,
+        ),
+        actions: [],
+      ),
+      body: body,
+    );
   }
 }

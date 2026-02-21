@@ -28,9 +28,19 @@ class _CustomNavigationPageState extends State<CustomNavigationPage> {
     AppBar(title: Text("Profile AppBar Placeholder")),
   ];
 
-  PreferredSizeWidget _getAppBar() => appBars[currentIndex];
-
-  Widget _getBody() => IndexedStack(index: currentIndex, children: pages);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: _getAppBar(),
+      body: _getBody(),
+      bottomNavigationBar: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: _buildCustomNavigationBar(),
+        ),
+      ),
+    );
+  }
 
   Row _buildCustomNavigationBar() => Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -68,17 +78,7 @@ class _CustomNavigationPageState extends State<CustomNavigationPage> {
     ],
   );
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _getAppBar(),
-      body: _getBody(),
-      bottomNavigationBar: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: _buildCustomNavigationBar(),
-        ),
-      ),
-    );
-  }
+  PreferredSizeWidget _getAppBar() => appBars[currentIndex];
+
+  Widget _getBody() => IndexedStack(index: currentIndex, children: pages);
 }
