@@ -61,14 +61,15 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           borderSide: BorderSide(color: AppAlertColors.error),
         ),
       ),
-      //? TODO: Replace onChanged behavior with a textController
       onChanged: (value) {
-        value.isEmpty
+        widget.textController.text = value;
+
+        widget.textController.text.isNotEmpty
             ? setState(() {
-                _isFilled = false;
+                _isFilled = true;
               })
             : setState(() {
-                _isFilled = true;
+                _isFilled = false;
               });
       },
       validator: widget.validator,
