@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homz/core/constants/constants.dart';
+import 'package:homz/core/widgets/app_padding.dart';
 import 'package:homz/core/widgets/custom_navigation_button.dart';
 
 class CustomNavigationPage extends StatefulWidget {
@@ -34,8 +35,9 @@ class _CustomNavigationPageState extends State<CustomNavigationPage> {
       appBar: _getAppBar(),
       body: _getBody(),
       bottomNavigationBar: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: AppPadding(
+          horizontalOffset: 8,
+          verticalOffset: 0,
           child: _buildCustomNavigationBar(),
         ),
       ),

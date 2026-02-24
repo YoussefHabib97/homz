@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:homz/core/widgets/app_padding.dart";
 import "package:homz/core/widgets/custom_button.dart";
 import "package:homz/core/widgets/custom_form.dart";
 import "package:homz/core/widgets/custom_text_form_field.dart";
@@ -17,26 +18,28 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(centerTitle: true, title: Text("Forgot Password")),
-      body: CustomForm(
-        formKey: formKey,
-        child: Column(
-          spacing: 32,
-          children: [
-            Text(
-              "Enter your mobile number to reset your password",
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            CustomTextFormField(
-              hintText: "Mobile Number",
-              textInputType: TextInputType.numberWithOptions(),
-              textController: _textEditingController,
-              validator: (value) {
-                return null;
-              },
-              onSubmit: (value) {},
-            ),
-            CustomButton(text: "Send Code", onPressed: () {}),
-          ],
+      body: AppPadding(
+        child: CustomForm(
+          formKey: formKey,
+          child: Column(
+            spacing: 32,
+            children: [
+              Text(
+                "Enter your mobile number to reset your password",
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+              CustomTextFormField(
+                hintText: "Mobile Number",
+                textInputType: TextInputType.numberWithOptions(),
+                textController: _textEditingController,
+                validator: (value) {
+                  return null;
+                },
+                onSubmit: (value) {},
+              ),
+              CustomButton(text: "Send Code", onPressed: () {}),
+            ],
+          ),
         ),
       ),
     );

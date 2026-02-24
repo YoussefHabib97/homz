@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homz/core/theme/app_theme.dart';
-import 'package:homz/features/authentication/sign_up/presentation/pages/sign_up_page.dart';
+import 'package:homz/features/navigator/presentation/pages/custom_navigation_page.dart';
 
 class ApplicationRoot extends StatelessWidget {
   const ApplicationRoot({super.key});
@@ -11,10 +11,7 @@ class ApplicationRoot extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Homz',
       theme: AppTheme.dark,
-      home: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: SignUpPage(),
-      ),
+      home: CustomNavigationPage(),
     );
   }
 }

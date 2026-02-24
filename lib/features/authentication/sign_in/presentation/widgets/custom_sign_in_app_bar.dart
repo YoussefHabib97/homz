@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:homz/core/widgets/change_locale_button.dart';
 
 class CustomSignInAppBar extends StatelessWidget {
   const CustomSignInAppBar({super.key});
@@ -10,32 +11,12 @@ class CustomSignInAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            "Welcome to\nHomz",
+            "Welcome to"
+            "\n"
+            "Homz",
             style: Theme.of(context).textTheme.headlineLarge,
           ),
-          SizedBox(
-            child: Ink(
-              decoration: BoxDecoration(
-                border: Border.all(color: Color(0xFFEFC3C3)),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: InkWell(
-                onTap: () {},
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10.0,
-                    vertical: 8.0,
-                  ),
-                  child: Text(
-                    "(عربي)",
-                    style: Theme.of(
-                      context,
-                    ).textTheme.bodyMedium!.copyWith(color: Color(0xFFEFC3C3)),
-                  ),
-                ),
-              ),
-            ),
-          ),
+          ChangeLocaleButton(),
         ],
       ),
     );
