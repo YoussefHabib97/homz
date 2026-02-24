@@ -4,6 +4,8 @@ import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/widgets/custom_text_form_field.dart';
 
+//? TODO: Refactor to be contained within CustomTextFormField
+
 class PasswordTextFormField extends StatelessWidget {
   final bool isConfirmField;
   final TextEditingController _passwordTextEditingController;

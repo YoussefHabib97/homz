@@ -17,7 +17,7 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
-  late bool _isRegisterButtonDisabled = false;
+  bool _isRegisterButtonDisabled = false;
   late TextEditingController _nameTextEditingController,
       _mobileNumberTextEditingController,
       _passwordTextEditingController,
@@ -46,7 +46,6 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 hintText: "Name",
                 textInputType: TextInputType.name,
-                textCapitalization: TextCapitalization.words,
                 textController: _nameTextEditingController,
                 validator: (value) {
                   if (value == null || value.isEmpty || !value.isValidName) {

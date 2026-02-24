@@ -8,8 +8,8 @@ class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     this.isPrimary = true,
-    required this.onPressed,
     required this.text,
+    required this.onPressed,
   });
 
   @override

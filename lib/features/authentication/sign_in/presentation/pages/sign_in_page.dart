@@ -4,7 +4,9 @@ import 'package:homz/core/widgets/custom_button.dart';
 import 'package:homz/core/widgets/custom_form.dart';
 import 'package:homz/core/widgets/custom_text_form_field.dart';
 import 'package:homz/core/widgets/password_text_form_field.dart';
+import 'package:homz/core/widgets/text_with_call_to_action_button.dart';
 import 'package:homz/core/widgets/third_party_authentication_buttons.dart';
+import 'package:homz/features/authentication/sign_in/presentation/widgets/custom_sign_in_app_bar.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -24,6 +26,7 @@ class _SignInPageState extends State<SignInPage> {
         spacing: 32,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          CustomSignInAppBar(),
           CustomTextFormField(
             hintText: "Phone Number",
             textInputType: TextInputType.number,
@@ -51,28 +54,12 @@ class _SignInPageState extends State<SignInPage> {
               ),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Don't have an account?",
-                style: Theme.of(
-                  context,
-                ).textTheme.bodyMedium!.copyWith(color: AppColors.grey[400]),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Sign Up",
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    color: AppColors.primary[300],
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ),
-            ],
+          TextWithCallToActionButton(
+            text: "Don't have an account?",
+            buttonText: "Create an account",
+            onPressed: () {},
           ),
-          CustomButton(onPressed: () {}, text: "Sign In", isPrimary: false),
+          CustomButton(text: "Sign In", isPrimary: false, onPressed: () {}),
           ThirdPartyAuthenticationButtons(),
           TextButton(
             onPressed: () {},
