@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/custom_icon_button.dart';
+import 'package:homz/core/widgets/custom_button.dart';
 
 class ThirdPartyAuthenticationButtons extends StatelessWidget {
   const ThirdPartyAuthenticationButtons({super.key});
@@ -30,15 +30,17 @@ class ThirdPartyAuthenticationButtons extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
-              child: CustomIconButton(
+              child: CustomButton(
+                isIconButton: true,
+                icon: SvgPicture.asset(kGoogleIcon),
                 onPressed: () {},
-                child: SvgPicture.asset(kGoogleIcon),
               ),
             ),
             Expanded(
-              child: CustomIconButton(
+              child: CustomButton(
+                isIconButton: true,
+                icon: SvgPicture.asset(kAppleIcon),
                 onPressed: () {},
-                child: SvgPicture.asset(kAppleIcon),
               ),
             ),
           ],

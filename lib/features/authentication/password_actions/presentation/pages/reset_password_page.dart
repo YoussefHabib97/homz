@@ -5,16 +5,22 @@ import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/widgets/custom_button.dart';
 import 'package:homz/core/widgets/custom_form.dart';
 import 'package:homz/core/widgets/custom_text_form_field.dart';
-import 'package:homz/core/widgets/dynamic_scaffold.dart';
 
-class ResetPasswordPage extends StatelessWidget {
+class ResetPasswordPage extends StatefulWidget {
   const ResetPasswordPage({super.key});
 
   @override
+  State<ResetPasswordPage> createState() => _ResetPasswordPageState();
+}
+
+class _ResetPasswordPageState extends State<ResetPasswordPage> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  @override
   Widget build(BuildContext context) {
-    return DynamicScaffold(
+    return Scaffold(
       appBar: AppBar(centerTitle: true, title: Text("Reset Password")),
       body: CustomForm(
+        formKey: formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 32,
@@ -55,6 +61,7 @@ class ResetPasswordPage extends StatelessWidget {
               onPressed: () {
                 showDialog(
                   context: context,
+                  barrierDismissible: false,
                   builder: (context) => AlertDialog(
                     actions: [
                       Padding(

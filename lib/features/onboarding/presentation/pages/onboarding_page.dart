@@ -13,18 +13,6 @@ class _OnboardingPageState extends State<OnboardingPage>
   late final PageController _pageController;
 
   @override
-  void initState() {
-    super.initState();
-    _pageController = PageController();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _pageController.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -41,5 +29,17 @@ class _OnboardingPageState extends State<OnboardingPage>
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    _pageController = PageController();
+    super.initState();
   }
 }

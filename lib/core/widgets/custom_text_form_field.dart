@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/theme/app_colors.dart';
 
 class CustomTextFormField extends StatefulWidget {
   final TextEditingController textController;
-  final bool isObscured;
+  final bool isPasswordTextFormField;
   final String hintText;
   final TextInputType textInputType;
   final TextCapitalization textCapitalization;
@@ -19,7 +21,7 @@ class CustomTextFormField extends StatefulWidget {
     required this.onSubmit,
     this.textCapitalization = TextCapitalization.none,
     this.textInputType = TextInputType.text,
-    this.isObscured = false,
+    this.isPasswordTextFormField = false,
     this.prefixIcon,
   });
 
@@ -36,12 +38,21 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       controller: widget.textController,
       textCapitalization: widget.textCapitalization,
       keyboardType: widget.textInputType,
-      obscureText: widget.isObscured,
+      obscureText: widget.isPasswordTextFormField,
       keyboardAppearance: Brightness.dark,
       readOnly: _isReadOnly,
       decoration: InputDecoration(
         counterText: "",
-        prefixIcon: widget.prefixIcon,
+        prefixIcon: widget.isPasswordTextFormField
+            ? SvgPicture.asset(
+                kPasswordIcon,
+                fit: BoxFit.scaleDown,
+                colorFilter: ColorFilter.mode(
+                  AppColors.grey[400]!,
+                  BlendMode.srcATop,
+                ),
+              )
+            : widget.prefixIcon,
         hintText: widget.hintText,
         hintStyle: TextStyle(color: AppColors.grey[400]!),
         border: OutlineInputBorder(),
@@ -74,9 +85,15 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   }
 
   @override
+  void dispose() {
+    widget.textController.dispose();
+    super.dispose();
+  }
+
+  @override
   void initState() {
-    super.initState();
     _isReadOnly = false;
     _isFilled = false;
+    super.initState();
   }
 }

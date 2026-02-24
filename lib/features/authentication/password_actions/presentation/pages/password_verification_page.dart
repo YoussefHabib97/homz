@@ -2,17 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/widgets/custom_form.dart';
 import 'package:homz/core/widgets/custom_text_form_field.dart';
-import 'package:homz/core/widgets/dynamic_scaffold.dart';
 import 'package:homz/core/widgets/text_with_call_to_action_button.dart';
 
-class PasswordVerificationPage extends StatelessWidget {
+class PasswordVerificationPage extends StatefulWidget {
   const PasswordVerificationPage({super.key});
 
   @override
+  State<PasswordVerificationPage> createState() =>
+      _PasswordVerificationPageState();
+}
+
+class _PasswordVerificationPageState extends State<PasswordVerificationPage> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  @override
   Widget build(BuildContext context) {
-    return DynamicScaffold(
+    return Scaffold(
       appBar: AppBar(centerTitle: true, title: Text("Verification Code")),
       body: CustomForm(
+        formKey: formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 32,

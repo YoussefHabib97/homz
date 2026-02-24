@@ -2,7 +2,6 @@ import "package:flutter/material.dart";
 import "package:homz/core/widgets/custom_button.dart";
 import "package:homz/core/widgets/custom_form.dart";
 import "package:homz/core/widgets/custom_text_form_field.dart";
-import "package:homz/core/widgets/dynamic_scaffold.dart";
 
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({super.key});
@@ -13,11 +12,13 @@ class ForgotPasswordPage extends StatefulWidget {
 
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   final TextEditingController _textEditingController = TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return DynamicScaffold(
+    return Scaffold(
       appBar: AppBar(centerTitle: true, title: Text("Forgot Password")),
       body: CustomForm(
+        formKey: formKey,
         child: Column(
           spacing: 32,
           children: [
@@ -43,7 +44,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
 
   @override
   void dispose() {
-    super.dispose();
     _textEditingController.dispose();
+    super.dispose();
   }
 }

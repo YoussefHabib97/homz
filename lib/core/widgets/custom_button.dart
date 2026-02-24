@@ -4,11 +4,14 @@ import 'package:homz/core/theme/app_colors.dart';
 class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback? onPressed;
-  final bool isPrimary;
+  final bool isPrimary, isIconButton;
+  final Widget? icon;
   const CustomButton({
     super.key,
     this.isPrimary = true,
-    required this.text,
+    this.isIconButton = false,
+    this.icon,
+    this.text = "",
     required this.onPressed,
   });
 
@@ -19,12 +22,14 @@ class CustomButton extends StatelessWidget {
       child: Ink(
         decoration: BoxDecoration(
           color: onPressed != null
-              ? (isPrimary ? AppColors.primary[400] : AppColors.grey[900])
+              ? (isPrimary && !isIconButton
+                    ? AppColors.primary[400]
+                    : AppColors.grey[900])
               : isPrimary
               ? AppColors.primary[900]
               : AppColors.grey[900],
           border: onPressed != null
-              ? (isPrimary
+              ? (isPrimary && !isIconButton
                     ? null
                     : Border.all(color: AppColors.grey[600]!, width: 1))
               : isPrimary
@@ -37,33 +42,36 @@ class CustomButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: Text(
-              text,
-              textAlign: TextAlign.center,
-              style: onPressed != null
-                  ? (isPrimary
-                        // If the button is enabled and primary, use the default text color for better contrast
+            child: isIconButton
+                ? icon
+                : Text(
+                    text,
+                    textAlign: TextAlign.center,
+                    style: onPressed != null
+                        ? (isPrimary
+                              // If the button is enabled and primary, use the default text color for better contrast
+                              ? Theme.of(context).textTheme.bodyMedium!
+                                    .copyWith(fontWeight: FontWeight.bold)
+                              // If the button is enabled and not primary, use a lighter text color for better contrast
+                              : Theme.of(
+                                  context,
+                                ).textTheme.bodyMedium!.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.grey[400],
+                                ))
+                        :
+                          // If the button is disabled and primary, use a muted text color regardless of primary state for better accessibility
+                          isPrimary
                         ? Theme.of(context).textTheme.bodyMedium!.copyWith(
                             fontWeight: FontWeight.bold,
+                            color: AppColors.grey[400],
                           )
-                        // If the button is enabled and not primary, use a lighter text color for better contrast
+                        // If the button is disabled and not primary, use the same muted text color for consistency
                         : Theme.of(context).textTheme.bodyMedium!.copyWith(
                             fontWeight: FontWeight.bold,
                             color: AppColors.grey[400],
-                          ))
-                  :
-                    // If the button is disabled and primary, use a muted text color regardless of primary state for better accessibility
-                    isPrimary
-                  ? Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.grey[400],
-                    )
-                  // If the button is disabled and not primary, use the same muted text color for consistency
-                  : Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.grey[400],
-                    ),
-            ),
+                          ),
+                  ),
           ),
         ),
       ),
