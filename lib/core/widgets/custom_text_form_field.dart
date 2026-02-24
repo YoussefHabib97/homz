@@ -40,7 +40,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       keyboardAppearance: Brightness.dark,
       readOnly: _isReadOnly,
       decoration: InputDecoration(
-        fillColor: AppColors.grey[900],
         counterText: "",
         prefixIcon: widget.prefixIcon,
         hintText: widget.hintText,

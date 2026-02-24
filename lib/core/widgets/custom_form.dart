@@ -16,7 +16,7 @@ class _CustomFormState extends State<CustomForm> {
       key: _formKey,
       autovalidateMode: AutovalidateMode.onUserInteractionIfError,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
+        padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 12.0),
         child: widget.child,
       ),
     );

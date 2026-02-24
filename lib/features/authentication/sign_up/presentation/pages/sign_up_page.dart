@@ -5,16 +5,17 @@ import 'package:homz/core/extensions/extensions.dart' show StringExtension;
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/widgets/custom_button.dart';
 import 'package:homz/core/widgets/custom_text_form_field.dart';
+import 'package:homz/core/widgets/password_text_form_field.dart';
 import 'package:homz/core/widgets/third_party_authentication_buttons.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _SignUpPageState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
   late bool _isRegisterButtonDisabled = false;
   late TextEditingController _nameTextEditingController,
@@ -76,41 +77,13 @@ class _RegisterPageState extends State<RegisterPage> {
                 },
                 onSubmit: (value) {},
               ),
-              CustomTextFormField(
-                textInputType: TextInputType.visiblePassword,
-                prefixIcon: SvgPicture.asset(
-                  kPasswordIcon,
-                  fit: BoxFit.scaleDown,
-                  colorFilter: ColorFilter.mode(
-                    AppColors.grey[400]!,
-                    BlendMode.srcATop,
-                  ),
-                ),
-                hintText: "Password",
-                isObscured: true,
-                textController: _passwordTextEditingController,
-                validator: (value) {
-                  return null;
-                },
-                onSubmit: (value) {},
+              PasswordTextFormField(
+                passwordTextEditingController: _passwordTextEditingController,
               ),
-              CustomTextFormField(
-                textInputType: TextInputType.visiblePassword,
-                prefixIcon: SvgPicture.asset(
-                  kPasswordIcon,
-                  fit: BoxFit.scaleDown,
-                  colorFilter: ColorFilter.mode(
-                    AppColors.grey[400]!,
-                    BlendMode.srcATop,
-                  ),
-                ),
-                isObscured: true,
-                hintText: "Confirm Password",
-                textController: _confirmPasswordTextEditingController,
-                validator: (value) {
-                  return null;
-                },
-                onSubmit: (value) {},
+              PasswordTextFormField(
+                isConfirmField: true,
+                passwordTextEditingController:
+                    _confirmPasswordTextEditingController,
               ),
               CustomButton(
                 onPressed: _isRegisterButtonDisabled
