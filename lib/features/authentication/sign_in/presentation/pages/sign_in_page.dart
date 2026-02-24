@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:homz/core/theme/app_colors.dart';
+import 'package:homz/core/utils/app_router.dart';
 import 'package:homz/core/widgets/app_padding.dart';
 import 'package:homz/core/widgets/custom_button.dart';
 import 'package:homz/core/widgets/custom_form.dart';
@@ -54,7 +56,9 @@ class _SignInPageState extends State<SignInPage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      GoRouter.of(context).push(AppRouter.kPageForgotPassword);
+                    },
                     child: Text(
                       "Forgot Password?",
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
@@ -68,12 +72,16 @@ class _SignInPageState extends State<SignInPage> {
               TextWithCallToActionButton(
                 text: "Don't have an account?",
                 buttonText: "Create an account",
-                onPressed: () {},
+                onPressed: () {
+                  GoRouter.of(context).push(AppRouter.kPageSignUp);
+                },
               ),
               CustomButton(text: "Sign In", isPrimary: false, onPressed: () {}),
               ThirdPartyAuthenticationButtons(),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  GoRouter.of(context).push(AppRouter.kPageHome);
+                },
                 child: Text(
                   "Skip and start browsing",
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(

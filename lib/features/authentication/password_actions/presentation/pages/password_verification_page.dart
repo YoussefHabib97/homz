@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:homz/core/theme/app_colors.dart';
+import 'package:homz/core/utils/app_router.dart';
 import 'package:homz/core/widgets/app_padding.dart';
 import 'package:homz/core/widgets/custom_form.dart';
 import 'package:homz/core/widgets/custom_text_form_field.dart';
@@ -58,7 +60,9 @@ class _PasswordVerificationPageState extends State<PasswordVerificationPage> {
                   context,
                 ).textTheme.bodyMedium!.copyWith(color: AppColors.grey[50]),
                 buttonText: "Resend",
-                onPressed: () {},
+                onPressed: () {
+                  GoRouter.of(context).push(AppRouter.kPageResetPassword);
+                },
               ),
             ],
           ),

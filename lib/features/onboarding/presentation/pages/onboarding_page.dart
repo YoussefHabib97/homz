@@ -39,7 +39,7 @@ class _OnboardingPageState extends State<OnboardingPage>
 
   @override
   void initState() {
-    _pageController = PageController();
     super.initState();
+    _pageController = PageController();
   }
 }

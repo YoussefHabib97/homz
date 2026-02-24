@@ -70,24 +70,13 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       ),
       maxLength: 50,
       onChanged: (value) {
-        widget.textController.text = value;
-        widget.textController.text.isNotEmpty
-            ? setState(() {
-                _isFilled = true;
-              })
-            : setState(() {
-                _isFilled = false;
-              });
+        setState(() {
+          _isFilled = value.isNotEmpty;
+        });
       },
       validator: widget.validator,
       onFieldSubmitted: widget.onSubmit,
     );
-  }
-
-  @override
-  void dispose() {
-    widget.textController.dispose();
-    super.dispose();
   }
 
   @override

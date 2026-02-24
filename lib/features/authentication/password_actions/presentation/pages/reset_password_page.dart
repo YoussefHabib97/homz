@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/theme/app_colors.dart';
+import 'package:homz/core/utils/app_router.dart';
 import 'package:homz/core/widgets/app_padding.dart';
 import 'package:homz/core/widgets/custom_button.dart';
 import 'package:homz/core/widgets/custom_form.dart';
@@ -93,7 +95,9 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                                 CustomButton(
                                   text: "Continue",
                                   onPressed: () {
-                                    Navigator.of(context).pop();
+                                    GoRouter.of(
+                                      context,
+                                    ).pushReplacement(AppRouter.kPageHome);
                                   },
                                 ),
                               ],

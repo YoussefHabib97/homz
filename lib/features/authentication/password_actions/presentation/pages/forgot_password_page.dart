@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import 'package:go_router/go_router.dart';
+import "package:homz/core/utils/app_router.dart";
 import "package:homz/core/widgets/app_padding.dart";
 import "package:homz/core/widgets/custom_button.dart";
 import "package:homz/core/widgets/custom_form.dart";
@@ -12,7 +14,7 @@ class ForgotPasswordPage extends StatefulWidget {
 }
 
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
-  final TextEditingController _textEditingController = TextEditingController();
+  late final TextEditingController _textEditingController;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,14 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 },
                 onSubmit: (value) {},
               ),
-              CustomButton(text: "Send Code", onPressed: () {}),
+              CustomButton(
+                text: "Send Code",
+                onPressed: () {
+                  GoRouter.of(
+                    context,
+                  ).push(AppRouter.kPagePasswordVerification);
+                },
+              ),
             ],
           ),
         ),
@@ -49,5 +58,11 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   void dispose() {
     _textEditingController.dispose();
     super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _textEditingController = TextEditingController();
   }
 }

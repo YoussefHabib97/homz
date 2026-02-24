@@ -123,10 +123,10 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   void initState() {
+    super.initState();
     _nameTextEditingController = TextEditingController();
     _mobileNumberTextEditingController = TextEditingController();
     _passwordTextEditingController = TextEditingController();
     _confirmPasswordTextEditingController = TextEditingController();
-    super.initState();
   }
 }
