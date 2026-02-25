@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:homz/core/theme/app_colors.dart';
 
 class ChangeLocaleButton extends StatelessWidget {
   const ChangeLocaleButton({super.key});
@@ -20,9 +21,9 @@ class ChangeLocaleButton extends StatelessWidget {
             ),
             child: Text(
               "(عربي)",
-              style: Theme.of(
-                context,
-              ).textTheme.bodyMedium!.copyWith(color: Color(0xFFEFC3C3)),
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                color: AppExtraColors.localeButtonColor,
+              ),
             ),
           ),
         ),

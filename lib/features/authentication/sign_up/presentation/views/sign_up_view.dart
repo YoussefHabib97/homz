@@ -3,20 +3,20 @@ import 'package:flutter_svg/svg.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart' show StringExtension;
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/app_padding.dart';
+import 'package:homz/core/widgets/app_default_padding.dart';
 import 'package:homz/core/widgets/custom_button.dart';
 import 'package:homz/core/widgets/custom_form.dart';
 import 'package:homz/core/widgets/custom_text_form_field.dart';
 import 'package:homz/core/widgets/third_party_authentication_buttons.dart';
 
-class SignUpPage extends StatefulWidget {
-  const SignUpPage({super.key});
+class SignUpView extends StatefulWidget {
+  const SignUpView({super.key});
 
   @override
-  State<SignUpPage> createState() => _SignUpPageState();
+  State<SignUpView> createState() => _SignUpViewState();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
+class _SignUpViewState extends State<SignUpView> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   late TextEditingController _nameTextEditingController,
       _mobileNumberTextEditingController,
@@ -27,7 +27,7 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(centerTitle: true, title: Text("Create an account")),
-      body: AppPadding(
+      body: AppDefaultPadding(
         child: CustomForm(
           formKey: formKey,
           child: Column(

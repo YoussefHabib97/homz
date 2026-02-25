@@ -1,50 +1,47 @@
 import 'package:go_router/go_router.dart';
-import 'package:homz/features/authentication/password_actions/presentation/pages/forgot_password_page.dart';
-import 'package:homz/features/authentication/password_actions/presentation/pages/password_verification_page.dart';
-import 'package:homz/features/authentication/password_actions/presentation/pages/reset_password_page.dart';
-import 'package:homz/features/authentication/sign_in/presentation/pages/sign_in_page.dart';
-import 'package:homz/features/authentication/sign_up/presentation/pages/sign_up_page.dart';
-import 'package:homz/features/onboarding/presentation/pages/onboarding_page.dart';
+import 'package:homz/features/authentication/password_actions/presentation/views/forgot_password_view.dart';
+import 'package:homz/features/authentication/password_actions/presentation/views/password_verification_view.dart';
+import 'package:homz/features/authentication/password_actions/presentation/views/reset_password_view.dart';
+import 'package:homz/features/authentication/sign_in/presentation/views/sign_in_view.dart';
+import 'package:homz/features/authentication/sign_up/presentation/views/sign_up_view.dart';
+import 'package:homz/features/home/presentation/views/home_view.dart';
+import 'package:homz/features/onboarding/presentation/views/onboarding_view.dart';
 
 abstract class AppRouter {
-  static const kPageHome = '/';
-  static const kPageOnboarding = '/onboardingPage';
-  static const kPageSignIn = '/signInPage';
-  static const kPageSignUp = '/signUpPage';
-  static const kPageForgotPassword = '/forgotPasswordPage';
-  static const kPageResetPassword = '/resetPasswordPage';
-  static const kPagePasswordVerification = '/passwordVerificationPage';
+  static const kViewHome = '/';
+  static const kViewOnboarding = '/onboardingView';
+  static const kViewSignIn = '/signInView';
+  static const kViewSignUp = '/signUpView';
+  static const kViewForgotPassword = '/forgotPasswordView';
+  static const kViewResetPassword = '/resetPasswordView';
+  static const kViewPasswordVerification = '/passwordVerificationView';
 
   static final router = GoRouter(
     routes: [
+      GoRoute(path: kViewHome, builder: (context, state) => const HomeView()),
       GoRoute(
-        path: kPageHome,
-        //? TODO: To be changed after debugging
-        builder: (context, state) => const SignInPage(),
+        path: kViewOnboarding,
+        builder: (context, state) => const OnboardingView(),
       ),
       GoRoute(
-        path: kPageOnboarding,
-        builder: (context, state) => const OnboardingPage(),
+        path: kViewSignIn,
+        builder: (context, state) => const SignInView(),
       ),
       GoRoute(
-        path: kPageSignIn,
-        builder: (context, state) => const SignInPage(),
+        path: kViewSignUp,
+        builder: (context, state) => const SignUpView(),
       ),
       GoRoute(
-        path: kPageSignUp,
-        builder: (context, state) => const SignUpPage(),
+        path: kViewForgotPassword,
+        builder: (context, state) => const ForgotPasswordView(),
       ),
       GoRoute(
-        path: kPageForgotPassword,
-        builder: (context, state) => const ForgotPasswordPage(),
+        path: kViewResetPassword,
+        builder: (context, state) => const ResetPasswordView(),
       ),
       GoRoute(
-        path: kPageResetPassword,
-        builder: (context, state) => const ResetPasswordPage(),
-      ),
-      GoRoute(
-        path: kPagePasswordVerification,
-        builder: (context, state) => const PasswordVerificationPage(),
+        path: kViewPasswordVerification,
+        builder: (context, state) => const PasswordVerificationView(),
       ),
     ],
   );

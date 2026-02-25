@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:homz/core/constants/constants.dart';
 
-class AppPadding extends StatelessWidget {
+class AppDefaultPadding extends StatelessWidget {
   final double verticalOffset, horizontalOffset;
   final Widget child;
-  const AppPadding({
+  const AppDefaultPadding({
     super.key,
     this.verticalOffset = kVerticalPadding,
     this.horizontalOffset = kHorizontalPadding,

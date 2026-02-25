@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:homz/core/constants/constants.dart';
-import 'package:homz/core/widgets/app_padding.dart';
+import 'package:homz/core/widgets/app_default_padding.dart';
 import 'package:homz/core/widgets/custom_navigation_button.dart';
 
-class CustomNavigationPage extends StatefulWidget {
-  const CustomNavigationPage({super.key});
+class HomeView extends StatefulWidget {
+  const HomeView({super.key});
 
   @override
-  State<CustomNavigationPage> createState() => _CustomNavigationPageState();
+  State<HomeView> createState() => _HomeViewState();
 }
 
-class _CustomNavigationPageState extends State<CustomNavigationPage> {
+class _HomeViewState extends State<HomeView> {
   int currentIndex = 0;
 
   final List<Widget> pages = [
@@ -35,7 +35,7 @@ class _CustomNavigationPageState extends State<CustomNavigationPage> {
       appBar: _getAppBar(),
       body: _getBody(),
       bottomNavigationBar: SafeArea(
-        child: AppPadding(
+        child: AppDefaultPadding(
           horizontalOffset: 8,
           verticalOffset: 0,
           child: _buildCustomNavigationBar(),

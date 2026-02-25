@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:homz/core/constants/constants.dart';
 
-class OnboardingPage extends StatefulWidget {
-  const OnboardingPage({super.key});
+class OnboardingView extends StatefulWidget {
+  const OnboardingView({super.key});
 
   @override
-  State<OnboardingPage> createState() => _OnboardingPageState();
+  State<OnboardingView> createState() => _OnboardingViewState();
 }
 
-class _OnboardingPageState extends State<OnboardingPage>
+class _OnboardingViewState extends State<OnboardingView>
     with TickerProviderStateMixin {
   late final PageController _pageController;
 

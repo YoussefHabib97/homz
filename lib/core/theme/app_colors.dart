@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+class AppAlertColors {
+  static const error = Color(0xFFEF4444);
+  static const success = Color(0xFF29AE29);
+  static const warning = Color(0xFFFFC62A);
+}
+
 class AppColors {
   static const primary = {
     50: Color(0xFFECF0F7),
@@ -28,8 +34,6 @@ class AppColors {
   };
 }
 
-class AppAlertColors {
-  static const error = Color(0xFFEF4444);
-  static const success = Color(0xFF29AE29);
-  static const warning = Color(0xFFFFC62A);
+class AppExtraColors {
+  static const localeButtonColor = Color(0xFFEFC3C3); // Citric Citron
 }

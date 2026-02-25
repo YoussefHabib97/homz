@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/utils/app_router.dart';
-import 'package:homz/core/widgets/app_padding.dart';
+import 'package:homz/core/widgets/app_default_padding.dart';
+import 'package:homz/core/widgets/custom_button.dart';
 import 'package:homz/core/widgets/custom_form.dart';
 import 'package:homz/core/widgets/custom_text_form_field.dart';
-import 'package:homz/core/widgets/text_with_call_to_action_button.dart';
+import 'package:homz/features/authentication/password_actions/presentation/widgets/success_alert_dialog.dart';
 
-class PasswordVerificationPage extends StatefulWidget {
-  const PasswordVerificationPage({super.key});
+class ResetPasswordView extends StatefulWidget {
+  const ResetPasswordView({super.key});
 
   @override
-  State<PasswordVerificationPage> createState() =>
-      _PasswordVerificationPageState();
+  State<ResetPasswordView> createState() => _ResetPasswordViewState();
 }
 
-class _PasswordVerificationPageState extends State<PasswordVerificationPage> {
+class _ResetPasswordViewState extends State<ResetPasswordView> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(centerTitle: true, title: Text("Verification Code")),
-      body: AppPadding(
+      appBar: AppBar(centerTitle: true, title: Text("Reset Password")),
+      body: AppDefaultPadding(
         child: CustomForm(
           formKey: formKey,
           child: Column(
@@ -30,13 +28,13 @@ class _PasswordVerificationPageState extends State<PasswordVerificationPage> {
             children: [
               RichText(
                 text: TextSpan(
-                  text: "Enter the verification code",
+                  text: "Enter a new password",
                   style: Theme.of(context).textTheme.bodyMedium,
                   children: [
                     TextSpan(
                       text:
                           "\n"
-                          "We have sent a verification code to your number",
+                          "Your new password must be strong",
                       style: Theme.of(context).textTheme.bodySmall!.copyWith(
                         color: AppColors.grey[400],
                         fontSize: 14,
@@ -46,22 +44,29 @@ class _PasswordVerificationPageState extends State<PasswordVerificationPage> {
                 ),
               ),
               CustomTextFormField(
-                hintText:
-                    "To be replaced with divided TextFormField for SMS Verification",
+                hintText: "New Password",
                 textController: TextEditingController(),
                 validator: (value) {
                   return null;
                 },
                 onSubmit: (value) {},
               ),
-              TextWithCallToActionButton(
-                text: "Didn't recieve the code?",
-                textStyle: Theme.of(
-                  context,
-                ).textTheme.bodyMedium!.copyWith(color: AppColors.grey[50]),
-                buttonText: "Resend",
+              CustomTextFormField(
+                hintText: "Confirm Password",
+                textController: TextEditingController(),
+                validator: (value) {
+                  return null;
+                },
+                onSubmit: (value) {},
+              ),
+              CustomButton(
+                text: "Reset Password",
                 onPressed: () {
-                  GoRouter.of(context).push(AppRouter.kPageResetPassword);
+                  showDialog(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (context) => SuccessAlertDialog(),
+                  );
                 },
               ),
             ],
