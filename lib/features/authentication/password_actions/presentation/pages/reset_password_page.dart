@@ -68,43 +68,48 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                   showDialog(
                     context: context,
                     barrierDismissible: false,
-                    builder: (context) => AlertDialog(
-                      actions: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 32.0,
-                            vertical: 24.0,
-                          ),
-                          child: Center(
-                            child: Column(
-                              spacing: 32,
-                              children: [
-                                SvgPicture.asset(kAlertSuccess),
-                                Text(
-                                  "Congratulations!",
-                                  style: Theme.of(
-                                    context,
-                                  ).textTheme.headlineMedium,
-                                  textAlign: TextAlign.center,
-                                ),
-                                Text(
-                                  "Your password has been successfully updated",
-                                  style: Theme.of(context).textTheme.bodyMedium,
-                                  textAlign: TextAlign.center,
-                                ),
-                                CustomButton(
-                                  text: "Continue",
-                                  onPressed: () {
-                                    GoRouter.of(
+                    builder: (context) => PopScope(
+                      canPop: false,
+                      child: AlertDialog(
+                        actions: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 32.0,
+                              vertical: 24.0,
+                            ),
+                            child: Center(
+                              child: Column(
+                                spacing: 32,
+                                children: [
+                                  SvgPicture.asset(kAlertSuccess),
+                                  Text(
+                                    "Congratulations!",
+                                    style: Theme.of(
                                       context,
-                                    ).pushReplacement(AppRouter.kPageHome);
-                                  },
-                                ),
-                              ],
+                                    ).textTheme.headlineMedium,
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  Text(
+                                    "Your password has been successfully updated",
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.bodyMedium,
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  CustomButton(
+                                    text: "Continue",
+                                    onPressed: () {
+                                      GoRouter.of(
+                                        context,
+                                      ).pushReplacement(AppRouter.kPageHome);
+                                    },
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   );
                 },

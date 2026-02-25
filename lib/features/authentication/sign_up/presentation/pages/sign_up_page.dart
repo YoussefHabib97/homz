@@ -47,9 +47,9 @@ class _SignUpPageState extends State<SignUpPage> {
                 textInputType: TextInputType.name,
                 textController: _nameTextEditingController,
                 validator: (value) {
-                  if (value == null || value.isEmpty || !value.isValidName) {
-                    return "Please enter a valid name";
-                  }
+                  // if (value == null || value.isEmpty || !value.isValidName) {
+                  //   return "Please enter a valid name";
+                  // }
                   return null;
                 },
                 onSubmit: (value) {
