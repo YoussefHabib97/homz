@@ -34,24 +34,23 @@ class _SignInViewState extends State<SignInView> {
             children: [
               SignInAppBar(),
               CustomTextFormField(
-                hintText: "Phone Number",
-                textInputType: TextInputType.number,
-                textController: _mobileNumberTextEditingController,
+                hintText: "Mobile Number",
+                controller: _mobileNumberTextEditingController,
                 validator: (value) {
                   return null;
                 },
                 onSubmit: (value) {},
               ),
               CustomTextFormField(
-                isPasswordTextFormField: true,
-                textInputType: TextInputType.visiblePassword,
+                isPassword: true,
                 hintText: "Password",
-                textController: _passwordTextEditingController,
+                controller: _passwordTextEditingController,
                 validator: (value) {
                   return null;
                 },
                 onSubmit: (value) {},
               ),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [

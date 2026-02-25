@@ -38,16 +38,23 @@ class AppTheme {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
     ),
-
     inputDecorationTheme: InputDecorationTheme(
-      filled: true,
-      border: OutlineInputBorder(
+      hintStyle: TextStyle(color: AppColors.grey[400]),
+
+      enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(color: AppColors.grey[600]!),
-        borderRadius: BorderRadius.circular(12),
       ),
+
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: AppColors.primary[300]!),
-        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: AppColors.grey[200]!, width: 2),
+      ),
+
+      errorBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: AppAlertColors.error),
+      ),
+
+      focusedErrorBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: AppAlertColors.error, width: 2),
       ),
     ),
   );

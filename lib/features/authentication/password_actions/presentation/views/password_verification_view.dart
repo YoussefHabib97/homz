@@ -48,7 +48,7 @@ class _PasswordVerificationViewState extends State<PasswordVerificationView> {
               CustomTextFormField(
                 hintText:
                     "To be replaced with divided TextFormField for SMS Verification",
-                textController: TextEditingController(),
+                controller: TextEditingController(),
                 validator: (value) {
                   return null;
                 },

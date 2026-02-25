@@ -44,8 +44,7 @@ class _SignUpViewState extends State<SignUpView> {
                   ),
                 ),
                 hintText: "Name",
-                textInputType: TextInputType.name,
-                textController: _nameTextEditingController,
+                controller: _nameTextEditingController,
                 validator: (value) {
                   // if (value == null || value.isEmpty || !value.isValidName) {
                   //   return "Please enter a valid name";
@@ -59,7 +58,6 @@ class _SignUpViewState extends State<SignUpView> {
                 },
               ),
               CustomTextFormField(
-                textInputType: TextInputType.phone,
                 prefixIcon: SvgPicture.asset(
                   kMobileNumberIcon,
                   fit: BoxFit.scaleDown,
@@ -69,27 +67,25 @@ class _SignUpViewState extends State<SignUpView> {
                   ),
                 ),
                 hintText: "Mobile Number",
-                textController: _mobileNumberTextEditingController,
+                controller: _mobileNumberTextEditingController,
                 validator: (value) {
                   return null;
                 },
                 onSubmit: (value) {},
               ),
               CustomTextFormField(
-                isPasswordTextFormField: true,
-                textInputType: TextInputType.visiblePassword,
+                isPassword: true,
                 hintText: "Password",
-                textController: _passwordTextEditingController,
+                controller: _passwordTextEditingController,
                 validator: (value) {
                   return null;
                 },
                 onSubmit: (value) {},
               ),
               CustomTextFormField(
-                isPasswordTextFormField: true,
-                textInputType: TextInputType.visiblePassword,
+                isPassword: true,
                 hintText: "Confirm Password",
-                textController: _confirmPasswordTextEditingController,
+                controller: _confirmPasswordTextEditingController,
                 validator: (value) {
                   return null;
                 },

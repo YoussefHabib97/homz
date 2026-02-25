@@ -45,15 +45,15 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
               ),
               CustomTextFormField(
                 hintText: "New Password",
-                textController: TextEditingController(),
+                controller: TextEditingController(),
                 validator: (value) {
                   return null;
                 },
                 onSubmit: (value) {},
               ),
               CustomTextFormField(
-                hintText: "Confirm Password",
-                textController: TextEditingController(),
+                hintText: "Confirm New Password",
+                controller: TextEditingController(),
                 validator: (value) {
                   return null;
                 },

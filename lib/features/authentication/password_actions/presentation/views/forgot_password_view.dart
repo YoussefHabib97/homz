@@ -32,8 +32,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
               ),
               CustomTextFormField(
                 hintText: "Mobile Number",
-                textInputType: TextInputType.numberWithOptions(),
-                textController: _textEditingController,
+                controller: _textEditingController,
                 validator: (value) {
                   return null;
                 },
