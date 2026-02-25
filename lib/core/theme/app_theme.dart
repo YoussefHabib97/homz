@@ -13,7 +13,7 @@ class AppTheme {
     colorScheme: ColorScheme(
       brightness: Brightness.dark,
       primary: AppColors.primary[300]!,
-      onPrimary: Colors.white,
+      onPrimary: AppColors.grey[50]!,
       secondary: AppColors.primary[200]!,
       onSecondary: AppColors.grey[900]!,
       error: AppAlertColors.error,
@@ -33,7 +33,7 @@ class AppTheme {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primary[300],
-        foregroundColor: Colors.white,
+        foregroundColor: AppColors.grey[50],
         disabledBackgroundColor: AppColors.grey[600],
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
