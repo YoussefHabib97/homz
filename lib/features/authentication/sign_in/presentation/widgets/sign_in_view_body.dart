@@ -35,7 +35,10 @@ class SignInViewBody extends StatelessWidget {
           PhoneNumberTextFormField(
             controller: _mobileNumberTextEditingController,
           ),
-          PasswordTextFormField(controller: _passwordTextEditingController),
+          PasswordTextFormField(
+            controller: _passwordTextEditingController,
+            isSignIn: true,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [

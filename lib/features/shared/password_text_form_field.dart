@@ -6,8 +6,15 @@ import 'package:homz/features/shared/base_text_form_field.dart';
 
 class PasswordTextFormField extends StatefulWidget {
   final TextEditingController controller;
+  final bool isSignIn;
+  final String? text;
 
-  const PasswordTextFormField({super.key, required this.controller});
+  const PasswordTextFormField({
+    super.key,
+    required this.controller,
+    this.isSignIn = false,
+    this.text = "",
+  });
 
   @override
   State<PasswordTextFormField> createState() => _PasswordTextFormFieldState();
@@ -30,13 +37,16 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
           controller: widget.controller,
           obscureText: _obscure,
           validator: (value) {
-            if (value == null || value.isEmpty || value.length < 8) {
+            if (widget.isSignIn && (value == null || value.isEmpty)) {
+              return 'Incorrect password';
+            }
+            if (!widget.isSignIn && (value == null || value.isEmpty)) {
               return 'Minimum 8 characters';
             }
             return null;
           },
           decoration: InputDecoration(
-            hintText: 'Password',
+            hintText: widget.text,
             prefixIcon: SvgPicture.asset(
               kPasswordIcon,
               fit: BoxFit.scaleDown,

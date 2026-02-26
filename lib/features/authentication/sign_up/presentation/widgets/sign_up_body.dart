@@ -40,6 +40,7 @@ class SignUpViewBody extends StatelessWidget {
           ),
           PasswordTextFormField(controller: _passwordTextEditingController),
           PasswordTextFormField(
+            text: "Confirm Password",
             controller: _confirmPasswordTextEditingController,
           ),
           CustomButton(
