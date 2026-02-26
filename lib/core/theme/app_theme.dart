@@ -41,12 +41,19 @@ class AppTheme {
     inputDecorationTheme: InputDecorationTheme(
       hintStyle: TextStyle(color: AppColors.grey[400]),
 
+      prefixIconColor: AppColors.grey[400],
+      suffixIconColor: AppColors.grey[400],
+
       enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(color: AppColors.grey[600]!),
       ),
 
       focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(color: AppColors.grey[200]!, width: 2),
+      ),
+
+      disabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: AppColors.grey[700]!),
       ),
 
       errorBorder: OutlineInputBorder(

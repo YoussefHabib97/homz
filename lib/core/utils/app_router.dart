@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
-import 'package:homz/features/authentication/password_actions/presentation/views/forgot_password_view.dart';
-import 'package:homz/features/authentication/password_actions/presentation/views/password_verification_view.dart';
-import 'package:homz/features/authentication/password_actions/presentation/views/reset_password_view.dart';
+import 'package:homz/features/authentication/password_actions/presentation/views/forgot_password/forgot_password_view.dart';
+import 'package:homz/features/authentication/password_actions/presentation/views/password_verification/password_verification_view.dart';
+import 'package:homz/features/authentication/password_actions/presentation/views/reset_password/reset_password_view.dart';
 import 'package:homz/features/authentication/sign_in/presentation/views/sign_in_view.dart';
 import 'package:homz/features/authentication/sign_up/presentation/views/sign_up_view.dart';
 import 'package:homz/features/onboarding/presentation/views/onboarding_view.dart';

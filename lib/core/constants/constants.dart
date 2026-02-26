@@ -1,6 +1,8 @@
 const String kAlertSuccess = 'assets/icons/alert-success.svg';
 const String kAppleIcon = 'assets/icons/apple-icon.svg';
 const String kAppLogo = 'assets/images/app-logo.png';
+const String kEyeIcon = 'assets/icons/eye.svg';
+const String kEyeSlashIcon = 'assets/icons/eye-slash.svg';
 const String kGoogleIcon = 'assets/icons/google-icon.svg';
 const String kHeartIcon = 'assets/icons/heart-icon.svg';
 const String kHomeIcon = 'assets/icons/home-icon.svg';
