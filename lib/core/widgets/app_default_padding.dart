@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homz/core/constants/constants.dart';
 
 class AppDefaultPadding extends StatelessWidget {
@@ -15,8 +16,8 @@ class AppDefaultPadding extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: horizontalOffset,
-        vertical: verticalOffset,
+        horizontal: horizontalOffset.w,
+        vertical: verticalOffset.h,
       ),
       child: child,
     );
