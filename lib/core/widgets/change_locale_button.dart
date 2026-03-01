@@ -7,10 +7,11 @@ class ChangeLocaleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: Ink(
-        decoration: BoxDecoration(
-          border: Border.all(color: Color(0xFFEFC3C3)),
+      child: Material(
+         color: Colors.transparent, // Keep the background transparent to see the onboarding image
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
+          side: const BorderSide(color: Color(0xFFEFC3C3), width: 1), 
         ),
         child: InkWell(
           onTap: () {},

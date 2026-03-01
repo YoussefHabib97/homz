@@ -19,23 +19,24 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: Ink(
-        decoration: BoxDecoration(
-          color: onPressed != null
-              ? (isPrimary && !isIconButton
-                    ? AppColors.primary[400]
-                    : AppColors.grey[900])
-              : isPrimary
-              ? AppColors.primary[900]
-              : AppColors.grey[900],
-          border: onPressed != null
-              ? (isPrimary && !isIconButton
-                    ? null
-                    : Border.all(color: AppColors.grey[600]!, width: 1))
-              : isPrimary
-              ? null
-              : Border.all(color: AppColors.grey[600]!, width: 1),
+      child: Material(
+        color: onPressed != null
+            ? (isPrimary && !isIconButton
+                  ? AppColors.primary[400]
+                  : AppColors.grey[900])
+            : isPrimary
+            ? AppColors.primary[900]
+            : AppColors.grey[900],
+
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
+          side: onPressed != null
+              ? (isPrimary && !isIconButton
+                    ? BorderSide.none
+                    : BorderSide(color: AppColors.grey[600]!, width: 1))
+              : isPrimary
+              ? BorderSide.none
+              : BorderSide(color: AppColors.grey[600]!, width: 1),
         ),
         child: InkWell(
           onTap: onPressed,

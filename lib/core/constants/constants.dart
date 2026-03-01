@@ -1,3 +1,4 @@
+
 const String kAlertSuccess = 'assets/icons/alert-success.svg';
 const String kAppleIcon = 'assets/icons/apple-icon.svg';
 const String kAppLogo = 'assets/images/app-logo.png';
