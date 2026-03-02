@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 
 class CustomNavigationButton extends StatelessWidget {
@@ -40,7 +41,7 @@ class CustomNavigationButton extends StatelessWidget {
                     ),
                     Text(
                       label,
-                      style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                      style: context.labelLarge.copyWith(
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),

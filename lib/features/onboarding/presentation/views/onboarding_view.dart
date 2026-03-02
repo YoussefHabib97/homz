@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homz/core/constants/constants.dart';
-import 'package:homz/features/onboarding/presentation/views/page_view_tem.dart';
+import 'package:homz/features/onboarding/presentation/views/widgets/onboarding_page_view_item.dart.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
@@ -13,38 +13,54 @@ class _OnboardingViewState extends State<OnboardingView>
     with TickerProviderStateMixin {
   late final PageController pageController;
   //page view data
-    List<OnboardingModel> onboardingData = [
-      OnboardingModel(
-        title: 'Explore Amazing\nReal Estate',
-        description: 'Find what you\nwant',
-        image: kOnboardingImage1,
-      ),
-      OnboardingModel(
-        title: 'Compare and\nchoose',
-        description: 'Find what you\nwant',
-        image: kOnboardingImage2,
-      ),
-      OnboardingModel(
-        title: 'choose the\nmore comfort',
-         description: 'Find what you\nwant',
-        image: kOnboardingImage3,
-      ),
-    ];
+  List<OnboardingPageModel> onboardingData = [
+    OnboardingPageModel(
+      title:
+          'Explore Amazing'
+          '\n'
+          'Real Estate',
+      description:
+          'Find what you'
+          '\n'
+          'want',
+      image: kOnboardingImage1,
+    ),
+    OnboardingPageModel(
+      title:
+          'Compare and'
+          '\n'
+          'choose',
+      description:
+          'Find what you'
+          '\n'
+          'want',
+      image: kOnboardingImage2,
+    ),
+    OnboardingPageModel(
+      title:
+          'Choose the'
+          '\n'
+          'most comfortable',
+      description:
+          'Find what you'
+          '\n'
+          'want',
+      image: kOnboardingImage3,
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView.builder(
-        itemBuilder: (context, index) => PageViewTem(
+        itemBuilder: (context, index) => OnboardingPageViewItem(
           model: onboardingData[index],
           index: index,
           pageController: pageController,
         ),
-        itemCount: 3,
+        itemCount: onboardingData.length,
         controller: pageController,
-        onPageChanged: (index) {
-            
-        },
+        onPageChanged: (index) {},
       ),
     );
   }
@@ -62,14 +78,14 @@ class _OnboardingViewState extends State<OnboardingView>
   }
 }
 
-class OnboardingModel {
+class OnboardingPageModel {
   final String title;
   final String description;
   final String image;
 
-  OnboardingModel({
+  OnboardingPageModel({
     required this.title,
-    required this.description,
+    this.description = '',
     required this.image,
   });
 }

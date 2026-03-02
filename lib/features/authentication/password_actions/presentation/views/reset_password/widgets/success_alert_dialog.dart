@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:homz/core/constants/constants.dart';
+import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/utils/app_router.dart';
 import 'package:homz/core/widgets/custom_button.dart';
 
@@ -26,12 +27,12 @@ class SuccessAlertDialog extends StatelessWidget {
                   SvgPicture.asset(kAlertSuccess),
                   Text(
                     "Congratulations!",
-                    style: Theme.of(context).textTheme.headlineMedium,
+                    style: context.headlineMedium,
                     textAlign: TextAlign.center,
                   ),
                   Text(
                     "Your password has been successfully updated",
-                    style: Theme.of(context).textTheme.bodyMedium,
+                    style: context.bodyMedium,
                     textAlign: TextAlign.center,
                   ),
                   CustomButton(

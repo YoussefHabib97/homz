@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/utils/app_router.dart';
 import 'package:homz/core/widgets/custom_form.dart';
@@ -22,16 +23,13 @@ class PasswordVerificationBody extends StatelessWidget {
           RichText(
             text: TextSpan(
               text: "Enter the verification code",
-              style: Theme.of(context).textTheme.bodyMedium,
+              style: context.bodyMedium,
               children: [
                 TextSpan(
                   text:
                       "\n"
                       "We have sent a verification code to your number",
-                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    color: AppColors.grey[400],
-                    fontSize: 14,
-                  ),
+                  style: context.bodySmall.copyWith(color: AppColors.grey[400]),
                 ),
               ],
             ),

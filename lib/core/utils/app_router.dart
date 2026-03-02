@@ -17,7 +17,10 @@ abstract class AppRouter {
 
   static final router = GoRouter(
     routes: [
-      GoRoute(path: kViewHome, builder: (context, state) => const SignInView()),
+      GoRoute(
+        path: kViewHome,
+        builder: (context, state) => const OnboardingView(),
+      ),
       GoRoute(
         path: kViewOnboarding,
         builder: (context, state) => const OnboardingView(),

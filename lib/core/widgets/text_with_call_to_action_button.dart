@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 
 class TextWithCallToActionButton extends StatelessWidget {
@@ -23,9 +24,7 @@ class TextWithCallToActionButton extends StatelessWidget {
           text,
           style:
               textStyle ??
-              Theme.of(
-                context,
-              ).textTheme.bodyMedium!.copyWith(color: AppColors.grey[400]),
+              context.bodyMedium.copyWith(color: AppColors.grey[400]),
         ),
         TextButton(
           onPressed: onPressed,
@@ -33,9 +32,10 @@ class TextWithCallToActionButton extends StatelessWidget {
             buttonText,
             style:
                 buttonTextStyle ??
-                Theme.of(context).textTheme.bodyMedium!.copyWith(
+                context.bodyMedium.copyWith(
                   color: AppColors.primary[300],
                   fontWeight: FontWeight.w400,
+                  overflow: TextOverflow.ellipsis,
                 ),
           ),
         ),

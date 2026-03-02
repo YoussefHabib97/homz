@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
@@ -51,8 +52,9 @@ class CustomButton extends StatelessWidget {
                     style: onPressed != null
                         ? (isPrimary
                               // If the button is enabled and primary, use the default text color for better contrast
-                              ? Theme.of(context).textTheme.bodyMedium!
-                                    .copyWith(fontWeight: FontWeight.bold)
+                              ? context.bodyMedium.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                )
                               // If the button is enabled and not primary, use a lighter text color for better contrast
                               : Theme.of(
                                   context,
@@ -63,12 +65,12 @@ class CustomButton extends StatelessWidget {
                         :
                           // If the button is disabled and primary, use a muted text color regardless of primary state for better accessibility
                           isPrimary
-                        ? Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        ? context.bodyMedium.copyWith(
                             fontWeight: FontWeight.bold,
                             color: AppColors.grey[400],
                           )
                         // If the button is disabled and not primary, use the same muted text color for consistency
-                        : Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        : context.bodyMedium.copyWith(
                             fontWeight: FontWeight.bold,
                             color: AppColors.grey[400],
                           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/widgets/custom_button.dart';
 import 'package:homz/core/widgets/custom_form.dart';
@@ -30,16 +31,13 @@ class ResetPasswordBody extends StatelessWidget {
           RichText(
             text: TextSpan(
               text: "Enter a new password",
-              style: Theme.of(context).textTheme.bodyMedium,
+              style: context.bodyMedium,
               children: [
                 TextSpan(
                   text:
                       "\n"
                       "Your new password must be strong",
-                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    color: AppColors.grey[400],
-                    fontSize: 14,
-                  ),
+                  style: context.bodySmall.copyWith(color: AppColors.grey[400]),
                 ),
               ],
             ),

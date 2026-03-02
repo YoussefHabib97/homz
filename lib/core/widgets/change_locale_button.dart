@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 
 class ChangeLocaleButton extends StatelessWidget {
@@ -8,12 +9,14 @@ class ChangeLocaleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       child: Material(
-         color: Colors.transparent, // Keep the background transparent to see the onboarding image
+        color: Colors
+            .transparent, // Keep the background transparent to see the onboarding image
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
-          side: const BorderSide(color: Color(0xFFEFC3C3), width: 1), 
+          side: const BorderSide(color: Color(0xFFEFC3C3), width: 1),
         ),
         child: InkWell(
+          borderRadius: BorderRadius.circular(8),
           onTap: () {},
           child: Padding(
             padding: const EdgeInsets.symmetric(
@@ -22,7 +25,7 @@ class ChangeLocaleButton extends StatelessWidget {
             ),
             child: Text(
               "(عربي)",
-              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+              style: context.bodyMedium.copyWith(
                 color: AppExtraColors.localeButtonColor,
               ),
             ),

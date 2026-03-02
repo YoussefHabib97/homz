@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/utils/app_router.dart';
 import 'package:homz/core/widgets/custom_button.dart';
 import 'package:homz/core/widgets/custom_form.dart';
@@ -24,7 +25,7 @@ class ForgotPasswordBody extends StatelessWidget {
         children: [
           Text(
             "Enter your mobile number to reset your password",
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: context.bodyMedium,
           ),
           PhoneNumberTextFormField(controller: _textEditingController),
           CustomButton(

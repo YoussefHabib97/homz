@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/utils/app_router.dart';
 import 'package:homz/core/widgets/custom_button.dart';
@@ -35,10 +36,7 @@ class SignInViewBody extends StatelessWidget {
           PhoneNumberTextFormField(
             controller: _mobileNumberTextEditingController,
           ),
-          PasswordTextFormField(
-            controller: _passwordTextEditingController,
-            isSignIn: true,
-          ),
+          PasswordTextFormField(controller: _passwordTextEditingController),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -48,7 +46,7 @@ class SignInViewBody extends StatelessWidget {
                 },
                 child: Text(
                   "Forgot Password?",
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  style: context.bodyMedium.copyWith(
                     color: AppColors.primary[300],
                     fontWeight: FontWeight.w500,
                   ),
@@ -77,7 +75,7 @@ class SignInViewBody extends StatelessWidget {
             },
             child: Text(
               "Skip and start browsing",
-              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+              style: context.bodyMedium.copyWith(
                 color: AppColors.primary[300],
                 fontWeight: FontWeight.w500,
               ),

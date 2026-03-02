@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homz/core/routing/routes.dart';
-import 'package:homz/core/theme/text_theme.dart';
+import 'package:go_router/go_router.dart';
+import 'package:homz/core/extensions/extensions.dart';
+import 'package:homz/core/theme/app_colors.dart';
+import 'package:homz/core/utils/app_router.dart';
 import 'package:homz/core/utils/spacing.dart';
+import 'package:homz/core/widgets/app_default_padding.dart';
 import 'package:homz/core/widgets/change_locale_button.dart';
 import 'package:homz/core/widgets/custom_button.dart';
 import 'package:homz/features/onboarding/presentation/views/onboarding_view.dart';
 
-class PageViewTem extends StatelessWidget {
-  final OnboardingModel model;
+class OnboardingPageViewItem extends StatelessWidget {
+  final OnboardingPageModel model;
   final int index;
   final PageController pageController;
-  const PageViewTem({super.key, required this.model, required this.index, required this.pageController});
+  const OnboardingPageViewItem({
+    super.key,
+    required this.model,
+    required this.index,
+    required this.pageController,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,24 +34,23 @@ class PageViewTem extends StatelessWidget {
         // add header and description at the bottom of the page
         Align(
           alignment: Alignment.bottomCenter,
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 40.h),
+          child: AppDefaultPadding(
+            horizontalOffset: 16,
+            verticalOffset: 32,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  model.title,
-                  style: AppTextStyles.font32Gray50Bold.copyWith(height: 1.h),
-                ),
-                verticalSpace(5),
+                Text(model.title, style: context.headlineLarge),
+                verticalSpace(4),
                 Row(
                   children: [
                     Text(
                       model.description,
-                      style: AppTextStyles.font16Blue50Regular.copyWith(
-                        height: 1.3.h,
-                      ),
+                      style: context.bodyLarge,
+                      // AppTextStyles.font16Blue50Regular.copyWith(
+                      //   height: 1.3.h,
+                      // ),
                     ),
                     const Spacer(),
                     if (index != 2)
@@ -57,32 +64,28 @@ class PageViewTem extends StatelessWidget {
                         },
                         icon: Icon(
                           Icons.arrow_forward_ios,
-                          color: Colors.white,
+                          color: AppColors.grey[50]!,
                           size: 24.sp,
                         ),
                       ),
                   ],
                 ),
-                if(index == 2)
-                Padding(
-                  padding:  EdgeInsets.only(top: 8.0.h),
-                  child: CustomButton(
-                    onPressed:   () {
-                      Navigator.pushNamed(context, Routes.signInScreen);
-                    }, text: "Get Started",
-                    isPrimary: true,
+                if (index == 2)
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0.h),
+                    child: CustomButton(
+                      onPressed: () {
+                        GoRouter.of(context).push(AppRouter.kViewSignIn);
+                      },
+                      text: "Get Started",
+                      isPrimary: true,
                     ),
-                ),
+                  ),
               ],
             ),
           ),
         ),
-        Positioned(
-          top: 58.h,
-          right: 16.w,
-          child: ChangeLocaleButton(),
-           ),
-        
+        Positioned(top: 70.h, right: 12.w, child: ChangeLocaleButton()),
       ],
     );
   }

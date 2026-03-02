@@ -1,46 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/theme/font_weight_helper.dart';
 
 TextTheme buildTextTheme() {
-  return const TextTheme(
-    displaySmall: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-    headlineLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-    headlineMedium: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-    headlineSmall: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-    titleLarge: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-    bodyLarge: TextStyle(fontSize: 18),
-    bodyMedium: TextStyle(fontSize: 16),
-    labelLarge: TextStyle(fontSize: 12),
-    labelSmall: TextStyle(fontSize: 10),
+  return TextTheme(
+    displaySmall: TextStyle(fontSize: 38.sp, fontWeight: FontWeight.bold),
+    headlineLarge: TextStyle(fontSize: 30.sp, fontWeight: FontWeight.bold),
+    headlineMedium: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.bold),
+    headlineSmall: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
+    titleLarge: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
+    bodyLarge: TextStyle(fontSize: 16.sp),
+    bodyMedium: TextStyle(fontSize: 14.sp),
+    bodySmall: TextStyle(fontSize: 12.sp),
+    labelLarge: TextStyle(fontSize: 10.sp),
+    labelSmall: TextStyle(fontSize: 8.sp),
   ).apply(fontFamily: 'SpaceGrotesk');
 }
-
-class AppTextStyles {
-  static TextStyle font32Gray50Bold = TextStyle(
-    fontSize: 32.sp,
-    fontWeight: FontWeightHelper.bold,
-    color: AppColors.grey[50]!,
-  );
-
-  static TextStyle font16Gray50Bold = TextStyle(
-    fontSize: 16.sp,
-    fontWeight: FontWeightHelper.bold,
-    color: AppColors.grey[50]!,
-  );
-
-
-  static TextStyle font16Blue50Regular = TextStyle(
-    fontSize: 16.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: AppColors.primary[50]!,
-  );
-
-   static TextStyle font16Blue50Bold = TextStyle(
-    fontSize: 16.sp,
-    fontWeight: FontWeightHelper.bold,
-    color: AppColors.primary[50]!,
-  );
-  
-  }
