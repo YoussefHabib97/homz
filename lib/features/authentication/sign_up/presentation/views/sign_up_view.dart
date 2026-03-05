@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homz/core/widgets/app_default_padding.dart';
+import 'package:homz/core/widgets/app_padding_and_gaps.dart';
 import 'package:homz/features/authentication/sign_up/presentation/widgets/sign_up_body.dart';
 
 class SignUpView extends StatefulWidget {

@@ -4,8 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/utils/app_router.dart';
-import 'package:homz/core/utils/spacing.dart';
-import 'package:homz/core/widgets/app_default_padding.dart';
+import 'package:homz/core/widgets/app_padding_and_gaps.dart';
 import 'package:homz/core/widgets/change_locale_button.dart';
 import 'package:homz/core/widgets/custom_button.dart';
 import 'package:homz/features/onboarding/presentation/views/onboarding_view.dart';
@@ -42,7 +41,7 @@ class OnboardingPageViewItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(model.title, style: context.headlineLarge),
-                verticalSpace(4),
+                VerticalGap(4),
                 Row(
                   children: [
                     Text(

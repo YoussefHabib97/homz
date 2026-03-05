@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homz/core/constants/constants.dart';
-import 'package:homz/core/widgets/app_default_padding.dart';
-import 'package:homz/core/widgets/custom_navigation_button.dart';
+import 'package:homz/features/home/presentation/widgets/custom_bottom_nav_bar.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -11,76 +9,60 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  int previousIndex = 0;
   int currentIndex = 0;
 
-  final List<Widget> pages = [
-    Center(child: Text("Home Body Placeholder")),
-    Center(child: Text("Search Body Placeholder")),
-    Center(child: Text("Saved Body Placeholder")),
-    Center(child: Text("Messages Body Placeholder")),
-    Center(child: Text("Profile Body Placeholder")),
+  final List<Widget> pages = const [
+    Center(child: Text("Home Body")),
+    Center(child: Text("Search Body")),
+    Center(child: Text("Saved Body")),
+    Center(child: Text("Messages Body")),
+    Center(child: Text("Profile Body")),
   ];
 
   final List<PreferredSizeWidget> appBars = [
-    AppBar(title: Text("Home AppBar Placeholder")),
-    AppBar(title: Text("Search AppBar Placeholder")),
-    AppBar(title: Text("Saved AppBar Placeholder")),
-    AppBar(title: Text("Messages AppBar Placeholder")),
-    AppBar(title: Text("Profile AppBar Placeholder")),
+    AppBar(title: const Text("Home")),
+    AppBar(title: const Text("Search")),
+    AppBar(title: const Text("Saved")),
+    AppBar(title: const Text("Messages")),
+    AppBar(title: const Text("Profile")),
   ];
+
+  void _onTabTapped(int index) {
+    if (currentIndex == index) return;
+    setState(() {
+      previousIndex = currentIndex;
+      currentIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _getAppBar(),
-      body: _getBody(),
-      bottomNavigationBar: SafeArea(
-        child: AppDefaultPadding(
-          horizontalOffset: 8,
-          verticalOffset: 0,
-          child: _buildCustomNavigationBar(),
+      appBar: appBars[currentIndex],
+      body: AnimatedSwitcher(
+        duration: Duration(milliseconds: 300),
+        switchInCurve: Curves.easeInOutCirc,
+        switchOutCurve: Curves.easeInOutCirc,
+        transitionBuilder: (child, animation) {
+          final direction = currentIndex > previousIndex ? 1 : -1;
+          final offsetAnimation = animation.drive(
+            Tween<Offset>(
+              begin: Offset(direction.toDouble(), 0),
+              end: Offset.zero,
+            ),
+          );
+          return SlideTransition(position: offsetAnimation, child: child);
+        },
+        child: SizedBox(
+          key: ValueKey<int>(currentIndex),
+          child: pages[currentIndex],
         ),
+      ),
+      bottomNavigationBar: CustomBottomNavBar(
+        currentIndex: currentIndex,
+        onTap: _onTabTapped,
       ),
     );
   }
-
-  Row _buildCustomNavigationBar() => Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-      CustomNavigationButton(
-        label: "Home",
-        iconPath: kHomeIcon,
-        isSelected: currentIndex == 0,
-        onTap: () => setState(() => currentIndex = 0),
-      ),
-      CustomNavigationButton(
-        label: "Search",
-        iconPath: kSearchIcon,
-        isSelected: currentIndex == 1,
-        onTap: () => setState(() => currentIndex = 1),
-      ),
-      CustomNavigationButton(
-        label: "Saved",
-        iconPath: kHeartIcon,
-        isSelected: currentIndex == 2,
-        onTap: () => setState(() => currentIndex = 2),
-      ),
-      CustomNavigationButton(
-        label: "Messages",
-        iconPath: kMessageIcon,
-        isSelected: currentIndex == 3,
-        onTap: () => setState(() => currentIndex = 3),
-      ),
-      CustomNavigationButton(
-        label: "Profile",
-        iconPath: kProfileIcon,
-        isSelected: currentIndex == 4,
-        onTap: () => setState(() => currentIndex = 4),
-      ),
-    ],
-  );
-
-  PreferredSizeWidget _getAppBar() => appBars[currentIndex];
-
-  Widget _getBody() => IndexedStack(index: currentIndex, children: pages);
 }

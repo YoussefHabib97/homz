@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import "package:homz/core/widgets/app_default_padding.dart";
+import "package:homz/core/widgets/app_padding_and_gaps.dart";
 import "package:homz/features/authentication/password_actions/presentation/views/forgot_password/widgets/forgot_password_body.dart";
 
 class ForgotPasswordView extends StatefulWidget {

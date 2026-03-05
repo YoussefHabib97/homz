@@ -1,1 +1,23 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"homz-application","appId":"1:828207111900:android:81b83cc030402260949e19","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"homz-application","configurations":{"android":"1:828207111900:android:81b83cc030402260949e19","ios":"1:828207111900:ios:f0c2873d24893f93949e19","web":"1:828207111900:web:12a7aa6f0641aff0949e19"}}}}}}
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "homz-application",
+                    "appId": "1:828207111900:android:81b83cc030402260949e19",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "homz-application",
+                    "configurations": {
+                        "android": "1:828207111900:android:81b83cc030402260949e19",
+                        "ios": "1:828207111900:ios:f0c2873d24893f93949e19",
+                        "web": "1:828207111900:web:12a7aa6f0641aff0949e19"
+                    }
+                }
+            }
+        }
+    }
+}
