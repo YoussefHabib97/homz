@@ -53,17 +53,14 @@ extension AppTextStyles on BuildContext {
   /// Secondary body text
   TextStyle get bodyMedium => Theme.of(this).textTheme.bodyMedium!;
 
-  /// All font sizes are subtracted by 2 for responsive design means
   /// 14 in Figma- Regular
   /// Secondary body text
   TextStyle get bodySmall => Theme.of(this).textTheme.bodySmall!;
 
-  /// All font sizes are subtracted by 2 for responsive design means
   /// 12 in Figma- Regular
   /// Large labels
   TextStyle get labelLarge => Theme.of(this).textTheme.labelLarge!;
 
-  /// All font sizes are subtracted by 2 for responsive design means
   /// 10 in Figma- Regular
   /// Small labels / captions
   TextStyle get labelSmall => Theme.of(this).textTheme.labelSmall!;

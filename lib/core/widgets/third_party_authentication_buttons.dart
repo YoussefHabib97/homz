@@ -30,16 +30,14 @@ class ThirdPartyAuthenticationButtons extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
-              child: CustomButton(
-                isIconButton: true,
-                icon: SvgPicture.asset(kGoogleIcon),
+              child: CustomButton.icon(
+                icon: SvgPicture.asset(kIconGoogle),
                 onPressed: () {},
               ),
             ),
             Expanded(
-              child: CustomButton(
-                isIconButton: true,
-                icon: SvgPicture.asset(kAppleIcon),
+              child: CustomButton.icon(
+                icon: SvgPicture.asset(kIconApple),
                 onPressed: () {},
               ),
             ),

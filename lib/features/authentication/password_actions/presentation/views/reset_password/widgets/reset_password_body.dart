@@ -44,6 +44,7 @@ class ResetPasswordBody extends StatelessWidget {
           ),
           PasswordTextFormField(controller: _passwordTextEditingController),
           PasswordTextFormField(
+            type: PasswordFieldType.confirm,
             controller: _confirmPasswordTextEditingController,
           ),
           CustomButton(

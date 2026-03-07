@@ -23,7 +23,7 @@ class _OnboardingViewState extends State<OnboardingView>
           'Find what you'
           '\n'
           'want',
-      image: kOnboardingImage1,
+      image: kImageOnboarding1,
     ),
     OnboardingPageModel(
       title:
@@ -34,7 +34,7 @@ class _OnboardingViewState extends State<OnboardingView>
           'Find what you'
           '\n'
           'want',
-      image: kOnboardingImage2,
+      image: kImageOnboarding2,
     ),
     OnboardingPageModel(
       title:
@@ -45,7 +45,7 @@ class _OnboardingViewState extends State<OnboardingView>
           'Find what you'
           '\n'
           'want',
-      image: kOnboardingImage3,
+      image: kImageOnboarding3,
     ),
   ];
 

@@ -7,8 +7,8 @@ class AppDefaultPadding extends StatelessWidget {
   final Widget child;
   const AppDefaultPadding({
     super.key,
-    this.verticalOffset = kVerticalPadding,
-    this.horizontalOffset = kHorizontalPadding,
+    this.verticalOffset = kPaddingVertical,
+    this.horizontalOffset = kPaddingHorizontal,
     required this.child,
   });
 

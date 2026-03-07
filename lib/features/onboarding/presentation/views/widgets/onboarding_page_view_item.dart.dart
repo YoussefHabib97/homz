@@ -77,7 +77,6 @@ class OnboardingPageViewItem extends StatelessWidget {
                         GoRouter.of(context).push(AppRouter.kViewSignIn);
                       },
                       text: "Get Started",
-                      isPrimary: true,
                     ),
                   ),
               ],

@@ -16,11 +16,11 @@ class CustomBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final navItems = [
-      (label: "Home", icon: kHomeIcon),
-      (label: "Search", icon: kSearchIcon),
-      (label: "Saved", icon: kHeartIcon),
-      (label: "Messages", icon: kMessageIcon),
-      (label: "Profile", icon: kProfileIcon),
+      (label: "Home", icon: kIconHome),
+      (label: "Search", icon: kIconSearch),
+      (label: "Saved", icon: kIconHeart),
+      (label: "Messages", icon: kIconMessage),
+      (label: "Profile", icon: kIconProfile),
     ];
 
     return SafeArea(

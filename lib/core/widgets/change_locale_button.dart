@@ -10,10 +10,13 @@ class ChangeLocaleButton extends StatelessWidget {
     return SizedBox(
       child: Material(
         color: Colors
-            .transparent, // Keep the background transparent to see the onboarding image
+            .transparent, // Keep the background transparent to make see the onboarding image see-through
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
-          side: const BorderSide(color: Color(0xFFEFC3C3), width: 1),
+          side: const BorderSide(
+            color: AppExtraColors.localeButtonColor,
+            width: 1,
+          ),
         ),
         child: InkWell(
           borderRadius: BorderRadius.circular(8),

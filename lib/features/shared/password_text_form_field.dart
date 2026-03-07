@@ -43,6 +43,10 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
                 (value == null || value.isEmpty)) {
               return 'Minimum 8 characters';
             }
+            if (widget.type == PasswordFieldType.confirm &&
+                (value == null || value.isEmpty)) {
+              return 'Minimum 8 characters';
+            }
             return null;
           },
           decoration: InputDecoration(
@@ -50,7 +54,7 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
                 ? "Password"
                 : "Confirm Password",
             prefixIcon: SvgPicture.asset(
-              kPasswordIcon,
+              kIconPassword,
               fit: BoxFit.scaleDown,
               colorFilter: _resolveIconColor(
                 context,
@@ -61,7 +65,7 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
             suffixIcon: hasText
                 ? IconButton(
                     icon: SvgPicture.asset(
-                      _obscure ? kEyeIcon : kEyeSlashIcon,
+                      _obscure ? kIconEye : kIconEyeSlash,
                       fit: BoxFit.scaleDown,
                       colorFilter: _resolveIconColor(
                         context,

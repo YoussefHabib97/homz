@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:homz/core/widgets/app_padding_and_gaps.dart';
 import 'package:homz/core/widgets/custom_button.dart';
 import 'package:homz/core/widgets/custom_form.dart';
 import 'package:homz/core/widgets/third_party_authentication_buttons.dart';
@@ -49,7 +50,7 @@ class SignUpViewBody extends StatelessWidget {
               formKey.currentState!.validate();
             },
           ),
-          SizedBox(height: 16.0),
+          VerticalGap(16),
           ThirdPartyAuthenticationButtons(),
         ],
       ),

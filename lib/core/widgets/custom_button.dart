@@ -2,78 +2,101 @@ import 'package:flutter/material.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 
+enum ButtonType { primary, secondary, icon }
+
 class CustomButton extends StatelessWidget {
-  final String text;
-  final VoidCallback? onPressed;
-  final bool isPrimary, isIconButton;
+  final String? text;
   final Widget? icon;
+  final VoidCallback? onPressed;
+  final ButtonType type;
+
+  /// Primary button (default)
   const CustomButton({
     super.key,
-    this.isPrimary = true,
-    this.isIconButton = false,
-    this.icon,
-    this.text = "",
+    required String this.text,
     required this.onPressed,
-  });
+  }) : icon = null,
+       type = ButtonType.primary;
+
+  /// Secondary button
+  const CustomButton.secondary({
+    super.key,
+    required String this.text,
+    required this.onPressed,
+  }) : icon = null,
+       type = ButtonType.secondary;
+
+  /// Icon button
+  const CustomButton.icon({
+    super.key,
+    required Widget this.icon,
+    required this.onPressed,
+  }) : text = null,
+       type = ButtonType.icon;
+
+  bool get isEnabled => onPressed != null;
+
+  Color _backgroundColor() {
+    if (!isEnabled) {
+      return type == ButtonType.primary
+          ? AppColors.primary[900]!
+          : AppColors.grey[900]!;
+    }
+
+    switch (type) {
+      case ButtonType.primary:
+        return AppColors.primary[400]!;
+      case ButtonType.secondary:
+      case ButtonType.icon:
+        return AppColors.grey[900]!;
+    }
+  }
+
+  BorderSide _border() {
+    if (type == ButtonType.primary) {
+      return BorderSide.none;
+    }
+
+    return BorderSide(color: AppColors.grey[600]!, width: 1);
+  }
+
+  TextStyle _textStyle(BuildContext context) {
+    final baseTextStyle = context.bodyMedium.copyWith(
+      fontWeight: FontWeight.bold,
+    );
+
+    if (!isEnabled) {
+      return baseTextStyle.copyWith(color: AppColors.grey[400]);
+    }
+
+    if (type == ButtonType.primary) {
+      return baseTextStyle;
+    }
+
+    return baseTextStyle.copyWith(color: AppColors.grey[400]);
+  }
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
+      width: type == ButtonType.icon ? null : double.infinity,
       child: Material(
-        color: onPressed != null
-            ? (isPrimary && !isIconButton
-                  ? AppColors.primary[400]
-                  : AppColors.grey[900])
-            : isPrimary
-            ? AppColors.primary[900]
-            : AppColors.grey[900],
-
+        color: _backgroundColor(),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
-          side: onPressed != null
-              ? (isPrimary && !isIconButton
-                    ? BorderSide.none
-                    : BorderSide(color: AppColors.grey[600]!, width: 1))
-              : isPrimary
-              ? BorderSide.none
-              : BorderSide(color: AppColors.grey[600]!, width: 1),
+          side: _border(),
         ),
         child: InkWell(
           onTap: onPressed,
           borderRadius: BorderRadius.circular(8),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: isIconButton
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+            child: type == ButtonType.icon
                 ? icon
                 : Text(
-                    text,
+                    text!,
                     textAlign: TextAlign.center,
-                    style: onPressed != null
-                        ? (isPrimary
-                              // If the button is enabled and primary, use the default text color for better contrast
-                              ? context.bodyMedium.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                )
-                              // If the button is enabled and not primary, use a lighter text color for better contrast
-                              : Theme.of(
-                                  context,
-                                ).textTheme.bodyMedium!.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColors.grey[400],
-                                ))
-                        :
-                          // If the button is disabled and primary, use a muted text color regardless of primary state for better accessibility
-                          isPrimary
-                        ? context.bodyMedium.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.grey[400],
-                          )
-                        // If the button is disabled and not primary, use the same muted text color for consistency
-                        : context.bodyMedium.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.grey[400],
-                          ),
+                    style: _textStyle(context),
                   ),
           ),
         ),
