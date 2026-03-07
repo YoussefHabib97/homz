@@ -1,28 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:homz/core/widgets/app_padding_and_gaps.dart';
-import 'package:homz/core/widgets/custom_button.dart';
-import 'package:homz/core/widgets/custom_form.dart';
-import 'package:homz/core/widgets/third_party_authentication_buttons.dart';
-import 'package:homz/features/shared/name_text_form_field.dart';
-import 'package:homz/features/shared/password_text_form_field.dart';
-import 'package:homz/features/shared/phone_text_form_field.dart';
+import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
+import 'package:homz/core/widgets/shared/buttons/custom_button.dart';
+import 'package:homz/core/widgets/shared/buttons/third_party_authentication_buttons.dart';
+import 'package:homz/core/widgets/shared/custom_form.dart';
+import 'package:homz/core/widgets/shared/text_form_fields/custom_text_form_field.dart';
 
 class SignUpViewBody extends StatelessWidget {
   final GlobalKey<FormState> formKey;
 
   final TextEditingController _nameTextEditingController;
-  final TextEditingController _mobileNumberTextEditingController;
+  final TextEditingController _phoneNumberTextEditingController;
   final TextEditingController _passwordTextEditingController;
   final TextEditingController _confirmPasswordTextEditingController;
   const SignUpViewBody({
     super.key,
     required this.formKey,
     required TextEditingController nameTextEditingController,
-    required TextEditingController mobileNumberTextEditingController,
+    required TextEditingController phoneNumberTextEditingController,
     required TextEditingController passwordTextEditingController,
     required TextEditingController confirmPasswordTextEditingController,
   }) : _nameTextEditingController = nameTextEditingController,
-       _mobileNumberTextEditingController = mobileNumberTextEditingController,
+       _phoneNumberTextEditingController = phoneNumberTextEditingController,
        _passwordTextEditingController = passwordTextEditingController,
        _confirmPasswordTextEditingController =
            confirmPasswordTextEditingController;
@@ -35,14 +33,16 @@ class SignUpViewBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         spacing: 32,
         children: [
-          NameTextFormField(controller: _nameTextEditingController),
-          PhoneNumberTextFormField(
-            controller: _mobileNumberTextEditingController,
+          CustomTextFormField.name(controller: _nameTextEditingController),
+          CustomTextFormField.phone(
+            controller: _phoneNumberTextEditingController,
           ),
-          PasswordTextFormField(controller: _passwordTextEditingController),
-          PasswordTextFormField(
-            type: PasswordFieldType.confirm,
-            controller: _confirmPasswordTextEditingController,
+          CustomTextFormField.password(
+            controller: _passwordTextEditingController,
+          ),
+          CustomTextFormField.confirmPassword(
+            controller: _passwordTextEditingController,
+            passwordToMatch: _confirmPasswordTextEditingController,
           ),
           CustomButton(
             text: "Sign Up",

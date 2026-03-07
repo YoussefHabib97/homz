@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homz/core/extensions/extensions.dart';
-import 'package:homz/core/widgets/change_locale_button.dart';
+import 'package:homz/core/widgets/shared/buttons/change_locale_button.dart';
 
 class SignInAppBar extends StatelessWidget {
   const SignInAppBar({super.key});

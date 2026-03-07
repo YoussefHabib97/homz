@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homz/core/widgets/app_padding_and_gaps.dart';
+import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
 import 'package:homz/features/authentication/sign_in/presentation/widgets/sign_in_view_body.dart';
 
 class SignInView extends StatefulWidget {
@@ -11,7 +11,7 @@ class SignInView extends StatefulWidget {
 
 class _SignInViewState extends State<SignInView> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  final _mobileNumberTextEditingController = TextEditingController();
+  final _phoneNumberTextEditingController = TextEditingController();
   final _passwordTextEditingController = TextEditingController();
 
   @override
@@ -20,7 +20,7 @@ class _SignInViewState extends State<SignInView> {
       body: AppDefaultPadding(
         child: SignInViewBody(
           formKey: formKey,
-          mobileNumberTextEditingController: _mobileNumberTextEditingController,
+          phoneNumberTextEditingController: _phoneNumberTextEditingController,
           passwordTextEditingController: _passwordTextEditingController,
         ),
       ),

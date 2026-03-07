@@ -4,9 +4,9 @@ import 'package:go_router/go_router.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/utils/app_router.dart';
-import 'package:homz/core/widgets/app_padding_and_gaps.dart';
-import 'package:homz/core/widgets/change_locale_button.dart';
-import 'package:homz/core/widgets/custom_button.dart';
+import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
+import 'package:homz/core/widgets/shared/buttons/change_locale_button.dart';
+import 'package:homz/core/widgets/shared/buttons/custom_button.dart';
 import 'package:homz/features/onboarding/presentation/views/onboarding_view.dart';
 
 class OnboardingPageViewItem extends StatelessWidget {

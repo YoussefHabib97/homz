@@ -3,9 +3,9 @@ import 'package:go_router/go_router.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/utils/app_router.dart';
-import 'package:homz/core/widgets/custom_form.dart';
-import 'package:homz/core/widgets/text_with_call_to_action_button.dart';
-import 'package:homz/features/shared/base_text_form_field.dart';
+import 'package:homz/core/widgets/shared/buttons/text_with_call_to_action_button.dart';
+import 'package:homz/core/widgets/shared/custom_form.dart';
+import 'package:homz/core/widgets/shared/text_form_fields/base_text_form_field.dart';
 
 class PasswordVerificationBody extends StatelessWidget {
   final GlobalKey<FormState> formKey;

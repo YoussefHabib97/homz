@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/custom_button.dart';
-import 'package:homz/core/widgets/custom_form.dart';
+import 'package:homz/core/widgets/shared/buttons/custom_button.dart';
+import 'package:homz/core/widgets/shared/custom_form.dart';
+import 'package:homz/core/widgets/shared/text_form_fields/custom_text_form_field.dart';
 import 'package:homz/features/authentication/password_actions/presentation/views/reset_password/widgets/success_alert_dialog.dart';
-import 'package:homz/features/shared/password_text_form_field.dart';
 
 class ResetPasswordBody extends StatelessWidget {
   final GlobalKey<FormState> formKey;
@@ -42,10 +42,12 @@ class ResetPasswordBody extends StatelessWidget {
               ],
             ),
           ),
-          PasswordTextFormField(controller: _passwordTextEditingController),
-          PasswordTextFormField(
-            type: PasswordFieldType.confirm,
-            controller: _confirmPasswordTextEditingController,
+          CustomTextFormField.password(
+            controller: _passwordTextEditingController,
+          ),
+          CustomTextFormField.confirmPassword(
+            controller: _passwordTextEditingController,
+            passwordToMatch: _confirmPasswordTextEditingController,
           ),
           CustomButton(
             text: "Reset Password",

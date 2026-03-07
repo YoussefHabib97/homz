@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homz/core/widgets/app_padding_and_gaps.dart';
+import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
 
 class CustomForm extends StatefulWidget {
   final Widget child;

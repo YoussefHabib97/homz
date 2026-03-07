@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homz/core/widgets/app_padding_and_gaps.dart';
+import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
 import 'package:homz/features/authentication/sign_up/presentation/widgets/sign_up_body.dart';
 
 class SignUpView extends StatefulWidget {
@@ -12,7 +12,7 @@ class SignUpView extends StatefulWidget {
 class _SignUpViewState extends State<SignUpView> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   late TextEditingController _nameTextEditingController,
-      _mobileNumberTextEditingController,
+      _phoneNumberTextEditingController,
       _passwordTextEditingController,
       _confirmPasswordTextEditingController;
 
@@ -24,7 +24,7 @@ class _SignUpViewState extends State<SignUpView> {
         child: SignUpViewBody(
           formKey: formKey,
           nameTextEditingController: _nameTextEditingController,
-          mobileNumberTextEditingController: _mobileNumberTextEditingController,
+          phoneNumberTextEditingController: _phoneNumberTextEditingController,
           passwordTextEditingController: _passwordTextEditingController,
           confirmPasswordTextEditingController:
               _confirmPasswordTextEditingController,
@@ -36,7 +36,7 @@ class _SignUpViewState extends State<SignUpView> {
   @override
   void dispose() {
     _nameTextEditingController.dispose();
-    _mobileNumberTextEditingController.dispose();
+    _phoneNumberTextEditingController.dispose();
     _passwordTextEditingController.dispose();
     _confirmPasswordTextEditingController.dispose();
     super.dispose();
@@ -46,7 +46,7 @@ class _SignUpViewState extends State<SignUpView> {
   void initState() {
     super.initState();
     _nameTextEditingController = TextEditingController();
-    _mobileNumberTextEditingController = TextEditingController();
+    _phoneNumberTextEditingController = TextEditingController();
     _passwordTextEditingController = TextEditingController();
     _confirmPasswordTextEditingController = TextEditingController();
   }

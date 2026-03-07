@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/custom_button.dart';
+import 'package:homz/core/widgets/shared/buttons/custom_button.dart';
 
 class ThirdPartyAuthenticationButtons extends StatelessWidget {
   const ThirdPartyAuthenticationButtons({super.key});

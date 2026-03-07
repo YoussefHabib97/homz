@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/utils/app_router.dart';
-import 'package:homz/core/widgets/custom_button.dart';
-import 'package:homz/core/widgets/custom_form.dart';
-import 'package:homz/features/shared/phone_text_form_field.dart';
+import 'package:homz/core/widgets/shared/buttons/custom_button.dart';
+import 'package:homz/core/widgets/shared/custom_form.dart';
+import 'package:homz/core/widgets/shared/text_form_fields/custom_text_form_field.dart';
 
 class ForgotPasswordBody extends StatelessWidget {
   final GlobalKey<FormState> formKey;
@@ -27,7 +27,7 @@ class ForgotPasswordBody extends StatelessWidget {
             "Enter your mobile number to reset your password",
             style: context.bodyMedium,
           ),
-          PhoneNumberTextFormField(controller: _textEditingController),
+          CustomTextFormField.phone(controller: _textEditingController),
           CustomButton(
             text: "Send Code",
             onPressed: () {

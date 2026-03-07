@@ -3,25 +3,24 @@ import 'package:go_router/go_router.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/utils/app_router.dart';
-import 'package:homz/core/widgets/custom_button.dart';
-import 'package:homz/core/widgets/custom_form.dart';
-import 'package:homz/core/widgets/text_with_call_to_action_button.dart';
-import 'package:homz/core/widgets/third_party_authentication_buttons.dart';
+import 'package:homz/core/widgets/shared/buttons/custom_button.dart';
+import 'package:homz/core/widgets/shared/buttons/text_with_call_to_action_button.dart';
+import 'package:homz/core/widgets/shared/buttons/third_party_authentication_buttons.dart';
+import 'package:homz/core/widgets/shared/custom_form.dart';
+import 'package:homz/core/widgets/shared/text_form_fields/custom_text_form_field.dart';
 import 'package:homz/features/authentication/sign_in/presentation/widgets/sign_in_app_bar.dart';
-import 'package:homz/features/shared/password_text_form_field.dart';
-import 'package:homz/features/shared/phone_text_form_field.dart';
 
 class SignInViewBody extends StatelessWidget {
   final GlobalKey<FormState> formKey;
 
-  final TextEditingController _mobileNumberTextEditingController;
+  final TextEditingController _phoneNumberTextEditingController;
   final TextEditingController _passwordTextEditingController;
   const SignInViewBody({
     super.key,
     required this.formKey,
-    required TextEditingController mobileNumberTextEditingController,
+    required TextEditingController phoneNumberTextEditingController,
     required TextEditingController passwordTextEditingController,
-  }) : _mobileNumberTextEditingController = mobileNumberTextEditingController,
+  }) : _phoneNumberTextEditingController = phoneNumberTextEditingController,
        _passwordTextEditingController = passwordTextEditingController;
 
   @override
@@ -33,10 +32,12 @@ class SignInViewBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SignInAppBar(),
-          PhoneNumberTextFormField(
-            controller: _mobileNumberTextEditingController,
+          CustomTextFormField.phone(
+            controller: _phoneNumberTextEditingController,
           ),
-          PasswordTextFormField(controller: _passwordTextEditingController),
+          CustomTextFormField.password(
+            controller: _passwordTextEditingController,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
