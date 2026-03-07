@@ -3,6 +3,7 @@ import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
 import 'package:homz/core/widgets/shared/buttons/custom_button.dart';
 import 'package:homz/core/widgets/shared/buttons/third_party_authentication_buttons.dart';
 import 'package:homz/core/widgets/shared/custom_form.dart';
+import 'package:homz/core/widgets/shared/text_divider.dart';
 import 'package:homz/core/widgets/shared/text_form_fields/custom_text_form_field.dart';
 
 class SignUpViewBody extends StatelessWidget {
@@ -51,6 +52,7 @@ class SignUpViewBody extends StatelessWidget {
             },
           ),
           VerticalGap(16),
+          TextDivider(text: 'or continue with'),
           ThirdPartyAuthenticationButtons(),
         ],
       ),

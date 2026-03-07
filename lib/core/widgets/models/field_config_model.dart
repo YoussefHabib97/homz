@@ -17,7 +17,6 @@ class FieldConfig {
     this.prefix,
   });
 
-  /// The "Brain": This logic is now separated from the Widget lifecycle.
   static FieldConfig get(
     FieldType type, {
     TextEditingController? passwordToMatch,

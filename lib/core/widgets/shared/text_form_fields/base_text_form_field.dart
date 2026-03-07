@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Performance-optimized base field.
-/// It acts as a stateless shell to avoid unnecessary layout calculations.
 class BaseTextFormField extends StatelessWidget {
   final TextEditingController controller;
   final InputDecoration decoration;

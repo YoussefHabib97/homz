@@ -7,6 +7,7 @@ import 'package:homz/core/widgets/shared/buttons/custom_button.dart';
 import 'package:homz/core/widgets/shared/buttons/text_with_call_to_action_button.dart';
 import 'package:homz/core/widgets/shared/buttons/third_party_authentication_buttons.dart';
 import 'package:homz/core/widgets/shared/custom_form.dart';
+import 'package:homz/core/widgets/shared/text_divider.dart';
 import 'package:homz/core/widgets/shared/text_form_fields/custom_text_form_field.dart';
 import 'package:homz/features/authentication/sign_in/presentation/widgets/sign_in_app_bar.dart';
 
@@ -68,6 +69,7 @@ class SignInViewBody extends StatelessWidget {
               formKey.currentState!.validate();
             },
           ),
+          TextDivider(text: 'or continue with'),
           ThirdPartyAuthenticationButtons(),
           TextButton(
             onPressed: () {

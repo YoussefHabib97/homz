@@ -30,7 +30,6 @@ class OnboardingPageViewItem extends StatelessWidget {
           height: double.infinity,
           width: double.infinity,
         ),
-        // add header and description at the bottom of the page
         Align(
           alignment: Alignment.bottomCenter,
           child: AppDefaultPadding(
@@ -44,18 +43,11 @@ class OnboardingPageViewItem extends StatelessWidget {
                 VerticalGap(4),
                 Row(
                   children: [
-                    Text(
-                      model.description,
-                      style: context.bodyLarge,
-                      // AppTextStyles.font16Blue50Regular.copyWith(
-                      //   height: 1.3.h,
-                      // ),
-                    ),
+                    Text(model.description, style: context.bodyLarge),
                     const Spacer(),
                     if (index != 2)
                       IconButton(
                         onPressed: () {
-                          // move to the next page in the page view
                           pageController.nextPage(
                             duration: const Duration(milliseconds: 300),
                             curve: Curves.easeInOut,

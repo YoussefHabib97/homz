@@ -4,7 +4,6 @@ import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/widgets/models/field_config_model.dart';
 import 'package:homz/core/widgets/shared/text_form_fields/base_text_form_field.dart';
-// Import your new config file
 
 class CustomTextFormField extends StatefulWidget {
   final TextEditingController controller;
@@ -81,7 +80,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     super.initState();
     _focusNode = FocusNode();
 
-    // Initialize config once from the external logic
     _config = FieldConfig.get(
       widget.fieldType,
       passwordToMatch: widget.passwordToMatchController,
