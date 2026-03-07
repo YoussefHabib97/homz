@@ -4,10 +4,11 @@ import 'package:homz/features/authentication/password_actions/presentation/views
 import 'package:homz/features/authentication/password_actions/presentation/views/reset_password/reset_password_view.dart';
 import 'package:homz/features/authentication/sign_in/presentation/views/sign_in_view.dart';
 import 'package:homz/features/authentication/sign_up/presentation/views/sign_up_view.dart';
+import 'package:homz/features/home/presentation/views/home_view.dart';
 import 'package:homz/features/onboarding/presentation/views/onboarding_view.dart';
 
 abstract class AppRouter {
-  static const kViewHome = '/';
+  static const kViewHome = '/homeView';
   static const kViewOnboarding = '/onboardingView';
   static const kViewSignIn = '/signInView';
   static const kViewSignUp = '/signUpView';
@@ -17,14 +18,8 @@ abstract class AppRouter {
 
   static final router = GoRouter(
     routes: [
-      GoRoute(
-        path: kViewHome,
-        builder: (context, state) => const OnboardingView(),
-      ),
-      GoRoute(
-        path: kViewOnboarding,
-        builder: (context, state) => const OnboardingView(),
-      ),
+      GoRoute(path: kViewHome, builder: (context, state) => const HomeView()),
+      GoRoute(path: '/', builder: (context, state) => const OnboardingView()),
       GoRoute(
         path: kViewSignIn,
         builder: (context, state) => const SignInView(),
