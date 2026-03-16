@@ -8,11 +8,11 @@ Modern real-estate style Flutter app with a dark theme, reusable UI components, 
 
 | Onboarding | Sign In | Sign Up |
 | :---: | :---: | :---: |
-| <img src="https://github.com/user-attachments/assets/fccf2fa3-5759-4f2f-b12d-af7153c4f361" width="250"/> | <img src="https://github.com/user-attachments/assets/78fcef68-dd24-4cea-adcb-239c761215a6" width="250"/> | <img src="https://github.com/user-attachments/assets/b25f87ea-f31d-4162-b321-43e564e37dd5" width="250"/> |
+| <img src="https://github.com/user-attachments/assets/fccf2fa3-5759-4f2f-b12d-af7153c4f361" width="450"/> | <img src="https://github.com/user-attachments/assets/78fcef68-dd24-4cea-adcb-239c761215a6" width="450"/> | <img src="https://github.com/user-attachments/assets/b25f87ea-f31d-4162-b321-43e564e37dd5" width="450"/> |
 
 | Forgot Password | Reset Password | Chat Interface |
 | :---: | :---: | :---: |
-| <img src="https://github.com/user-attachments/assets/c6ab67fe-db40-46b3-b004-24964df68450" width="250"/> | <img src="https://github.com/user-attachments/assets/4f4193e0-2c9e-4c05-956f-062234cb22f9" width="250"/> | <img src="https://github.com/user-attachments/assets/f54e37b8-04a8-4b0f-9f08-5feb1fb6c285" width="250"/> |
+| <img src="https://github.com/user-attachments/assets/c6ab67fe-db40-46b3-b004-24964df68450" width="450"/> | <img src="https://github.com/user-attachments/assets/4f4193e0-2c9e-4c05-956f-062234cb22f9" width="450"/> | <img src="https://github.com/user-attachments/assets/f54e37b8-04a8-4b0f-9f08-5feb1fb6c285" width="450"/> |
 
 ### Features
 
