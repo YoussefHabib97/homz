@@ -28,6 +28,8 @@ A **modern real-estate style Flutter application** featuring a dark theme, reusa
 
 </p>
 
+---
+
 ### Password Recovery Flow
 
 <p align="center">
