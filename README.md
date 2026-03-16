@@ -8,7 +8,7 @@ Modern real-estate style Flutter app with a dark theme, reusable UI components, 
 
 | Onboarding | Sign In | Sign Up |
 | :---: | :---: | :---: |
-| <img src="https://github.com/user-attachments/assets/fccf2fa3-5759-4f2f-b12d-af7153c4f361" width="450"/> | <img src="https://github.com/user-attachments/assets/78fcef68-dd24-4cea-adcb-239c761215a6" width="450"/> | <img src="https://github.com/user-attachments/assets/b25f87ea-f31d-4162-b321-43e564e37dd5" width="450"/> |
+| <img src="[https://github.com/user-attachments/assets/fccf2fa3-5759-4f2f-b12d-af7153c4f361](https://github.com/user-attachments/assets/5cb0cd2b-77fa-450f-9d83-727379584c19)" width="450"/> | <img src="https://github.com/user-attachments/assets/78fcef68-dd24-4cea-adcb-239c761215a6" width="450"/> | <img src="https://github.com/user-attachments/assets/b25f87ea-f31d-4162-b321-43e564e37dd5" width="450"/> |
 
 | Forgot Password | Reset Password | Chat Interface |
 | :---: | :---: | :---: |
