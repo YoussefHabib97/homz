@@ -1,16 +1,42 @@
-# homz
+## homz
 
-A new Flutter project.
+Modern real-estate style Flutter app with a dark theme, reusable UI components, and a chat experience inspired by contemporary messaging apps.
 
-## Getting Started
+### Features
 
-This project is a starting point for a Flutter application.
+- **Authentication**: Password flows and custom form fields.
+- **Design system**: Centralized colors, typography, button and text field components.
+- **Chat**: Figma-inspired chat screen with message bubbles, avatars, date chips, and attachment-aware input.
 
-A few resources to get you started if this is your first Flutter project:
+### Requirements
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Flutter**: 3.22+ (stable)
+- **Dart**: 3.x
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Getting started
+
+- **Install dependencies**
+
+```bash
+flutter pub get
+```
+
+- **Run the app**
+
+```bash
+flutter run
+```
+
+By default it runs with the dark theme defined in `lib/core/theme/app_theme.dart`.
+
+### Project structure (high level)
+
+- `lib/core` – shared theme, widgets, and utilities.
+- `lib/features/authentication` – auth-related screens and logic.
+- `lib/features/chat` – chat UI and related widgets.
+
+### Development notes
+
+- Prefer using existing shared widgets (e.g. `CustomTextFormField`, `CustomButton`) before creating new ones.
+- Keep colors and typography in the theme files (`app_colors.dart`, text themes) instead of hard-coding values in widgets.
+- When adding new UI from Figma, align with the existing design tokens and components where possible.
