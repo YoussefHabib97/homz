@@ -4,8 +4,10 @@ import 'package:homz/features/authentication/password_actions/presentation/views
 import 'package:homz/features/authentication/password_actions/presentation/views/reset_password/reset_password_view.dart';
 import 'package:homz/features/authentication/sign_in/presentation/views/sign_in_view.dart';
 import 'package:homz/features/authentication/sign_up/presentation/views/sign_up_view.dart';
-import 'package:homz/features/home/presentation/views/home_view.dart';
+import 'package:homz/features/home/ui/home_view.dart';
 import 'package:homz/features/onboarding/presentation/views/onboarding_view.dart';
+import 'package:homz/features/residential/details/ui/details_screen.dart';
+import 'package:homz/features/residential/look/ui/look_screen.dart';
 
 abstract class AppRouter {
   static const kViewHome = '/homeView';
@@ -15,11 +17,13 @@ abstract class AppRouter {
   static const kViewForgotPassword = '/forgotPasswordView';
   static const kViewResetPassword = '/resetPasswordView';
   static const kViewPasswordVerification = '/passwordVerificationView';
+  static const kViewResidentialLook = '/residentialLookScreen';
+  static const kViewResidentialDetails = '/residentialDetailsScreen';
 
   static final router = GoRouter(
     routes: [
-      GoRoute(path: kViewHome, builder: (context, state) => const HomeView()),
-      GoRoute(path: '/', builder: (context, state) => const OnboardingView()),
+      GoRoute(path: "/", builder: (context, state) => const HomeView()),
+      GoRoute(path: kViewOnboarding, builder: (context, state) => const OnboardingView()),
       GoRoute(
         path: kViewSignIn,
         builder: (context, state) => const SignInView(),
@@ -39,6 +43,14 @@ abstract class AppRouter {
       GoRoute(
         path: kViewPasswordVerification,
         builder: (context, state) => const PasswordVerificationView(),
+      ),
+      GoRoute(
+        path: kViewResidentialLook,
+        builder: (context, state) => const LookScreen(),
+      ),
+      GoRoute(
+        path: kViewResidentialDetails,
+        builder: (context, state) =>  DetailsScreen(),
       ),
     ],
   );

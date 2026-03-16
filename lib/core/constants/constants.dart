@@ -16,4 +16,14 @@ const String kIconPassword = 'assets/icons/password-icon.svg';
 const String kIconProfile = 'assets/icons/profile-icon.svg';
 const String kIconSearch = 'assets/icons/search-icon.svg';
 const String kIconUser = 'assets/icons/user-icon.svg';
+const String kIconNotification = 'assets/icons/notification.svg';
+const String kIconShare = 'assets/icons/share_icon.svg';
+const String kIconArrowLeft = 'assets/icons/arrow-left.svg';
+const String kIconCall = 'assets/icons/call-icon.svg';
+const String kIconSendTo = 'assets/icons/send-to-icon.svg';
+const String kIconBathRoom = 'assets/icons/bathroom_icon.svg';
+const String kIconBedRoom = 'assets/icons/bedroom_icon.svg';
+const String kIconParking = 'assets/icons/parking_icon.svg';
+const String kIconGym = 'assets/icons/gym_icon.svg';
+
 const double kPaddingVertical = 16.0;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
-import 'package:homz/features/home/presentation/widgets/custom_navigation_button.dart';
+import 'package:homz/features/home/ui/widgets/custom_navigation_button.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   final int currentIndex;

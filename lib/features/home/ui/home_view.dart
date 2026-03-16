@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:homz/features/home/presentation/widgets/custom_bottom_nav_bar.dart';
+import 'package:homz/features/home/ui/widgets/custom_bottom_nav_bar.dart';
+import 'package:homz/features/home/ui/widgets/home_body.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -13,20 +14,20 @@ class _HomeViewState extends State<HomeView> {
   int currentIndex = 0;
 
   final List<Widget> pages = const [
-    Center(child: Text("Home Body")),
+    HomeBody(),
     Center(child: Text("Search Body")),
     Center(child: Text("Saved Body")),
     Center(child: Text("Messages Body")),
     Center(child: Text("Profile Body")),
   ];
 
-  final List<PreferredSizeWidget> appBars = [
-    AppBar(title: const Text("Home")),
-    AppBar(title: const Text("Search")),
-    AppBar(title: const Text("Saved")),
-    AppBar(title: const Text("Messages")),
-    AppBar(title: const Text("Profile")),
-  ];
+  // final List<PreferredSizeWidget> appBars = [
+  //   AppBar(title: const Text("Home")),
+  //   AppBar(title: const Text("Search")),
+  //   AppBar(title: const Text("Saved")),
+  //   AppBar(title: const Text("Messages")),
+  //   AppBar(title: const Text("Profile")),
+  // ];
 
   void _onTabTapped(int index) {
     if (currentIndex == index) return;
@@ -39,7 +40,6 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBars[currentIndex],
       body: AnimatedSwitcher(
         duration: Duration(milliseconds: 300),
         switchInCurve: Curves.easeInOutCirc,

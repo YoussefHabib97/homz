@@ -7,6 +7,7 @@ enum ButtonType { primary, secondary, icon }
 class CustomButton extends StatelessWidget {
   final String? text;
   final Widget? icon;
+  final double horizontalPadding , verticalPadding;
   final VoidCallback? onPressed;
   final ButtonType type;
 
@@ -15,6 +16,8 @@ class CustomButton extends StatelessWidget {
     super.key,
     required String this.text,
     required this.onPressed,
+      this.horizontalPadding = 16,
+      this.verticalPadding = 16,
   }) : icon = null,
        type = ButtonType.primary;
 
@@ -23,6 +26,9 @@ class CustomButton extends StatelessWidget {
     super.key,
     required String this.text,
     required this.onPressed,
+    this.horizontalPadding = 16,
+    this.verticalPadding = 16,
+
   }) : icon = null,
        type = ButtonType.secondary;
 
@@ -31,6 +37,8 @@ class CustomButton extends StatelessWidget {
     super.key,
     required Widget this.icon,
     required this.onPressed,
+    this.horizontalPadding = 16,
+    this.verticalPadding = 16,
   }) : text = null,
        type = ButtonType.icon;
 
@@ -90,7 +98,7 @@ class CustomButton extends StatelessWidget {
           onTap: onPressed,
           borderRadius: BorderRadius.circular(8),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+            padding:  EdgeInsets.symmetric(vertical: verticalPadding, horizontal: horizontalPadding),
             child: type == ButtonType.icon
                 ? icon
                 : Text(

@@ -11,7 +11,6 @@ class ApplicationRoot extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
-      minTextAdapt: false,
       splitScreenMode: true,
       builder: (context, child) => MaterialApp.router(
         debugShowCheckedModeBanner: false,
