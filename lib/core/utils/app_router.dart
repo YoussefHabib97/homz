@@ -6,6 +6,7 @@ import 'package:homz/features/authentication/sign_in/presentation/views/sign_in_
 import 'package:homz/features/authentication/sign_up/presentation/views/sign_up_view.dart';
 import 'package:homz/features/chat/presentation/views/chat_view.dart';
 import 'package:homz/features/home/presentation/views/home_view.dart';
+import 'package:homz/features/onboarding/presentation/views/onboarding_view.dart';
 
 abstract class AppRouter {
   static const kViewHome = '/homeView';
@@ -15,11 +16,13 @@ abstract class AppRouter {
   static const kViewForgotPassword = '/forgotPasswordView';
   static const kViewResetPassword = '/resetPasswordView';
   static const kViewPasswordVerification = '/passwordVerificationView';
+  static const kViewChat = '/chatView';
 
   static final router = GoRouter(
     routes: [
+      GoRoute(path: '/', builder: (context, state) => const OnboardingView()),
       GoRoute(path: kViewHome, builder: (context, state) => const HomeView()),
-      GoRoute(path: '/', builder: (context, state) => const ChatView()),
+      GoRoute(path: kViewChat, builder: (context, state) => const ChatView()),
       GoRoute(
         path: kViewSignIn,
         builder: (context, state) => const SignInView(),

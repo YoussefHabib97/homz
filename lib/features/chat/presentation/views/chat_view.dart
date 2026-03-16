@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/theme/chat_text_theme.dart';
 import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
@@ -44,6 +45,7 @@ class _ChatViewState extends State<ChatView> {
     super.dispose();
   }
 
+  // TODO: Refactor to multiple child widgets
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +53,7 @@ class _ChatViewState extends State<ChatView> {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new_rounded),
-          onPressed: () => Navigator.of(context).maybePop(),
+          onPressed: () => GoRouter.of(context).pop(),
         ),
         title: const Text('Name Placeholder'),
         actions: const [CircleAvatar(radius: 20), SizedBox(width: 16)],
