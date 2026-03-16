@@ -7,7 +7,6 @@ class AppTheme {
     brightness: Brightness.dark,
     useMaterial3: true,
 
-    fontFamily: 'SpaceGrotesk',
     textTheme: buildTextTheme(),
 
     colorScheme: ColorScheme(

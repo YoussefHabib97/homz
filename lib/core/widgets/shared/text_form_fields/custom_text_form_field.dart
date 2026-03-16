@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/theme/app_colors.dart';
+import 'package:homz/core/theme/chat_text_theme.dart';
 import 'package:homz/core/widgets/models/field_config_model.dart';
 import 'package:homz/core/widgets/shared/text_form_fields/base_text_form_field.dart';
 
@@ -11,13 +12,16 @@ class CustomTextFormField extends StatefulWidget {
   final FieldType fieldType;
   final VoidCallback? onFilterTap;
   final VoidCallback? onAttach;
-
+  final VoidCallback? onSend;
+  final List<Widget> attachments;
   const CustomTextFormField._({
     required this.controller,
     required this.fieldType,
     this.passwordToMatchController,
     this.onFilterTap,
     this.onAttach,
+    this.onSend,
+    this.attachments = const [],
   });
 
   // Factories
@@ -59,10 +63,14 @@ class CustomTextFormField extends StatefulWidget {
   factory CustomTextFormField.chat({
     required TextEditingController controller,
     VoidCallback? onAttach,
+    VoidCallback? onSend,
+    List<Widget> attachments = const [],
   }) => CustomTextFormField._(
     controller: controller,
     fieldType: FieldType.chat,
     onAttach: onAttach,
+    onSend: onSend,
+    attachments: attachments,
   );
 
   @override
@@ -107,23 +115,81 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
   @override
   Widget build(BuildContext context) {
+    final isChatField = widget.fieldType == FieldType.chat;
+    final hasChatAttachments =
+        isChatField && widget.attachments.isNotEmpty;
+
     return ListenableBuilder(
       listenable: Listenable.merge([_obscureNotifier, _errorNotifier]),
       builder: (context, _) {
         return BaseTextFormField(
           controller: widget.controller,
           focusNode: _focusNode,
+          readOnly: hasChatAttachments,
           obscureText: _obscureNotifier.value,
           keyboardType: _config.keyboardType,
           validator: _config.validator,
           decoration: InputDecoration(
-            hintText: _config.hint,
+            hintText: hasChatAttachments ? null : _config.hint,
+            filled: isChatField,
+            fillColor: isChatField ? AppExtraColors.chatTextFieldColor : null,
+            hintStyle: isChatField
+                ? ChatTextStyles.input.copyWith(color: AppColors.grey[400])
+                : null,
+            contentPadding: isChatField
+                ? const EdgeInsets.symmetric(horizontal: 16, vertical: 16)
+                : null,
+            enabledBorder: isChatField
+                ? OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(999),
+                    borderSide: BorderSide.none,
+                  )
+                : null,
+            focusedBorder: isChatField
+                ? OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(999),
+                    borderSide: BorderSide(
+                      color: AppColors.primary[300]!,
+                      width: 1.5,
+                    ),
+                  )
+                : null,
             errorText: _errorNotifier.value,
-            prefixIcon: _buildSurgicalPrefix(),
+            prefixIcon:
+                hasChatAttachments ? _buildChatAttachmentsPrefix() : _buildSurgicalPrefix(),
+            prefixIconConstraints: isChatField
+                ? const BoxConstraints(minWidth: 0, minHeight: 0)
+                : null,
             suffixIcon: _buildSurgicalSuffix(),
           ),
         );
       },
+    );
+  }
+
+  Widget? _buildChatAttachmentsPrefix() {
+    if (widget.attachments.isEmpty) return null;
+
+    return Padding(
+      padding: const EdgeInsets.only(left: 8, right: 8),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: widget.attachments
+            .map(
+              (thumb) => Padding(
+                padding: const EdgeInsets.only(right: 6),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: SizedBox(
+                    width: 40,
+                    height: 40,
+                    child: thumb,
+                  ),
+                ),
+              ),
+            )
+            .toList(),
+      ),
     );
   }
 
@@ -167,19 +233,44 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           );
         },
       );
-    }
-
-    if (widget.fieldType == FieldType.search && widget.onFilterTap != null) {
+    } else if (widget.fieldType == FieldType.search &&
+        widget.onFilterTap != null) {
       return IconButton(
         icon: const Icon(Icons.filter_list),
         onPressed: widget.onFilterTap,
       );
-    }
-
-    if (widget.fieldType == FieldType.chat && widget.onAttach != null) {
-      return IconButton(
-        icon: const Icon(Icons.attach_file),
-        onPressed: widget.onAttach,
+    } else if (widget.fieldType == FieldType.chat) {
+      return Padding(
+        padding: const EdgeInsets.only(right: 6),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(
+              icon: SvgPicture.asset(
+                kIconAttachFile,
+                colorFilter: ColorFilter.mode(
+                  AppColors.grey[50]!,
+                  BlendMode.srcATop,
+                ),
+              ),
+              onPressed: widget.onAttach,
+            ),
+            SizedBox(
+              width: 48,
+              height: 42,
+              child: Material(
+                color: AppColors.primary[300],
+                shape: RoundedSuperellipseBorder(
+                  borderRadius: BorderRadius.circular(999),
+                ),
+                child: InkWell(
+                  onTap: widget.onSend,
+                  child: SvgPicture.asset(kIconSend, fit: BoxFit.scaleDown),
+                ),
+              ),
+            ),
+          ],
+        ),
       );
     }
 

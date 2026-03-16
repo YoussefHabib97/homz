@@ -36,4 +36,7 @@ class AppColors {
 
 class AppExtraColors {
   static const localeButtonColor = Color(0xFFEFC3C3); // Citric Citron
+  static const chatBubbleColor = Color(0xFF181A23);
+  static const chatDateCardColor = Color(0xFF0A0A0A);
+  static const chatTextFieldColor = Color(0xFF201E24);
 }

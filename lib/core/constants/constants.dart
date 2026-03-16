@@ -17,3 +17,5 @@ const String kIconProfile = 'assets/icons/profile-icon.svg';
 const String kIconSearch = 'assets/icons/search-icon.svg';
 const String kIconUser = 'assets/icons/user-icon.svg';
 const double kPaddingVertical = 16.0;
+const String kIconAttachFile = 'assets/icons/attach-icon.svg';
+const String kIconSend = 'assets/icons/send-icon.svg';
