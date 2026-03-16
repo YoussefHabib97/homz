@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 
-enum ButtonType { primary, secondary, icon }
+enum ButtonType { primary, secondary, icon, delete }
 
 class CustomButton extends StatelessWidget {
   final String? text;
@@ -34,6 +34,14 @@ class CustomButton extends StatelessWidget {
   }) : text = null,
        type = ButtonType.icon;
 
+  /// Delete button
+  const CustomButton.delete({
+    super.key,
+    required String this.text,
+    required this.onPressed,
+  }) : icon = null,
+       type = ButtonType.secondary;
+
   bool get isEnabled => onPressed != null;
 
   Color _backgroundColor() {
@@ -48,6 +56,7 @@ class CustomButton extends StatelessWidget {
         return AppColors.primary[400]!;
       case ButtonType.secondary:
       case ButtonType.icon:
+      case ButtonType.delete:
         return AppColors.grey[900]!;
     }
   }
@@ -71,6 +80,10 @@ class CustomButton extends StatelessWidget {
 
     if (type == ButtonType.primary) {
       return baseTextStyle;
+    }
+
+    if (type == ButtonType.delete) {
+      return baseTextStyle.copyWith(color: AppAlertColors.error);
     }
 
     return baseTextStyle.copyWith(color: AppColors.grey[400]);

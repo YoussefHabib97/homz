@@ -11,9 +11,9 @@ A **modern real-estate style Flutter application** featuring a dark theme, reusa
 ## 🚀 Onboarding
 
 <p align="center">
-  <img height="500" alt="Image" src="https://github.com/user-attachments/assets/6951756f-c67d-4c4f-9523-083676a24f5e" />
-  <img height="500" alt="Image" src="https://github.com/user-attachments/assets/60abdf42-015c-4dcc-9dfc-dbd317c336a6" />
-  <img src="https://github.com/user-attachments/assets/5cb0cd2b-77fa-450f-9d83-727379584c19" height="500"/>
+  <img src="https://github.com/user-attachments/assets/6951756f-c67d-4c4f-9523-083676a24f5e" height="750"/>
+  <img src="https://github.com/user-attachments/assets/60abdf42-015c-4dcc-9dfc-dbd317c336a6" height="750"/>
+  <img src="https://github.com/user-attachments/assets/5cb0cd2b-77fa-450f-9d83-727379584c19" height="750"/>
 </p>
 
 ---
@@ -23,8 +23,8 @@ A **modern real-estate style Flutter application** featuring a dark theme, reusa
 ### Sign In / Sign Up
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/78fcef68-dd24-4cea-adcb-239c761215a6" height="500"/>
-  <img src="https://github.com/user-attachments/assets/b25f87ea-f31d-4162-b321-43e564e37dd5" height="500"/>
+  <img src="https://github.com/user-attachments/assets/78fcef68-dd24-4cea-adcb-239c761215a6" height="750"/>
+  <img src="https://github.com/user-attachments/assets/b25f87ea-f31d-4162-b321-43e564e37dd5" height="750"/>
 
 </p>
 
@@ -33,9 +33,9 @@ A **modern real-estate style Flutter application** featuring a dark theme, reusa
 ### Password Recovery Flow
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/c6ab67fe-db40-46b3-b004-24964df68450" height="500"/>
-  <img src="https://github.com/user-attachments/assets/4f4193e0-2c9e-4c05-956f-062234cb22f9" height="500"/>
-  <img src="https://github.com/user-attachments/assets/a90662d4-8902-4e9b-8662-df6ac13dca15" height ="500"/>
+  <img src="https://github.com/user-attachments/assets/c6ab67fe-db40-46b3-b004-24964df68450" height="750"/>
+  <img src="https://github.com/user-attachments/assets/4f4193e0-2c9e-4c05-956f-062234cb22f9" height="750"/>
+  <img src="https://github.com/user-attachments/assets/a90662d4-8902-4e9b-8662-df6ac13dca15" height ="750"/>
 </p>
 
 ---
@@ -43,7 +43,7 @@ A **modern real-estate style Flutter application** featuring a dark theme, reusa
 ## 💬 Chat Interface
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/f54e37b8-04a8-4b0f-9f08-5feb1fb6c285" height="500"/>
+  <img src="https://github.com/user-attachments/assets/f54e37b8-04a8-4b0f-9f08-5feb1fb6c285" height="750"/>
 </p>
 
 ---
