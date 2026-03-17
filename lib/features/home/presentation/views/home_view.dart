@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:homz/core/utils/app_router.dart';
 import 'package:homz/features/home/presentation/widgets/custom_bottom_nav_bar.dart';
 
 class HomeView extends StatefulWidget {
@@ -16,8 +18,8 @@ class _HomeViewState extends State<HomeView> {
     Center(child: Text("Home Body")),
     Center(child: Text("Search Body")),
     Center(child: Text("Saved Body")),
-    Center(child: Text("Messages Body")),
-    Center(child: Text("Profile Body")),
+    MessagesPageView(),
+    ProfilePageView(),
   ];
 
   final List<PreferredSizeWidget> appBars = [
@@ -62,6 +64,34 @@ class _HomeViewState extends State<HomeView> {
       bottomNavigationBar: CustomBottomNavBar(
         currentIndex: currentIndex,
         onTap: _onTabTapped,
+      ),
+    );
+  }
+}
+
+class MessagesPageView extends StatelessWidget {
+  const MessagesPageView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+        onPressed: () => GoRouter.of(context).push(AppRouter.kViewChat),
+        child: Text("View Messages"),
+      ),
+    );
+  }
+}
+
+class ProfilePageView extends StatelessWidget {
+  const ProfilePageView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+        onPressed: () => GoRouter.of(context).push(AppRouter.kViewSignIn),
+        child: Text("Sign In"),
       ),
     );
   }

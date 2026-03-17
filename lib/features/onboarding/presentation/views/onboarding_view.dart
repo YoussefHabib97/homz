@@ -12,7 +12,7 @@ class OnboardingView extends StatefulWidget {
 class _OnboardingViewState extends State<OnboardingView>
     with TickerProviderStateMixin {
   late final PageController pageController;
-  //page view data
+  // Page view data
   List<OnboardingPageModel> onboardingData = [
     OnboardingPageModel(
       title:

@@ -46,7 +46,7 @@ class PasswordVerificationBody extends StatelessWidget {
             ).textTheme.bodyMedium!.copyWith(color: AppColors.grey[50]),
             buttonText: "Resend",
             onPressed: () {
-              GoRouter.of(context).push(AppRouter.kViewResetPassword);
+              GoRouter.of(context).go(AppRouter.kViewResetPassword);
             },
           ),
         ],

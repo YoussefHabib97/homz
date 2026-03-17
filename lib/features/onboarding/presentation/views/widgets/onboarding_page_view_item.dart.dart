@@ -66,7 +66,7 @@ class OnboardingPageViewItem extends StatelessWidget {
                     padding: EdgeInsets.only(top: 8.0.h),
                     child: CustomButton(
                       onPressed: () {
-                        GoRouter.of(context).push(AppRouter.kViewSignIn);
+                        GoRouter.of(context).go(AppRouter.kViewSignIn);
                       },
                       text: "Get Started",
                     ),

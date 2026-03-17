@@ -10,6 +10,7 @@ class BaseTextFormField extends StatelessWidget {
   final void Function(String)? onSubmitted;
   final void Function(String)? onChanged;
   final FocusNode? focusNode;
+  final bool readOnly;
 
   const BaseTextFormField({
     super.key,
@@ -22,6 +23,7 @@ class BaseTextFormField extends StatelessWidget {
     this.onSubmitted,
     this.onChanged,
     this.focusNode,
+  this.readOnly = false,
   });
 
   @override
@@ -29,6 +31,7 @@ class BaseTextFormField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       focusNode: focusNode,
+      readOnly: readOnly,
       keyboardType: keyboardType,
       textInputAction:
           textInputAction ??

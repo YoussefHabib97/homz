@@ -73,7 +73,7 @@ class SignInViewBody extends StatelessWidget {
           ThirdPartyAuthenticationButtons(),
           TextButton(
             onPressed: () {
-              GoRouter.of(context).push(AppRouter.kViewHome);
+              GoRouter.of(context).go(AppRouter.kViewHome);
             },
             child: Text(
               "Skip and start browsing",
