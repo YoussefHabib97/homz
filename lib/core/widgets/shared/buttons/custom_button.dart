@@ -1,123 +1,112 @@
 import 'package:flutter/material.dart';
-import 'package:homz/core/extensions/extensions.dart';
-import 'package:homz/core/theme/app_colors.dart';
-
-enum ButtonType { primary, secondary, icon, delete }
+import 'package:homz/core/constants/constants.dart';
+import 'package:homz/core/widgets/models/button_config_model.dart';
 
 class CustomButton extends StatelessWidget {
   final String? text;
   final Widget? icon;
-  final double horizontalPadding , verticalPadding;
   final VoidCallback? onPressed;
+  final double horizontalPadding;
+  final double verticalPadding;
   final ButtonType type;
 
-  /// Primary button (default)
-  const CustomButton({
-    super.key,
-    required String this.text,
+  const CustomButton._({
+    this.text,
+    this.icon,
     required this.onPressed,
-      this.horizontalPadding = 16,
-      this.verticalPadding = 16,
-  }) : icon = null,
-       type = ButtonType.primary;
+    required this.type,
+    this.horizontalPadding = kPaddingHorizontal,
+    this.verticalPadding = kPaddingVertical,
+  });
 
-  /// Secondary button
-  const CustomButton.secondary({
-    super.key,
-    required String this.text,
-    required this.onPressed,
-    this.horizontalPadding = 16,
-    this.verticalPadding = 16,
+  factory CustomButton.primary({
+    required String text,
+    required VoidCallback? onPressed,
+    double horizontalPadding = kPaddingHorizontal,
+    double verticalPadding = kPaddingVertical,
+  }) {
+    return CustomButton._(
+      text: text,
+      onPressed: onPressed,
+      type: ButtonType.primary,
+      horizontalPadding: horizontalPadding,
+      verticalPadding: verticalPadding,
+    );
+  }
 
-  }) : icon = null,
-       type = ButtonType.secondary;
+  factory CustomButton.secondary({
+    required String text,
+    required VoidCallback? onPressed,
+    double horizontalPadding = kPaddingHorizontal,
+    double verticalPadding = kPaddingVertical,
+  }) {
+    return CustomButton._(
+      text: text,
+      onPressed: onPressed,
+      type: ButtonType.secondary,
+      horizontalPadding: horizontalPadding,
+      verticalPadding: verticalPadding,
+    );
+  }
 
-  /// Icon button
-  const CustomButton.icon({
-    super.key,
-    required Widget this.icon,
-    required this.onPressed,
-    this.horizontalPadding = 16,
-    this.verticalPadding = 16,
-  }) : text = null,
-       type = ButtonType.icon;
+  factory CustomButton.delete({
+    required String text,
+    required VoidCallback? onPressed,
+    double horizontalPadding = kPaddingHorizontal,
+    double verticalPadding = kPaddingVertical,
+  }) {
+    return CustomButton._(
+      text: text,
+      onPressed: onPressed,
+      type: ButtonType.delete,
+      horizontalPadding: horizontalPadding,
+      verticalPadding: verticalPadding,
+    );
+  }
 
-  /// Delete button
-  const CustomButton.delete({
-    super.key,
-    required String this.text,
-    required this.onPressed,
-  }) : icon = null,
-       type = ButtonType.secondary;
+  factory CustomButton.icon({
+    required Widget icon,
+    required VoidCallback? onPressed,
+    double horizontalPadding = kPaddingHorizontal,
+    double verticalPadding = kPaddingVertical,
+  }) {
+    return CustomButton._(
+      icon: icon,
+      onPressed: onPressed,
+      type: ButtonType.icon,
+      horizontalPadding: horizontalPadding,
+      verticalPadding: verticalPadding,
+    );
+  }
 
   bool get isEnabled => onPressed != null;
 
-  Color _backgroundColor() {
-    if (!isEnabled) {
-      return type == ButtonType.primary
-          ? AppColors.primary[900]!
-          : AppColors.grey[900]!;
-    }
-
-    switch (type) {
-      case ButtonType.primary:
-        return AppColors.primary[400]!;
-      case ButtonType.secondary:
-      case ButtonType.icon:
-      case ButtonType.delete:
-        return AppColors.grey[900]!;
-    }
-  }
-
-  BorderSide _border() {
-    if (type == ButtonType.primary) {
-      return BorderSide.none;
-    }
-
-    return BorderSide(color: AppColors.grey[600]!, width: 1);
-  }
-
-  TextStyle _textStyle(BuildContext context) {
-    final baseTextStyle = context.bodyMedium.copyWith(
-      fontWeight: FontWeight.bold,
-    );
-
-    if (!isEnabled) {
-      return baseTextStyle.copyWith(color: AppColors.grey[400]);
-    }
-
-    if (type == ButtonType.primary) {
-      return baseTextStyle;
-    }
-
-    if (type == ButtonType.delete) {
-      return baseTextStyle.copyWith(color: AppAlertColors.error);
-    }
-
-    return baseTextStyle.copyWith(color: AppColors.grey[400]);
-  }
-
   @override
   Widget build(BuildContext context) {
+    final config = ButtonConfig.get(type);
+
     return SizedBox(
-      width: type == ButtonType.icon ? null : double.infinity,
+      width: config.isFullWidth ? double.infinity : null,
       child: Material(
-        color: _backgroundColor(),
+        color: config.backgroundColor(isEnabled),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
-          side: _border(),
+          side: config.border,
         ),
         child: InkWell(
           onTap: onPressed,
           borderRadius: BorderRadius.circular(8),
           child: Padding(
-            padding:  EdgeInsets.symmetric(vertical: verticalPadding, horizontal: horizontalPadding),
+            padding: EdgeInsets.symmetric(
+              horizontal: horizontalPadding,
+              vertical: verticalPadding,
+            ),
             child: type == ButtonType.icon
                 ? icon
                 : Text(
                     text!,
                     textAlign: TextAlign.center,
-                    style: _textStyle(context),
+                    style: config.textStyle(context, isEnabled),
                   ),
           ),
         ),

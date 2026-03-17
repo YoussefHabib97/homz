@@ -23,7 +23,7 @@ class BaseTextFormField extends StatelessWidget {
     this.onSubmitted,
     this.onChanged,
     this.focusNode,
-  this.readOnly = false,
+    this.readOnly = false,
   });
 
   @override

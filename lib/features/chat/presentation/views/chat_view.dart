@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/theme/chat_text_theme.dart';
 import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
@@ -45,16 +44,17 @@ class _ChatViewState extends State<ChatView> {
     super.dispose();
   }
 
-  // TODO: Refactor to multiple child widgets
+  //? TODO: Refactor to multiple child widgets
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded),
-          onPressed: () => GoRouter.of(context).pop(),
-        ),
+        //? TODO: Implement the proper icon button
+        // leading: IconButton(
+        //   icon: const Icon(Icons.arrow_back_ios_new_rounded),
+        //   onPressed: () => GoRouter.of(context).pop(),
+        // ),
         title: const Text('Name Placeholder'),
         actions: const [CircleAvatar(radius: 20), SizedBox(width: 16)],
       ),
@@ -93,7 +93,7 @@ class _ChatViewState extends State<ChatView> {
     );
   }
 
-  // TODO: Replace with actual date
+  //? TODO: Replace with actual date
   Widget _buildDateChip() {
     return Center(
       child: Container(

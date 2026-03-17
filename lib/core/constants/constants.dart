@@ -26,7 +26,6 @@ const String kIconBedRoom = 'assets/icons/bedroom_icon.svg';
 const String kIconParking = 'assets/icons/parking_icon.svg';
 const String kIconGym = 'assets/icons/gym_icon.svg';
 const String kIconFavorite = 'assets/icons/favorite_icon.svg';
-
 const double kPaddingVertical = 16.0;
 const String kIconAttachFile = 'assets/icons/attach-icon.svg';
 const String kIconSend = 'assets/icons/send-icon.svg';

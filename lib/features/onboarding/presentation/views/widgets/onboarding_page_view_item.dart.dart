@@ -64,7 +64,7 @@ class OnboardingPageViewItem extends StatelessWidget {
                 if (index == 2)
                   Padding(
                     padding: EdgeInsets.only(top: 8.0.h),
-                    child: CustomButton(
+                    child: CustomButton.primary(
                       onPressed: () {
                         GoRouter.of(context).go(AppRouter.kViewSignIn);
                       },

@@ -3,7 +3,6 @@ import 'package:homz/features/residential/look/ui/widgets/build_page_view_item.d
 
 class LookScreen extends StatefulWidget {
   const LookScreen({super.key});
-  
 
   @override
   State<LookScreen> createState() => _LookScreenState();
@@ -25,7 +24,10 @@ class _LookScreenState extends State<LookScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView.builder(
-        itemBuilder:   (context, index)=> BuildPageViewItem(imagesPath: imagesPath[index], currentIndex: currentIndex,),
+        itemBuilder: (context, index) => BuildPageViewItem(
+          imagesPath: imagesPath[index],
+          currentIndex: currentIndex,
+        ),
         controller: pageController,
         itemCount: 6,
         onPageChanged: (index) {
@@ -33,14 +35,16 @@ class _LookScreenState extends State<LookScreen> {
             currentIndex = index;
           });
         },
-        ),
+      ),
     );
   }
+
   @override
   void dispose() {
     pageController.dispose();
     super.dispose();
   }
+
   @override
   void initState() {
     pageController = PageController();

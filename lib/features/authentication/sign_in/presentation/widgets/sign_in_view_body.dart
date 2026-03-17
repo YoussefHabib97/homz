@@ -63,7 +63,7 @@ class SignInViewBody extends StatelessWidget {
               GoRouter.of(context).push(AppRouter.kViewSignUp);
             },
           ),
-          CustomButton.secondary(
+          CustomButton.primary(
             text: "Sign In",
             onPressed: () {
               formKey.currentState!.validate();

@@ -28,7 +28,7 @@ class ForgotPasswordBody extends StatelessWidget {
             style: context.bodyMedium,
           ),
           CustomTextFormField.phone(controller: _textEditingController),
-          CustomButton(
+          CustomButton.primary(
             text: "Send Code",
             onPressed: () {
               GoRouter.of(context).push(AppRouter.kViewPasswordVerification);

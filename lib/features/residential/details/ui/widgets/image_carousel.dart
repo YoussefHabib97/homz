@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ImageCarousel extends StatefulWidget {
   final List<String> imagesPaths;
-  
+
   const ImageCarousel({super.key, required this.imagesPaths});
 
   @override
@@ -18,12 +18,10 @@ class _ImageCarouselState extends State<ImageCarousel> {
     return Container(
       height: 260.h,
       width: double.infinity,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r)),
       child: Stack(
         fit: StackFit.expand,
-        children:[
+        children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(20.r),
             child: PageView.builder(
@@ -49,11 +47,16 @@ class _ImageCarouselState extends State<ImageCarousel> {
             height: 80.h,
             child: Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.vertical(bottom: Radius.circular(20.r)),
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.circular(20.r),
+                ),
                 gradient: LinearGradient(
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter,
-                  colors:[Colors.black.withOpacity(0.7), Colors.transparent],
+                  colors: [
+                    Colors.black.withValues(alpha: 0.7),
+                    Colors.transparent,
+                  ],
                 ),
               ),
             ),
@@ -73,8 +76,9 @@ class _ImageCarouselState extends State<ImageCarousel> {
                   height: 6.w,
                   width: 6.w,
                   decoration: BoxDecoration(
-                  
-                    color: isActive ? Colors.white : Colors.white.withOpacity(0.4),
+                    color: isActive
+                        ? Colors.white
+                        : Colors.white.withValues(alpha: 0.4),
                     shape: BoxShape.circle,
                   ),
                 );
@@ -91,9 +95,13 @@ class _ImageCarouselState extends State<ImageCarousel> {
                 color: Color(0xFF4A6DA7), // Your primary blue
                 shape: BoxShape.circle,
               ),
-              child: Icon(Icons.near_me_outlined, color: Colors.white, size: 22.w),
+              child: Icon(
+                Icons.near_me_outlined,
+                color: Colors.white,
+                size: 22.w,
+              ),
             ),
-          )
+          ),
         ],
       ),
     );

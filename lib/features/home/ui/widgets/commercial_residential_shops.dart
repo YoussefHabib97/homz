@@ -15,8 +15,6 @@ class CommercialResidentialShops extends StatefulWidget {
 
 class _CommercialResidentialShopsState
     extends State<CommercialResidentialShops> {
-
-    
   // 0 = Commercial, 1 = Residential, 2 = Shops
   int _selectedIndex = 1;
   final List<String> _categories = ['Commercial', 'Residential', 'Shops'];
@@ -45,18 +43,18 @@ class _CommercialResidentialShopsState
       children: [
         Expanded(
           child: Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 8.h),
+            padding: EdgeInsets.symmetric(horizontal: 8.h),
             child: IndexedStack(
-            index: _selectedIndex,
-            children: List.generate(_categoryImages.length, (index) {
-              return BuildCarouselSlider(imagePaths: _categoryImages[index]);
-            }),
-                  ),
+              index: _selectedIndex,
+              children: List.generate(_categoryImages.length, (index) {
+                return BuildCarouselSlider(imagePaths: _categoryImages[index]);
+              }),
+            ),
           ),
         ),
-      VerticalGap(20),
-      Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 24.w),
+        VerticalGap(20),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: List.generate(_categories.length, (index) {
@@ -64,17 +62,21 @@ class _CommercialResidentialShopsState
               return GestureDetector(
                 onTap: () {
                   setState(() {
-                    _selectedIndex = index; 
+                    _selectedIndex = index;
                   });
                 },
                 child: Container(
                   color: Colors.transparent,
-                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 10,
+                    horizontal: 8,
+                  ),
                   child: Text(
                     _categories[index],
                     style: context.bodyMedium.copyWith(
-                      color: isActive ? AppColors.grey[50] : AppColors.grey[400],
-                      
+                      color: isActive
+                          ? AppColors.grey[50]
+                          : AppColors.grey[400],
                     ),
                   ),
                 ),
@@ -83,7 +85,7 @@ class _CommercialResidentialShopsState
           ),
         ),
         VerticalGap(48),
-      ],  
+      ],
     );
   }
 }

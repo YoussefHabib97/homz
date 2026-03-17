@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:homz/core/constants/constants.dart';
-import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/utils/app_router.dart';
 import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
@@ -50,7 +49,7 @@ class ButtonsOverlayImage extends StatelessWidget {
               // "Take a Look" Button
               SizedBox(
                 width: 141.w,
-                child: CustomButton(
+                child: CustomButton.primary(
                   text: 'Take a Look',
                   verticalPadding: 8.h,
                   horizontalPadding: 25.w,

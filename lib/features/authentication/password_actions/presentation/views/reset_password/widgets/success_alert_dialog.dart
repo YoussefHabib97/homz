@@ -35,7 +35,7 @@ class SuccessAlertDialog extends StatelessWidget {
                     style: context.bodyMedium,
                     textAlign: TextAlign.center,
                   ),
-                  CustomButton(
+                  CustomButton.primary(
                     text: "Continue",
                     onPressed: () {
                       GoRouter.of(context).pushReplacement(AppRouter.kViewHome);

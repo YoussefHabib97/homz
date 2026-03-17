@@ -49,7 +49,7 @@ class ResetPasswordBody extends StatelessWidget {
             controller: _passwordTextEditingController,
             passwordToMatch: _confirmPasswordTextEditingController,
           ),
-          CustomButton(
+          CustomButton.primary(
             text: "Reset Password",
             onPressed: () {
               showDialog(

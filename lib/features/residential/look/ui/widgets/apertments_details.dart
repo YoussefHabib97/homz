@@ -20,21 +20,26 @@ class ApertmentsDetails extends StatelessWidget {
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-               mainAxisSize: MainAxisSize.min, 
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   'Araay\nApertments',
-                  style: context.headlineMedium.copyWith(color: AppColors.grey[50]),
+                  style: context.headlineMedium.copyWith(
+                    color: AppColors.grey[50],
+                  ),
                 ),
                 Text(
                   '\$10000,500',
-                  style: context.headlineSmall.copyWith(color: AppColors.grey[50],height: 1.5.h),
+                  style: context.headlineSmall.copyWith(
+                    color: AppColors.grey[50],
+                    height: 1.5.h,
+                  ),
                 ),
               ],
             ),
             const Spacer(),
             Column(
-              mainAxisSize: MainAxisSize.min, 
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 RoundedButton(
@@ -42,7 +47,7 @@ class ApertmentsDetails extends StatelessWidget {
                   iconPath: kIconSendTo,
                   onPressed: () {},
                 ),
-                  VerticalGap(8),
+                VerticalGap(8),
                 RoundedButton(
                   backgroundColor: AppColors.primary[500]!,
                   iconPath: kIconCall,
@@ -53,9 +58,8 @@ class ApertmentsDetails extends StatelessWidget {
           ],
         ),
         VerticalGap(20),
-        RowLabeledIcon(),  
+        RowLabeledIcon(),
       ],
-
     );
   }
 }

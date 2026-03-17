@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -54,7 +53,7 @@ class AmenityItem extends StatelessWidget {
       children: [
         Container(
           padding: EdgeInsets.all(12.w),
-          decoration:  BoxDecoration(
+          decoration: BoxDecoration(
             color: AppColors.primary[500],
             shape: BoxShape.circle,
           ),

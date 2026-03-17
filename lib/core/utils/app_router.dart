@@ -5,14 +5,13 @@ import 'package:homz/features/authentication/password_actions/presentation/views
 import 'package:homz/features/authentication/sign_in/presentation/views/sign_in_view.dart';
 import 'package:homz/features/authentication/sign_up/presentation/views/sign_up_view.dart';
 import 'package:homz/features/chat/presentation/views/chat_view.dart';
-import 'package:homz/features/home/presentation/views/home_view.dart';
-
+import 'package:homz/features/home/ui/home_view.dart';
 import 'package:homz/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:homz/features/residential/details/ui/details_screen.dart';
 import 'package:homz/features/residential/look/ui/look_screen.dart';
 
 abstract class AppRouter {
-  static const kViewHome = '/homeView';
+  static const kViewHome = '/';
   static const kViewOnboarding = '/onboardingView';
   static const kViewSignIn = '/signInView';
   static const kViewSignUp = '/signUpView';
@@ -25,16 +24,16 @@ abstract class AppRouter {
 
   static final router = GoRouter(
     routes: [
-      GoRoute(path: "/", builder: (context, state) => const HomeView()),
-      GoRoute(path: kViewOnboarding, builder: (context, state) => const OnboardingView()),
+      GoRoute(path: kViewHome, builder: (context, state) => const HomeView()),
+      GoRoute(
+        path: kViewOnboarding,
+        builder: (context, state) => const OnboardingView(),
+      ),
       GoRoute(
         path: kViewSignIn,
         builder: (context, state) => const SignInView(),
       ),
-      GoRoute(
-        path: kViewChat,
-        builder: (context, state) => const ChatView(),
-      ),
+      GoRoute(path: kViewChat, builder: (context, state) => const ChatView()),
       GoRoute(
         path: kViewSignUp,
         builder: (context, state) => const SignUpView(),
@@ -57,7 +56,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kViewResidentialDetails,
-        builder: (context, state) =>  DetailsScreen(),
+        builder: (context, state) => DetailsScreen(),
       ),
     ],
   );

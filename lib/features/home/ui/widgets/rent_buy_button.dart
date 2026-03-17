@@ -12,23 +12,20 @@ class RentBuyButton extends StatefulWidget {
 
 class _RentBuyButtonState extends State<RentBuyButton> {
   // true = Rent, false = Buy
-  bool isRentSelected = true; 
+  bool isRentSelected = true;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 219.w, 
-      height: 43.h, 
-      padding:  EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h), 
+      width: 219.w,
+      height: 43.h,
+      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: AppColors.grey[400]!,
-          width: 1,
-        ),
+        border: Border.all(color: AppColors.grey[400]!, width: 1),
       ),
       child: Row(
-        children:[
+        children: [
           // --- RENT BUTTON ---
           Expanded(
             child: GestureDetector(
@@ -40,18 +37,22 @@ class _RentBuyButtonState extends State<RentBuyButton> {
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 200),
                 decoration: BoxDecoration(
-                  color: isRentSelected ? AppColors.primary[500] : Colors.transparent,
-                 borderRadius: BorderRadius.circular(12), // Inner rounded corners
+                  color: isRentSelected
+                      ? AppColors.primary[500]
+                      : Colors.transparent,
+                  borderRadius: BorderRadius.circular(
+                    12,
+                  ), // Inner rounded corners
                 ),
                 alignment: Alignment.center,
-                child:  Text(
+                child: Text(
                   'Rent',
                   style: context.bodyMedium.copyWith(color: AppColors.grey[50]),
                 ),
               ),
             ),
           ),
-          
+
           // --- BUY BUTTON ---
           Expanded(
             child: GestureDetector(
@@ -63,11 +64,13 @@ class _RentBuyButtonState extends State<RentBuyButton> {
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 200),
                 decoration: BoxDecoration(
-                  color: !isRentSelected ? AppColors.primary[500] : Colors.transparent,
+                  color: !isRentSelected
+                      ? AppColors.primary[500]
+                      : Colors.transparent,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 alignment: Alignment.center,
-                child:  Text(
+                child: Text(
                   'Buy',
                   style: context.bodyMedium.copyWith(color: AppColors.grey[50]),
                 ),

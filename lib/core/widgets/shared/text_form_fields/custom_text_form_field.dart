@@ -116,8 +116,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     final isChatField = widget.fieldType == FieldType.chat;
-    final hasChatAttachments =
-        isChatField && widget.attachments.isNotEmpty;
+    final hasChatAttachments = isChatField && widget.attachments.isNotEmpty;
 
     return ListenableBuilder(
       listenable: Listenable.merge([_obscureNotifier, _errorNotifier]),
@@ -155,8 +154,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                   )
                 : null,
             errorText: _errorNotifier.value,
-            prefixIcon:
-                hasChatAttachments ? _buildChatAttachmentsPrefix() : _buildSurgicalPrefix(),
+            prefixIcon: hasChatAttachments
+                ? _buildChatAttachmentsPrefix()
+                : _buildSurgicalPrefix(),
             prefixIconConstraints: isChatField
                 ? const BoxConstraints(minWidth: 0, minHeight: 0)
                 : null,
@@ -180,11 +180,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                 padding: const EdgeInsets.only(right: 6),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: thumb,
-                  ),
+                  child: SizedBox(width: 40, height: 40, child: thumb),
                 ),
               ),
             )

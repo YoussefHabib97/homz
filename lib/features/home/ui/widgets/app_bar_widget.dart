@@ -11,7 +11,7 @@ class AppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 16.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Row(
         children: [
           Text(
@@ -20,7 +20,7 @@ class AppBarWidget extends StatelessWidget {
           ),
           Spacer(),
           // add notification icon here as svg
-         InkWell(
+          InkWell(
             onTap: () {},
             child: SvgPicture.asset(
               kIconNotification,

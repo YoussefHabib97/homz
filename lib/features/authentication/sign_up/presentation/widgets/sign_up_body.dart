@@ -45,7 +45,7 @@ class SignUpViewBody extends StatelessWidget {
             controller: _passwordTextEditingController,
             passwordToMatch: _confirmPasswordTextEditingController,
           ),
-          CustomButton(
+          CustomButton.primary(
             text: "Sign Up",
             onPressed: () {
               formKey.currentState!.validate();
