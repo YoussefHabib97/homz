@@ -36,7 +36,7 @@ class ButtonsOverlayImage extends StatelessWidget {
           right: 16.w,
           child: RoundedButton(
             backgroundColor: AppColors.grey[900]!,
-            iconPath: kIconHeart,
+            iconPath: kIconFavorite,
             onPressed: () {},
           ),
         ),
@@ -59,27 +59,6 @@ class ButtonsOverlayImage extends StatelessWidget {
                   },
                 ),
               ),
-              // InkWell(
-              //   onTap: () {
-              //     GoRouter.of(context).push(AppRouter.kViewResidentialLook);
-              //   },
-              //   child: Container(
-              //     padding:  EdgeInsets.symmetric(
-              //       horizontal: 25.w,
-              //       vertical: 8.h,
-              //     ),
-              //     decoration: BoxDecoration(
-              //       color: AppColors.primary[500],
-              //       borderRadius: BorderRadius.circular(8),
-              //     ),
-              //     child:  Text(
-              //       'Take a Look',
-              //       style: context.bodyMedium.copyWith(
-              //         color: AppColors.grey[50],
-              //       ),
-              //     ),
-              //   ),
-              // ),
               HorizontalGap(8.w),
               // Details Button
               RoundedButton(

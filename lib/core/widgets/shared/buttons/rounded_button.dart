@@ -10,13 +10,15 @@ class RoundedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Ink(
+    return Material(
+      color: backgroundColor,
+      clipBehavior: Clip.antiAlias,
+      shape: const CircleBorder(),
       child: InkWell(
         onTap: onPressed,
-        child: Container(
-          padding: EdgeInsets.all(8.h),
-          decoration: BoxDecoration(color: backgroundColor, shape: BoxShape.circle),
-          child: SvgPicture.asset(iconPath, height: 24.h, width: 24.w),
+        child: Padding(
+          padding:  EdgeInsets.all(8.h),
+          child: SvgPicture.asset(iconPath, height: 24.h, width: 24.w,),
         ),
       ),
     );
