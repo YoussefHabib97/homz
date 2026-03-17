@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:homz/core/constants/constants.dart';
+import 'package:homz/core/extensions/extensions.dart';
+import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/utils/app_router.dart';
 import 'package:homz/features/home/presentation/widgets/custom_bottom_nav_bar.dart';
 
@@ -14,22 +18,6 @@ class _HomeViewState extends State<HomeView> {
   int previousIndex = 0;
   int currentIndex = 0;
 
-  final List<Widget> pages = const [
-    Center(child: Text("Home Body")),
-    Center(child: Text("Search Body")),
-    Center(child: Text("Saved Body")),
-    MessagesPageView(),
-    ProfilePageView(),
-  ];
-
-  final List<PreferredSizeWidget> appBars = [
-    AppBar(title: const Text("Home")),
-    AppBar(title: const Text("Search")),
-    AppBar(title: const Text("Saved")),
-    AppBar(title: const Text("Messages")),
-    AppBar(title: const Text("Profile")),
-  ];
-
   void _onTabTapped(int index) {
     if (currentIndex == index) return;
     setState(() {
@@ -40,10 +28,42 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
+    final tabs = <_NavTab>[
+      _NavTab(
+        appBar: AppBar(
+          title: Text("Home", style: context.headlineLarge),
+          actions: [
+            IconButton(
+              // style: Theme.of(context).iconButtonTheme.style!.copyWith(backgroundColor: AppColors.primary[400]),
+              onPressed: () {},
+              icon: SvgPicture.asset(kIconNotification),
+            ),
+          ],
+        ),
+        body: const Center(child: Text("Home Body")),
+      ),
+      _NavTab(
+        appBar: AppBar(title: const Text("Search")),
+        body: const Center(child: Text("Search Body")),
+      ),
+      _NavTab(
+        appBar: AppBar(title: const Text("Saved")),
+        body: const Center(child: Text("Saved Body")),
+      ),
+      _NavTab(
+        appBar: AppBar(title: const Text("Messages")),
+        body: const MessagesPageView(),
+      ),
+      _NavTab(
+        appBar: AppBar(title: const Text("Profile")),
+        body: const ProfilePageView(),
+      ),
+    ];
+
     return Scaffold(
-      appBar: appBars[currentIndex],
+      appBar: tabs[currentIndex].appBar,
       body: AnimatedSwitcher(
-        duration: Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 300),
         switchInCurve: Curves.easeInOutCirc,
         switchOutCurve: Curves.easeInOutCirc,
         transitionBuilder: (child, animation) {
@@ -58,7 +78,7 @@ class _HomeViewState extends State<HomeView> {
         },
         child: SizedBox(
           key: ValueKey<int>(currentIndex),
-          child: pages[currentIndex],
+          child: tabs[currentIndex].body,
         ),
       ),
       bottomNavigationBar: CustomBottomNavBar(
@@ -67,6 +87,13 @@ class _HomeViewState extends State<HomeView> {
       ),
     );
   }
+}
+
+class _NavTab {
+  final PreferredSizeWidget appBar;
+  final Widget body;
+
+  const _NavTab({required this.appBar, required this.body});
 }
 
 class MessagesPageView extends StatelessWidget {
@@ -92,6 +119,31 @@ class ProfilePageView extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () => GoRouter.of(context).push(AppRouter.kViewSignIn),
         child: Text("Sign In"),
+      ),
+    );
+  }
+}
+
+class HomePageView extends StatelessWidget {
+  const HomePageView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Homz"),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: SvgPicture.asset(
+              kIconNotification,
+              colorFilter: ColorFilter.mode(
+                AppColors.grey[50]!,
+                BlendMode.srcIn,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
