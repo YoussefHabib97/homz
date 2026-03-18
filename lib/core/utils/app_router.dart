@@ -4,7 +4,7 @@ import 'package:homz/features/authentication/password_actions/presentation/views
 import 'package:homz/features/authentication/password_actions/presentation/views/reset_password/reset_password_view.dart';
 import 'package:homz/features/authentication/sign_in/presentation/views/sign_in_view.dart';
 import 'package:homz/features/authentication/sign_up/presentation/views/sign_up_view.dart';
-import 'package:homz/features/chat/presentation/views/chat_view.dart';
+import 'package:homz/features/chat/ui/chat_view.dart';
 import 'package:homz/features/home/ui/home_view.dart';
 import 'package:homz/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:homz/features/residential/details/ui/details_screen.dart';
