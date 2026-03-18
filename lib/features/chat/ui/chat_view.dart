@@ -8,6 +8,8 @@ import 'package:homz/features/chat/utils/chat_utils.dart';
 import 'widgets/chat_bubble.dart';
 import 'widgets/date_chip.dart';
 
+//? TODO: Refactor to use Slivers & CustomScrollView
+
 class ChatView extends StatefulWidget {
   const ChatView({super.key});
 
@@ -20,8 +22,13 @@ class _ChatViewState extends State<ChatView> {
   final ScrollController _scrollController = ScrollController();
   final List<ChatMessage> _messages = [
     ChatMessage(
+      text: "Anytime!",
+      sentAt: DateTime.now().subtract(Duration(hours: 19, minutes: 8)),
+      isMe: false,
+    ),
+    ChatMessage(
       text: "Anyhow, thank you for the convo!",
-      sentAt: DateTime.now().subtract(Duration(hours: 19, minutes: 11)),
+      sentAt: DateTime.now().subtract(Duration(hours: 19, minutes: 9)),
       isMe: true,
     ),
     ChatMessage(
@@ -228,6 +235,7 @@ class _ChatViewState extends State<ChatView> {
     ),
     // ...continue reversing the rest similarly
   ];
+
   @override
   void dispose() {
     _messageController.dispose();
@@ -240,13 +248,9 @@ class _ChatViewState extends State<ChatView> {
     super.initState();
     // Scroll to bottom after the widgets are laid out
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      // if (_scrollController.hasClients) {
-      //   _scrollController.animateTo(
-      //     _scrollController.position.maxScrollExtent,
-      //     duration: Duration.zero, // instant scroll
-      //     curve: Curves.linear,
-      //   );
-      // }
+      if (_scrollController.hasClients) {
+        _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+      }
     });
   }
 
