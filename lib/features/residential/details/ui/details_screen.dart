@@ -36,7 +36,7 @@ class DetailsScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          VerticalGap(36),
+          const VerticalGap(36),
           Expanded(
             child: Container(
               decoration: BoxDecoration(
@@ -66,7 +66,7 @@ class DetailsScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  VerticalGap(18),
+                  const VerticalGap(18),
                   ImageCarousel(imagesPaths: imagesPath),
                 ],
               ),

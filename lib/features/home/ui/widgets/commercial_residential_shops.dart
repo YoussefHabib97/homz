@@ -52,7 +52,7 @@ class _CommercialResidentialShopsState
             ),
           ),
         ),
-        VerticalGap(20),
+        const VerticalGap(20),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Row(
@@ -84,7 +84,7 @@ class _CommercialResidentialShopsState
             }),
           ),
         ),
-        VerticalGap(48),
+        const VerticalGap(48),
       ],
     );
   }

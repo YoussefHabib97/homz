@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 const String kAlertSuccess = 'assets/icons/alert-success.svg';
 const String kIconApple = 'assets/icons/apple-icon.svg';
 const String kAppLogo = 'assets/images/app-logo.png';
@@ -29,3 +31,14 @@ const String kIconFavorite = 'assets/icons/favorite_icon.svg';
 const double kPaddingVertical = 16.0;
 const String kIconAttachFile = 'assets/icons/attach-icon.svg';
 const String kIconSend = 'assets/icons/send-icon.svg';
+const String kIconArrowRight = 'assets/icons/arrow-right.svg';
+const String kIconInfoCircle = 'assets/icons/info-circle-icon.svg';
+const String kIconLocale = 'assets/icons/language-icon.svg';
+const String kIconLogin = 'assets/icons/login-icon.svg';
+const String kIconRating = 'assets/icons/rating-icon.svg';
+const String kIconShield = 'assets/icons/shield-icon.svg';
+const String kImageSavedIllustration = 'assets/images/saved-illustration.png';
+const String kImageMessagesInboxIllustration =
+    'assets/images/inbox-illustration.png';
+const String kImageSearchIllustration = 'assets/images/search-illustration.png';
+final double kToolbarHeightTall = 80.h;

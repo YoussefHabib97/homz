@@ -1,4 +1,4 @@
-import 'chat_message.dart';
+import 'chat_message_model.dart';
 
 sealed class ChatTimelineItem {
   const ChatTimelineItem();

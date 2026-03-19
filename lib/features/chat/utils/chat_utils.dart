@@ -1,5 +1,5 @@
-import 'package:homz/features/chat/data/models/chat_message.dart';
-import 'package:homz/features/chat/data/models/chat_timeline_item.dart';
+import 'package:homz/features/chat/data/models/chat_message_model.dart';
+import 'package:homz/features/chat/data/models/chat_timeline_item_model.dart';
 
 const whatsAppGroupThreshold = Duration(minutes: 5);
 

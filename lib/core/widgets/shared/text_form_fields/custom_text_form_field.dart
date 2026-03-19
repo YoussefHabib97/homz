@@ -229,11 +229,22 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           );
         },
       );
-    } else if (widget.fieldType == FieldType.search &&
-        widget.onFilterTap != null) {
-      return IconButton(
-        icon: const Icon(Icons.filter_list),
-        onPressed: widget.onFilterTap,
+    } else if (widget.fieldType == FieldType.search) {
+      return ListenableBuilder(
+        listenable: widget.controller,
+        builder: (context, _) {
+          if (widget.controller.text.isEmpty) return SizedBox.shrink();
+          return IconButton(
+            icon: SvgPicture.asset(
+              kIconSearch,
+              colorFilter: ColorFilter.mode(
+                AppColors.grey[50]!,
+                BlendMode.srcATop,
+              ),
+            ),
+            onPressed: widget.onFilterTap,
+          );
+        },
       );
     } else if (widget.fieldType == FieldType.chat) {
       return Padding(
@@ -243,6 +254,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           children: [
             IconButton(
               icon: SvgPicture.asset(
+                height: 24,
                 kIconAttachFile,
                 colorFilter: ColorFilter.mode(
                   AppColors.grey[50]!,
@@ -251,19 +263,22 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
               ),
               onPressed: widget.onAttach,
             ),
-            SizedBox(
-              width: 48,
-              height: 42,
-              child: Material(
-                color: AppColors.primary[300],
-                shape: RoundedSuperellipseBorder(
-                  borderRadius: BorderRadius.circular(999),
-                ),
-                child: InkWell(
-                  onTap: widget.onSend,
-                  child: SvgPicture.asset(kIconSend, fit: BoxFit.scaleDown),
+            IconButton(
+              style: ButtonStyle(
+                backgroundColor: WidgetStatePropertyAll(AppColors.primary[300]),
+                padding: WidgetStatePropertyAll(
+                  EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 ),
               ),
+              icon: SvgPicture.asset(
+                height: 24,
+                kIconSend,
+                colorFilter: ColorFilter.mode(
+                  AppColors.grey[50]!,
+                  BlendMode.srcATop,
+                ),
+              ),
+              onPressed: widget.onSend,
             ),
           ],
         ),

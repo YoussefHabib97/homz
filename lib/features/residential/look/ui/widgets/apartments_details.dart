@@ -7,8 +7,8 @@ import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
 import 'package:homz/core/widgets/shared/buttons/rounded_button.dart';
 import 'package:homz/features/residential/look/ui/widgets/row_labeled_icon.dart';
 
-class ApertmentsDetails extends StatelessWidget {
-  const ApertmentsDetails({super.key});
+class ApartmentsDetails extends StatelessWidget {
+  const ApartmentsDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class ApertmentsDetails extends StatelessWidget {
                   iconPath: kIconSendTo,
                   onPressed: () {},
                 ),
-                VerticalGap(8),
+                const VerticalGap(8),
                 RoundedButton(
                   backgroundColor: AppColors.primary[500]!,
                   iconPath: kIconCall,
@@ -57,7 +57,7 @@ class ApertmentsDetails extends StatelessWidget {
             ),
           ],
         ),
-        VerticalGap(20),
+        const VerticalGap(20),
         RowLabeledIcon(),
       ],
     );

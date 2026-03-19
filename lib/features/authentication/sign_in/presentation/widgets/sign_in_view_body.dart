@@ -9,7 +9,6 @@ import 'package:homz/core/widgets/shared/buttons/third_party_authentication_butt
 import 'package:homz/core/widgets/shared/custom_form.dart';
 import 'package:homz/core/widgets/shared/text_divider.dart';
 import 'package:homz/core/widgets/shared/text_form_fields/custom_text_form_field.dart';
-import 'package:homz/features/authentication/sign_in/presentation/widgets/sign_in_app_bar.dart';
 
 class SignInViewBody extends StatelessWidget {
   final GlobalKey<FormState> formKey;
@@ -32,7 +31,6 @@ class SignInViewBody extends StatelessWidget {
         spacing: 32,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SignInAppBar(),
           CustomTextFormField.phone(
             controller: _phoneNumberTextEditingController,
           ),

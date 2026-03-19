@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/widgets/shared/buttons/rounded_button.dart';
-import 'package:homz/features/residential/look/ui/widgets/apertments_details.dart';
+import 'package:homz/features/residential/look/ui/widgets/apartments_details.dart';
 
 class BuildPageViewItem extends StatelessWidget {
   final String imagesPath;
@@ -58,7 +58,7 @@ class BuildPageViewItem extends StatelessWidget {
           bottom: 32.h,
           left: 16.w,
           right: 16.w,
-          child: ApertmentsDetails(),
+          child: ApartmentsDetails(),
         ),
       ],
     );

@@ -58,7 +58,7 @@ class ButtonsOverlayImage extends StatelessWidget {
                   },
                 ),
               ),
-              HorizontalGap(8.w),
+              const HorizontalGap(8),
               // Details Button
               RoundedButton(
                 backgroundColor: AppColors.primary[500]!,

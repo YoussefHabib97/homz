@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/utils/app_router.dart';
-import 'package:homz/features/home/ui/widgets/custom_bottom_nav_bar.dart';
+import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
+import 'package:homz/core/widgets/shared/default_app_bar.dart';
+import 'package:homz/core/widgets/shared/text_form_fields/custom_text_form_field.dart';
 import 'package:homz/features/home/ui/widgets/home_body.dart';
+import 'package:homz/features/navigator/presentation/custom_bottom_nav_bar.dart';
+import 'package:homz/features/navigator/presentation/widgets/custom_navigation_button.dart';
+import 'package:homz/features/navigator/presentation/widgets/unpopulated_nav_tab.dart';
+import 'package:homz/features/profile/ui/profile_page_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -30,11 +33,12 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    final tabs = <_NavTab>[
-      _NavTab(
-        appBar: AppBar(
-          toolbarHeight: 80.h,
+    final tabs = <NavTab>[
+      NavTab(
+        appBar: AppDefaultAppBar(
+          toolbarHeight: kToolbarHeightTall,
           title: Text("Home", style: context.headlineLarge),
+          centerTitle: false,
           actions: [
             IconButton(
               onPressed: () {},
@@ -44,21 +48,47 @@ class _HomeViewState extends State<HomeView> {
         ),
         body: HomeBody(),
       ),
-      _NavTab(
-        appBar: AppBar(title: const Text("Search")),
-        body: Center(child: Container(color: Colors.brown, height: 400)),
+      NavTab(
+        appBar: AppDefaultAppBar(
+          title: const Text("Search"),
+          centerTitle: true,
+        ),
+        body: AppDefaultPadding(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CustomTextFormField.search(
+                controller: TextEditingController(),
+                onFilterTap: () {},
+              ),
+              UnpopulatedNavTabBody(
+                imagePath: kImageSearchIllustration,
+                title: "No results found",
+                subtitle: "Please try again",
+              ),
+            ],
+          ),
+        ),
       ),
-      _NavTab(
-        appBar: AppBar(title: const Text("Saved")),
-        body: const Center(child: Text("Saved Body")),
+      NavTab(
+        appBar: AppDefaultAppBar(title: const Text("Saved"), centerTitle: true),
+        body: UnpopulatedNavTabBody(
+          imagePath: kImageSavedIllustration,
+          title: "Nothing here!",
+          subtitle: "You don't have any places saved yet",
+        ),
       ),
-      _NavTab(
-        appBar: AppBar(title: const Text("Messages")),
-        body: const MessagesPageView(),
+      NavTab(
+        appBar: AppDefaultAppBar(title: const Text("Messages")),
+        body: const MessagesViewBody(),
       ),
-      _NavTab(
-        appBar: AppBar(title: const Text("Profile")),
-        body: const ProfilePageView(),
+      NavTab(
+        appBar: AppDefaultAppBar(
+          title: const Text("Profile"),
+          centerTitle: true,
+        ),
+        body: const ProfileViewBody(),
       ),
     ];
 
@@ -91,37 +121,16 @@ class _HomeViewState extends State<HomeView> {
   }
 }
 
-class _NavTab {
-  final PreferredSizeWidget appBar;
-  final Widget body;
-
-  const _NavTab({required this.appBar, required this.body});
-}
-
-class MessagesPageView extends StatelessWidget {
-  const MessagesPageView({super.key});
+class MessagesViewBody extends StatelessWidget {
+  const MessagesViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ElevatedButton(
-        onPressed: () => GoRouter.of(context).push(AppRouter.kViewChat),
-        child: Text("View Messages"),
-      ),
-    );
-  }
-}
-
-class ProfilePageView extends StatelessWidget {
-  const ProfilePageView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: ElevatedButton(
-        onPressed: () => GoRouter.of(context).push(AppRouter.kViewSignIn),
-        child: Text("Sign In"),
-      ),
+    return UnpopulatedNavTabBody(
+      imagePath: kImageMessagesInboxIllustration,
+      title: "Inbox empty",
+      subtitle:
+          "You have no messages yet.\nBe the first to start a conversation",
     );
   }
 }

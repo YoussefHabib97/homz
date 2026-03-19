@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:homz/core/constants/constants.dart';
+import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
+import 'package:homz/core/widgets/shared/buttons/change_locale_button.dart';
+import 'package:homz/core/widgets/shared/default_app_bar.dart';
 import 'package:homz/features/authentication/sign_in/presentation/widgets/sign_in_view_body.dart';
 
 class SignInView extends StatefulWidget {
@@ -17,6 +21,23 @@ class _SignInViewState extends State<SignInView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppDefaultAppBar(
+        title: Text(
+          "Welcome to"
+          "\n"
+          "Homz",
+          style: context.headlineLarge,
+        ),
+        centerTitle: false,
+        actions: [
+          AppDefaultPadding(
+            verticalOffset: 0,
+            horizontalOffset: 8,
+            child: ChangeLocaleButton(),
+          ),
+        ],
+        toolbarHeight: kToolbarHeightTall,
+      ),
       body: AppDefaultPadding(
         child: SignInViewBody(
           formKey: formKey,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:homz/core/constants/constants.dart';
@@ -16,10 +17,7 @@ class SuccessAlertDialog extends StatelessWidget {
       child: AlertDialog(
         actions: [
           Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 32.0,
-              vertical: 24.0,
-            ),
+            padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 24.0.h),
             child: Center(
               child: Column(
                 spacing: 32,
@@ -38,7 +36,9 @@ class SuccessAlertDialog extends StatelessWidget {
                   CustomButton.primary(
                     text: "Continue",
                     onPressed: () {
-                      GoRouter.of(context).pushReplacement(AppRouter.kViewHome);
+                      GoRouter.of(
+                        context,
+                      ).pushReplacement(AppRouter.kViewSignIn);
                     },
                   ),
                 ],
