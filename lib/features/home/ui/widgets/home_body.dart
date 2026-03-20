@@ -7,14 +7,12 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            RentBuyButton(),
-            Expanded(child: CommercialResidentialShops()),
-          ],
-        ),
+    return Center(
+      child: Column(
+        children: [
+          RentBuyButton(),
+          Expanded(child: CommercialResidentialShops()),
+        ],
       ),
     );
   }

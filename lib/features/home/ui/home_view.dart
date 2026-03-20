@@ -62,10 +62,14 @@ class _HomeViewState extends State<HomeView> {
                 controller: TextEditingController(),
                 onFilterTap: () {},
               ),
-              UnpopulatedNavTabBody(
-                imagePath: kImageSearchIllustration,
-                title: "No results found",
-                subtitle: "Please try again",
+              Expanded(
+                child: Center(
+                  child: UnpopulatedNavTabBody(
+                    imagePath: kImageSearchIllustration,
+                    title: "No results found",
+                    subtitle: "Please try again",
+                  ),
+                ),
               ),
             ],
           ),
@@ -93,11 +97,21 @@ class _HomeViewState extends State<HomeView> {
     ];
 
     return Scaffold(
-      appBar: tabs[currentIndex].appBar,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(
+          currentIndex == 0 ? kToolbarHeightTall : kToolbarHeight,
+        ),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeInOut,
+          height: currentIndex == 0 ? kToolbarHeightTall : kToolbarHeight,
+          child: tabs[currentIndex].appBar,
+        ),
+      ),
       body: AnimatedSwitcher(
         duration: const Duration(milliseconds: 300),
-        switchInCurve: Curves.bounceIn,
-        // switchOutCurve: Curves.easeInOutCirc,
+        switchInCurve: Curves.easeInCirc,
+        switchOutCurve: Curves.easeInOutCirc,
         transitionBuilder: (child, animation) {
           final direction = currentIndex > previousIndex ? 1 : -1;
           final offsetAnimation = animation.drive(
