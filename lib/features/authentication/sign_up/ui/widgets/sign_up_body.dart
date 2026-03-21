@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:homz/core/widgets/common/text_divider.dart';
 import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
+import 'package:homz/core/widgets/shared/text_divider.dart';
 import 'package:homz/shared/buttons/custom_button.dart';
 import 'package:homz/shared/buttons/third_party_authentication_buttons.dart';
 import 'package:homz/shared/forms/custom_form.dart';

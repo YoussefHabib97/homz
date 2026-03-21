@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:homz/app/router/app_router.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
 import 'package:homz/core/widgets/layout/sticky_header_delegate.dart';
 import 'package:homz/shared/text_fields/custom_text_form_field.dart';
 
-class MessagesViewBody extends StatelessWidget {
-  const MessagesViewBody({super.key});
+class MessagesViewTab extends StatelessWidget {
+  const MessagesViewTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,9 @@ class MessagesViewBody extends StatelessWidget {
           itemBuilder: (context, index) {
             return Ink(
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  GoRouter.of(context).push(AppRouter.kViewChat);
+                },
                 child: AppDefaultPadding(
                   child: Row(
                     spacing: 16,
@@ -57,7 +61,7 @@ class MessagesViewBody extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text("Time"),
+                          Text("09:00 AM"),
                           CircleAvatar(radius: 16, child: Text("1")),
                         ],
                       ),

@@ -11,7 +11,7 @@ import 'package:homz/features/residential/details/ui/views/details_view.dart';
 import 'package:homz/features/residential/look/ui/views/look_screen.dart';
 
 abstract class AppRouter {
-  static const kViewHome = '/';
+  static const kViewHome = '/homeView';
   static const kViewOnboarding = '/onboardingView';
   static const kViewSignIn = '/signInView';
   static const kViewSignUp = '/signUpView';
@@ -25,10 +25,7 @@ abstract class AppRouter {
   static final router = GoRouter(
     routes: [
       GoRoute(path: kViewHome, builder: (context, state) => const HomeView()),
-      GoRoute(
-        path: kViewOnboarding,
-        builder: (context, state) => const OnboardingView(),
-      ),
+      GoRoute(path: '/', builder: (context, state) => const OnboardingView()),
       GoRoute(
         path: kViewSignIn,
         builder: (context, state) => const SignInView(),

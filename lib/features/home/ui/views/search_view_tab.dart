@@ -3,8 +3,8 @@ import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/widgets/layout/sticky_header_delegate.dart';
 import 'package:homz/shared/text_fields/custom_text_form_field.dart';
 
-class SearchViewBody extends StatelessWidget {
-  const SearchViewBody({super.key});
+class SearchViewTab extends StatelessWidget {
+  const SearchViewTab({super.key});
 
   @override
   Widget build(BuildContext context) {

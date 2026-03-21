@@ -69,10 +69,3 @@ class CustomNavigationButton extends StatelessWidget {
           );
   }
 }
-
-class NavTab {
-  final PreferredSizeWidget appBar;
-  final Widget body;
-
-  const NavTab({required this.appBar, required this.body});
-}
