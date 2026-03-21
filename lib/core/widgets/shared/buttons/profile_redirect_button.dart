@@ -129,13 +129,14 @@ class ProfileRedirectButton extends StatelessWidget {
     switch (type) {
       case ProfileButtonType.profile:
         return Row(
+          spacing: 16,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CircleAvatar(
               radius: 32,
               // backgroundImage: NetworkImage(profileImageUrl!),
             ),
-            const SizedBox(width: 12),
-            Text(title),
+            Expanded(child: Text(title)),
           ],
         );
 
