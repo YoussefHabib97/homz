@@ -1,5 +1,5 @@
-import 'package:homz/features/chat/ui/models/chat_message_model.dart';
-import 'package:homz/features/chat/ui/models/chat_timeline_item_model.dart';
+import 'package:homz/features/chat/data/models/chat_message_model.dart';
+import 'package:homz/features/chat/data/models/chat_timeline_item_model.dart';
 
 const messageGroupThreshold = Duration(minutes: 5);
 

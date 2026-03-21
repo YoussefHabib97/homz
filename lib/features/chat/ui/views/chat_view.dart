@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:homz/core/utils/mock_messages.dart';
 import 'package:homz/core/widgets/common/default_app_bar.dart';
 import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
+import 'package:homz/features/chat/data/models/chat_timeline_item_model.dart';
 import 'package:homz/features/chat/ui/helpers/chat_utils.dart';
-import 'package:homz/features/chat/ui/models/chat_timeline_item_model.dart';
 import 'package:homz/shared/text_fields/custom_text_form_field.dart';
 
 import '../widgets/bubbles/chat_bubble.dart';

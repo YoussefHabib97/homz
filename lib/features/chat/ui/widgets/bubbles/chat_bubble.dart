@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
-import 'package:homz/features/chat/ui/models/chat_message_model.dart';
+import 'package:homz/features/chat/data/models/chat_message_model.dart';
 import 'package:homz/features/chat/ui/widgets/bubbles/bubble_contents.dart';
 
 class ChatBubble extends StatelessWidget {
