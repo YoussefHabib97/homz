@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_libphonenumber/flutter_libphonenumber.dart';
-import 'package:homz/app.dart';
+import 'package:homz/app/app.dart';
 import 'package:homz/firebase_options.dart';
 
 Future<void> main() async {

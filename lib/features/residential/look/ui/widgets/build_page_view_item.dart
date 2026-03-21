@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/shared/buttons/rounded_button.dart';
 import 'package:homz/features/residential/look/ui/widgets/apartments_details.dart';
+import 'package:homz/shared/buttons/rounded_button.dart';
 
 class BuildPageViewItem extends StatelessWidget {
   final String imagesPath;
