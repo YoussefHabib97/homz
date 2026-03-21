@@ -48,10 +48,15 @@ class FieldConfig {
           },
           prefix: SvgPicture.asset(kIconPassword, fit: BoxFit.scaleDown),
         );
+
+      // TODO: Implement validation
       case FieldType.phone:
-        return const FieldConfig(
+        return FieldConfig(
           hint: 'Phone Number',
           keyboardType: TextInputType.phone,
+          validator: (value) {
+            return null;
+          },
         );
       case FieldType.search:
         return const FieldConfig(

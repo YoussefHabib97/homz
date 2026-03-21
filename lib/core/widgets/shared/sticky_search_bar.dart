@@ -6,11 +6,13 @@ import 'package:homz/shared/text_fields/custom_text_form_field.dart';
 class StickySearchBar extends StatelessWidget {
   final TextEditingController controller;
   final VoidCallback onFilterTap;
+  final bool keepSticky;
 
   const StickySearchBar({
     super.key,
     required this.controller,
     required this.onFilterTap,
+    this.keepSticky = true,
   });
 
   @override
@@ -21,7 +23,7 @@ class StickySearchBar extends StatelessWidget {
         vertical: kPaddingVertical,
       ),
       sliver: SliverPersistentHeader(
-        pinned: true,
+        pinned: keepSticky,
         delegate: StickyHeaderDelegate(
           height: kToolbarHeight,
           child: CustomTextFormField.search(

@@ -5,10 +5,10 @@ import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/widgets/shared/default_app_bar.dart';
 import 'package:homz/features/home/ui/views/messages_view_tab.dart';
-import 'package:homz/features/home/ui/views/search_view_tab.dart';
 import 'package:homz/features/home/ui/widgets/home_tab.dart';
 import 'package:homz/features/profile/ui/views/profile_page_view.dart';
 import 'package:homz/features/saved/ui/views/saved_view.dart';
+import 'package:homz/features/search/ui/search_view_tab.dart';
 
 class NavTabs {
   static List<NavTab> build(BuildContext context) {

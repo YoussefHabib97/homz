@@ -4,12 +4,11 @@ import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
 import 'package:homz/core/widgets/shared/default_app_bar.dart';
 import 'package:homz/features/chat/data/models/chat_timeline_item_model.dart';
 import 'package:homz/features/chat/ui/helpers/chat_utils.dart';
+import 'package:homz/features/chat/ui/widgets/bubbles/chat_bubble.dart';
+import 'package:homz/features/chat/ui/widgets/date_chip.dart';
 import 'package:homz/shared/text_fields/custom_text_form_field.dart';
 
-import '../widgets/bubbles/chat_bubble.dart';
-import '../widgets/date_chip.dart';
-
-//? TODO: Refactor to use Slivers & CustomScrollView
+// TODO: Refactor to use Slivers & CustomScrollView
 
 class ChatView extends StatefulWidget {
   const ChatView({super.key});
@@ -82,7 +81,14 @@ class _ChatViewState extends State<ChatView> {
                 },
               ),
             ),
-            CustomTextFormField.chat(controller: _messageController),
+            CustomTextFormField.chat(
+              controller: _messageController,
+              // attachments: [
+              //   Container(color: Colors.teal),
+              //   Container(color: Colors.brown),
+              //   Container(color: Colors.grey),
+              // ],
+            ),
           ],
         ),
       ),

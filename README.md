@@ -48,11 +48,12 @@ A **modern real-estate style Flutter application** featuring a dark theme, reusa
 
 ---
 
-## 💬 Chat Interface
+## Messages & Chat Interfaces
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/f54e37b8-04a8-4b0f-9f08-5feb1fb6c285" height="450" style="margin:6px;"/>
-</p>
+ <img height="450" alt="Image" src="https://github.com/user-attachments/assets/6db2773b-0e17-4f01-bf32-d7ef7abee854"  />
+  <img height="450" alt="Image" src="https://github.com/user-attachments/assets/eeb92df6-ded0-4b9f-a989-8d3222ff23e2" />
+ <img height="450" alt="Image" src="https://github.com/user-attachments/assets/4d79c7fa-c1f1-4c6e-8c1b-e91a2f65297b" />
 
 ---
 
@@ -87,6 +88,7 @@ Figma-inspired chat experience featuring:
 * Distinct sent and received message bubbles
 * Date separator chips
 * Attachment-aware input field
+
   * When attachments exist, **the hint disappears** and the field becomes **read-only** (typing disabled).
 
 ### 🧭 Home Navigation
@@ -143,8 +145,8 @@ lib/
 │
 ├── features/
 │   ├── authentication/   # Authentication flows and related screens
-│   └── chat/             # Chat UI and messaging components
-│   └── home/             # Home navigation + home UI widgets
+│   ├── chat/             # Chat UI and messaging components
+│   ├── home/             # Home navigation + home UI widgets
 │   └── residential/      # Residential look + details screens
 ```
 

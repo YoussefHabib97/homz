@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
@@ -7,7 +8,7 @@ import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
 enum IconSourceType { material, svg, network }
 
 class IconSource {
-  final IconSourceType type;
+  final IconSourceType? type;
   final IconData? iconData;
   final String? assetPath;
   final String? url;
@@ -28,46 +29,47 @@ class IconSource {
       assetPath = null;
 }
 
-enum ProfileButtonType { normal, locale, withoutSuffix, profile }
+enum ActionTileType { normal, locale, withoutSuffix, profile, search }
 
-class ProfileRedirectButton extends StatelessWidget {
-  final ProfileButtonType type;
+class ActionTile extends StatelessWidget {
+  final ActionTileType type;
   final String title;
   final IconSource? iconSource;
   final String? languageCode;
   final String? profileImageUrl;
-  final VoidCallback? onTap;
+  final VoidCallback? onTap, onSuffixTap;
 
-  const ProfileRedirectButton._({
+  const ActionTile._({
     required this.type,
     required this.title,
     this.iconSource,
     this.languageCode,
     this.profileImageUrl,
     this.onTap,
+    this.onSuffixTap,
   });
 
-  factory ProfileRedirectButton.normal({
+  factory ActionTile.normal({
     required IconSource iconSource,
     required String title,
     VoidCallback? onTap,
   }) {
-    return ProfileRedirectButton._(
-      type: ProfileButtonType.normal,
+    return ActionTile._(
+      type: ActionTileType.normal,
       iconSource: iconSource,
       title: title,
       onTap: onTap,
     );
   }
 
-  factory ProfileRedirectButton.locale({
+  factory ActionTile.locale({
     required IconSource iconSource,
     required String title,
     required String languageCode,
     VoidCallback? onTap,
   }) {
-    return ProfileRedirectButton._(
-      type: ProfileButtonType.locale,
+    return ActionTile._(
+      type: ActionTileType.locale,
       iconSource: iconSource,
       title: title,
       languageCode: languageCode,
@@ -75,29 +77,39 @@ class ProfileRedirectButton extends StatelessWidget {
     );
   }
 
-  factory ProfileRedirectButton.withoutSuffix({
+  factory ActionTile.withoutSuffix({
     required IconSource iconSource,
     required String title,
     VoidCallback? onTap,
   }) {
-    return ProfileRedirectButton._(
+    return ActionTile._(
       iconSource: iconSource,
-      type: ProfileButtonType.withoutSuffix,
+      type: ActionTileType.withoutSuffix,
       title: title,
       onTap: onTap,
     );
   }
 
-  factory ProfileRedirectButton.profile({
+  factory ActionTile.profile({
     required String title,
-    //? TODO: Make profileImageUrl required & not nullable when implementing Firebase storage
+    // TODO: Make profileImageUrl required & not nullable when implementing Firebase storage
     String? profileImageUrl,
     VoidCallback? onTap,
+    VoidCallback? onSuffixTap,
   }) {
-    return ProfileRedirectButton._(
-      type: ProfileButtonType.profile,
+    return ActionTile._(
+      type: ActionTileType.profile,
       title: title,
       profileImageUrl: profileImageUrl,
+      onTap: onTap,
+      onSuffixTap: onSuffixTap,
+    );
+  }
+
+  factory ActionTile.search({required String title, VoidCallback? onTap}) {
+    return ActionTile._(
+      type: ActionTileType.search,
+      title: title,
       onTap: onTap,
     );
   }
@@ -106,7 +118,7 @@ class ProfileRedirectButton extends StatelessWidget {
     if (iconSource == null) return null;
 
     switch (iconSource!.type) {
-      case IconSourceType.material:
+      case IconSourceType.material!:
         return Icon(iconSource!.iconData, size: 24);
       case IconSourceType.svg:
         return SvgPicture.asset(
@@ -127,7 +139,7 @@ class ProfileRedirectButton extends StatelessWidget {
 
   Widget _buildPrefix(BuildContext context) {
     switch (type) {
-      case ProfileButtonType.profile:
+      case ActionTileType.profile:
         return Row(
           spacing: 16,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -153,10 +165,10 @@ class ProfileRedirectButton extends StatelessWidget {
 
   Widget? _buildSuffix(BuildContext context) {
     switch (type) {
-      case ProfileButtonType.withoutSuffix:
+      case ActionTileType.withoutSuffix:
         return null;
 
-      case ProfileButtonType.locale:
+      case ActionTileType.locale:
         return Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -164,9 +176,17 @@ class ProfileRedirectButton extends StatelessWidget {
               languageCode!,
               style: context.bodyMedium.copyWith(color: AppColors.grey[400]),
             ),
-            const VerticalGap(8),
+            HorizontalGap(8),
             const Icon(Icons.chevron_right, size: 32),
           ],
+        );
+      case ActionTileType.search:
+        return IconButton(
+          icon: SvgPicture.asset(
+            kIconCross,
+            colorFilter: ColorFilter.mode(AppColors.grey[50]!, BlendMode.srcIn),
+          ),
+          onPressed: onSuffixTap,
         );
 
       default:
