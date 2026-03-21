@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:homz/app/navigation/unpopulated_nav_tab.dart';
 import 'package:homz/core/constants/constants.dart';
-import 'package:homz/core/widgets/layout/sticky_header_delegate.dart';
-import 'package:homz/shared/text_fields/custom_text_form_field.dart';
+import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
+import 'package:homz/core/widgets/shared/sticky_search_bar.dart';
 
 class SearchViewTab extends StatelessWidget {
   const SearchViewTab({super.key});
@@ -10,34 +11,22 @@ class SearchViewTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverPadding(
-          padding: EdgeInsets.symmetric(
-            horizontal: kPaddingHorizontal,
-            vertical: kPaddingVertical,
-          ),
-          sliver: SliverPersistentHeader(
-            pinned: true,
-            delegate: StickyHeaderDelegate(
-              height: kToolbarHeight,
-              child: CustomTextFormField.search(
-                controller: TextEditingController(),
-                onFilterTap: () {},
+        StickySearchBar(
+          controller: TextEditingController(),
+          onFilterTap: () {},
+        ),
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: AppDefaultPadding(
+            child: Center(
+              child: UnpopulatedNavTabBody(
+                imagePath: kImageSearchIllustration,
+                title: "No results found",
+                subtitle: "Please try again",
               ),
             ),
           ),
         ),
-        // SliverFillRemaining(
-        //   hasScrollBody: false,
-        //   child: AppDefaultPadding(
-        //     child: Center(
-        //       child: UnpopulatedNavTabBody(
-        //         imagePath: kImageSearchIllustration,
-        //         title: "No results found",
-        //         subtitle: "Please try again",
-        //       ),
-        //     ),
-        //   ),
-        // ),
       ],
     );
   }

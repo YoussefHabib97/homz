@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:homz/app/navigation/nav_tab.dart';
-import 'package:homz/app/navigation/unpopulated_nav_tab.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/widgets/shared/default_app_bar.dart';
@@ -9,6 +8,7 @@ import 'package:homz/features/home/ui/views/messages_view_tab.dart';
 import 'package:homz/features/home/ui/views/search_view_tab.dart';
 import 'package:homz/features/home/ui/widgets/home_tab.dart';
 import 'package:homz/features/profile/ui/profile_page_view.dart';
+import 'package:homz/features/saved/ui/views/saved_view.dart';
 
 class NavTabs {
   static List<NavTab> build(BuildContext context) {
@@ -36,11 +36,7 @@ class NavTabs {
       ),
       NavTab(
         appBar: const AppDefaultAppBar(title: Text("Saved"), centerTitle: true),
-        body: const UnpopulatedNavTabBody(
-          imagePath: kImageSavedIllustration,
-          title: "Nothing here!",
-          subtitle: "You don't have any places saved yet",
-        ),
+        body: SavedView(),
       ),
       NavTab(
         appBar: const AppDefaultAppBar(title: Text("Messages")),
