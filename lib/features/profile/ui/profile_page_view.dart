@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:homz/app/router/app_router.dart';
 import 'package:homz/core/constants/constants.dart';
-import 'package:homz/core/utils/app_router.dart';
-import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
-import 'package:homz/core/widgets/shared/buttons/profile_redirect_button.dart';
+import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
+import 'package:homz/shared/buttons/profile_redirect_button.dart';
 
 //? TODO: Implement condition builder guest logic
 

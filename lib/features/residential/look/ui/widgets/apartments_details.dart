@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
-import 'package:homz/core/widgets/shared/buttons/rounded_button.dart';
+import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
 import 'package:homz/features/residential/look/ui/widgets/row_labeled_icon.dart';
+import 'package:homz/shared/buttons/rounded_button.dart';
 
 class ApartmentsDetails extends StatelessWidget {
   const ApartmentsDetails({super.key});

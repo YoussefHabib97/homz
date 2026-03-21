@@ -1,4 +1,4 @@
-import 'package:homz/features/chat/data/models/chat_message_model.dart';
+import 'package:homz/features/chat/ui/models/chat_message_model.dart';
 
 final List<ChatMessage> mockMessages = [
   ChatMessage(
