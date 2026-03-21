@@ -7,10 +7,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Build the list of tabs
     final tabs = NavTabs.build(context);
-
-    // Return the AppShell which handles tab switching, app bar, and bottom nav
     return AppShell(tabs: tabs);
   }
 }

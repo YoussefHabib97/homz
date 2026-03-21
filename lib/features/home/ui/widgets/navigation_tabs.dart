@@ -7,7 +7,7 @@ import 'package:homz/core/widgets/shared/default_app_bar.dart';
 import 'package:homz/features/home/ui/views/messages_view_tab.dart';
 import 'package:homz/features/home/ui/views/search_view_tab.dart';
 import 'package:homz/features/home/ui/widgets/home_tab.dart';
-import 'package:homz/features/profile/ui/profile_page_view.dart';
+import 'package:homz/features/profile/ui/views/profile_page_view.dart';
 import 'package:homz/features/saved/ui/views/saved_view.dart';
 
 class NavTabs {

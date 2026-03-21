@@ -20,7 +20,7 @@ class SavedView extends StatelessWidget {
           child: AppDefaultPadding(
             child: Center(
               child: UnpopulatedNavTabBody(
-                imagePath: kImageSearchIllustration,
+                imagePath: kImageSavedIllustration,
                 title: "Nothing here!",
                 subtitle: "You don't have any places saved yet",
               ),
