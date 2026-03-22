@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homz/core/utils/mock_messages.dart';
-import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
+import 'package:homz/core/widgets/layout/default_app_padding.dart';
 import 'package:homz/core/widgets/shared/default_app_bar.dart';
 import 'package:homz/features/chat/data/models/chat_timeline_item_model.dart';
 import 'package:homz/features/chat/ui/helpers/chat_utils.dart';
@@ -44,12 +44,12 @@ class _ChatViewState extends State<ChatView> {
     final items = buildTimelineItems(mockMessages);
 
     return Scaffold(
-      appBar: AppDefaultAppBar(
+      appBar: DefaultAppBar(
         centerTitle: false,
         actions: [IconButton(onPressed: () {}, icon: CircleAvatar())],
         title: const Text('Name Placeholder'),
       ),
-      body: AppDefaultPadding(
+      body: DefaultPadding(
         child: Column(
           children: [
             Expanded(

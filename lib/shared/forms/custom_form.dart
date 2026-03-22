@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
+import 'package:homz/core/widgets/layout/default_app_padding.dart';
 
 class CustomForm extends StatefulWidget {
   final Widget child;
@@ -17,7 +17,7 @@ class _CustomFormState extends State<CustomForm> {
       child: Form(
         key: widget.formKey,
         autovalidateMode: AutovalidateMode.onUserInteractionIfError,
-        child: AppDefaultPadding(
+        child: DefaultPadding(
           horizontalOffset: 0,
           verticalOffset: 12,
           child: widget.child,

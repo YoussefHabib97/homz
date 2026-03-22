@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:homz/app/router/app_router.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
+import 'package:homz/core/widgets/layout/default_app_padding.dart';
 import 'package:homz/core/widgets/layout/sticky_header_delegate.dart';
 import 'package:homz/shared/text_fields/custom_text_form_field.dart';
 
@@ -37,7 +37,7 @@ class MessagesViewTab extends StatelessWidget {
                 onTap: () {
                   GoRouter.of(context).push(AppRouter.kViewChat);
                 },
-                child: AppDefaultPadding(
+                child: DefaultPadding(
                   child: Row(
                     spacing: 16,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -72,7 +72,7 @@ class MessagesViewTab extends StatelessWidget {
             );
           },
           separatorBuilder: (context, index) {
-            return AppDefaultPadding(
+            return DefaultPadding(
               verticalOffset: 0,
               child: Divider(color: AppColors.grey[700]),
             );

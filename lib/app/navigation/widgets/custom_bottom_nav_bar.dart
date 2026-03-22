@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:homz/app/navigation/widgets/custom_navigation_button.dart';
 import 'package:homz/core/constants/constants.dart';
-import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
+import 'package:homz/core/widgets/layout/default_app_padding.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   final int currentIndex;
@@ -23,7 +23,7 @@ class CustomBottomNavBar extends StatelessWidget {
     ];
 
     return SafeArea(
-      child: AppDefaultPadding(
+      child: DefaultPadding(
         horizontalOffset: 8,
         verticalOffset: 0,
         child: Row(

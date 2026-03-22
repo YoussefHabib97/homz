@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
 import 'package:homz/features/home/ui/widgets/carousel/build_carousel_slider.dart';
 
 class CommercialResidentialShops extends StatefulWidget {
@@ -52,7 +52,7 @@ class _CommercialResidentialShopsState
             ),
           ),
         ),
-        const VerticalGap(20),
+        const Gap(20),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Row(
@@ -84,7 +84,7 @@ class _CommercialResidentialShopsState
             }),
           ),
         ),
-        const VerticalGap(48),
+        const Gap(48),
       ],
     );
   }

@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:homz/core/constants/constants.dart';
 
-enum FieldType { name, password, confirmPassword, phone, search, chat }
+enum FieldType {
+  name,
+  chat,
+  password,
+  confirmPassword,
+  phone,
+  search,
+  searchWithFilter,
+}
 
 class FieldConfig {
   final String hint;
@@ -59,6 +67,11 @@ class FieldConfig {
           },
         );
       case FieldType.search:
+        return const FieldConfig(
+          hint: 'Search...',
+          keyboardType: TextInputType.text,
+        );
+      case FieldType.searchWithFilter:
         return const FieldConfig(
           hint: 'Search...',
           keyboardType: TextInputType.text,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
 import 'package:homz/features/residential/look/ui/widgets/row_labeled_icon.dart';
 import 'package:homz/shared/buttons/rounded_button.dart';
 
@@ -47,7 +47,7 @@ class ApartmentsDetails extends StatelessWidget {
                   iconPath: kIconSendTo,
                   onPressed: () {},
                 ),
-                const VerticalGap(8),
+                const Gap(8),
                 RoundedButton(
                   backgroundColor: AppColors.primary[500]!,
                   iconPath: kIconCall,
@@ -57,7 +57,7 @@ class ApartmentsDetails extends StatelessWidget {
             ),
           ],
         ),
-        const VerticalGap(20),
+        const Gap(20),
         RowLabeledIcon(),
       ],
     );

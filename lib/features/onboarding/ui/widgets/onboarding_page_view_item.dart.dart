@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:homz/app/router/app_router.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
+import 'package:homz/core/widgets/layout/default_app_padding.dart';
 import 'package:homz/features/onboarding/ui/views/onboarding_view.dart';
 import 'package:homz/shared/buttons/change_locale_button.dart';
 import 'package:homz/shared/buttons/custom_button.dart';
@@ -32,7 +33,7 @@ class OnboardingPageViewItem extends StatelessWidget {
         ),
         Align(
           alignment: Alignment.bottomCenter,
-          child: AppDefaultPadding(
+          child: DefaultPadding(
             horizontalOffset: 16,
             verticalOffset: 32,
             child: Column(
@@ -40,7 +41,7 @@ class OnboardingPageViewItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(model.title, style: context.headlineLarge),
-                VerticalGap(4),
+                Gap(4),
                 Row(
                   children: [
                     Text(model.description, style: context.bodyLarge),

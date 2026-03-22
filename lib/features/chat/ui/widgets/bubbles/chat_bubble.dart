@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
 import 'package:homz/features/chat/data/models/chat_message_model.dart';
 import 'package:homz/features/chat/ui/widgets/bubbles/bubble_contents.dart';
 
@@ -46,7 +46,7 @@ class ChatBubble extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const VerticalGap(16),
+            const Gap(16),
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -87,7 +87,7 @@ class ChatBubble extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            const VerticalGap(16),
+            const Gap(16),
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(

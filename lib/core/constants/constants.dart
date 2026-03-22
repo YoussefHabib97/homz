@@ -43,3 +43,4 @@ const String kImageMessagesInboxIllustration =
 const String kImageSearchIllustration = 'assets/images/search-illustration.png';
 final double kToolbarHeightTall = 80.h;
 const String kIconCross = 'assets/icons/cross-icon.svg';
+const String kIconFilter = 'assets/icons/filter-icon.svg';

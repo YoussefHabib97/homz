@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
+import 'package:flutter_gap/flutter_gap.dart';
 import 'package:homz/core/widgets/shared/text_divider.dart';
 import 'package:homz/shared/buttons/custom_button.dart';
 import 'package:homz/shared/buttons/third_party_authentication_buttons.dart';
@@ -51,7 +51,7 @@ class SignUpViewBody extends StatelessWidget {
               formKey.currentState!.validate();
             },
           ),
-          VerticalGap(16),
+          Gap(16),
           TextDivider(text: 'or continue with'),
           ThirdPartyAuthenticationButtons(),
         ],

@@ -53,10 +53,11 @@ class CustomTextFormField extends StatefulWidget {
 
   factory CustomTextFormField.search({
     required TextEditingController controller,
+    bool isWithFilter = false,
     VoidCallback? onFilterTap,
   }) => CustomTextFormField._(
     controller: controller,
-    fieldType: FieldType.search,
+    fieldType: !isWithFilter ? FieldType.search : FieldType.searchWithFilter,
     onFilterTap: onFilterTap,
   );
 
@@ -237,6 +238,22 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           return IconButton(
             icon: SvgPicture.asset(
               kIconSearch,
+              colorFilter: ColorFilter.mode(
+                AppColors.grey[50]!,
+                BlendMode.srcATop,
+              ),
+            ),
+            onPressed: widget.onFilterTap,
+          );
+        },
+      );
+    } else if (widget.fieldType == FieldType.searchWithFilter) {
+      return ListenableBuilder(
+        listenable: widget.controller,
+        builder: (context, _) {
+          return IconButton(
+            icon: SvgPicture.asset(
+              kIconFilter,
               colorFilter: ColorFilter.mode(
                 AppColors.grey[50]!,
                 BlendMode.srcATop,

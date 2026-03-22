@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class AppDefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
+class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget title;
   final List<Widget> actions;
   final bool centerTitle;
   final double toolbarHeight;
   final Color? backgroundColor;
-  const AppDefaultAppBar({
+  const DefaultAppBar({
     super.key,
     required this.title,
     this.backgroundColor,

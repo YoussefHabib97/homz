@@ -27,6 +27,7 @@ class StickySearchBar extends StatelessWidget {
         delegate: StickyHeaderDelegate(
           height: kToolbarHeight,
           child: CustomTextFormField.search(
+            isWithFilter: true,
             controller: controller,
             onFilterTap: onFilterTap,
           ),

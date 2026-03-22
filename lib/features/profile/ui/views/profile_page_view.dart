@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gap/flutter_gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:homz/app/router/app_router.dart';
 import 'package:homz/core/constants/constants.dart';
-import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
 import 'package:homz/shared/buttons/action_tile.dart';
 
 // TODO: Implement condition builder guest logic
@@ -15,7 +15,7 @@ class ProfileViewBody extends StatelessWidget {
     return Column(
       children: [
         ActionTile.profile(title: "Name Placeholder", onTap: () {}),
-        const VerticalGap(8),
+        const Gap(8),
         ActionTile.normal(
           iconSource: IconSource.svg(kIconNotification),
           title: "Notifications",

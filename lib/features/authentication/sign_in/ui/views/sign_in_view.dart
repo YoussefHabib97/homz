@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart';
-import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
+import 'package:homz/core/widgets/layout/default_app_padding.dart';
 import 'package:homz/core/widgets/shared/default_app_bar.dart';
 import 'package:homz/features/authentication/sign_in/ui/widgets/sign_in_view_body.dart';
 import 'package:homz/shared/buttons/change_locale_button.dart';
@@ -21,7 +21,7 @@ class _SignInViewState extends State<SignInView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppDefaultAppBar(
+      appBar: DefaultAppBar(
         title: Text(
           "Welcome to"
           "\n"
@@ -30,7 +30,7 @@ class _SignInViewState extends State<SignInView> {
         ),
         centerTitle: false,
         actions: [
-          AppDefaultPadding(
+          DefaultPadding(
             verticalOffset: 0,
             horizontalOffset: 8,
             child: ChangeLocaleButton(),
@@ -38,7 +38,7 @@ class _SignInViewState extends State<SignInView> {
         ],
         toolbarHeight: kToolbarHeightTall,
       ),
-      body: AppDefaultPadding(
+      body: DefaultPadding(
         child: SignInViewBody(
           formKey: formKey,
           phoneNumberTextEditingController: _phoneNumberTextEditingController,

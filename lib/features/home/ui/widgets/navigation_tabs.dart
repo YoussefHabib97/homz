@@ -14,7 +14,7 @@ class NavTabs {
   static List<NavTab> build(BuildContext context) {
     return [
       NavTab(
-        appBar: AppDefaultAppBar(
+        appBar: DefaultAppBar(
           toolbarHeight: kToolbarHeightTall,
           title: Text("Home", style: context.headlineLarge),
           centerTitle: false,
@@ -28,25 +28,19 @@ class NavTabs {
         body: const HomeBody(),
       ),
       NavTab(
-        appBar: const AppDefaultAppBar(
-          title: Text("Search"),
-          centerTitle: true,
-        ),
+        appBar: const DefaultAppBar(title: Text("Search"), centerTitle: true),
         body: const SearchViewTab(),
       ),
       NavTab(
-        appBar: const AppDefaultAppBar(title: Text("Saved"), centerTitle: true),
+        appBar: const DefaultAppBar(title: Text("Saved"), centerTitle: true),
         body: SavedView(),
       ),
       NavTab(
-        appBar: const AppDefaultAppBar(title: Text("Messages")),
+        appBar: const DefaultAppBar(title: Text("Messages")),
         body: const MessagesViewTab(),
       ),
       NavTab(
-        appBar: const AppDefaultAppBar(
-          title: Text("Profile"),
-          centerTitle: true,
-        ),
+        appBar: const DefaultAppBar(title: Text("Profile"), centerTitle: true),
         body: const ProfileViewBody(),
       ),
     ];

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/layout/app_padding_and_gaps.dart';
 import 'package:homz/features/residential/details/ui/widgets/image_carousel.dart';
 
 class DetailsView extends StatelessWidget {
@@ -36,7 +36,7 @@ class DetailsView extends StatelessWidget {
       ),
       body: Column(
         children: [
-          const VerticalGap(36),
+          const Gap(36),
           Expanded(
             child: Container(
               decoration: BoxDecoration(
@@ -66,7 +66,7 @@ class DetailsView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const VerticalGap(18),
+                  const Gap(18),
                   ImageCarousel(imagesPaths: imagesPath),
                 ],
               ),

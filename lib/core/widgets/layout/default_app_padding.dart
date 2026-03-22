@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homz/core/constants/constants.dart';
 
-class AppDefaultPadding extends StatelessWidget {
+class DefaultPadding extends StatelessWidget {
   final double horizontalOffset, verticalOffset;
   final Widget child;
-  const AppDefaultPadding({
+  const DefaultPadding({
     super.key,
     this.verticalOffset = kPaddingVertical,
     this.horizontalOffset = kPaddingHorizontal,
@@ -21,25 +21,5 @@ class AppDefaultPadding extends StatelessWidget {
       ),
       child: child,
     );
-  }
-}
-
-class HorizontalGap extends StatelessWidget {
-  final double width;
-  const HorizontalGap(this.width, {super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(width: width.w);
-  }
-}
-
-class VerticalGap extends StatelessWidget {
-  final double height;
-  const VerticalGap(this.height, {super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(height: height.h);
   }
 }

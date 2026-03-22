@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import "package:homz/core/widgets/layout/app_padding_and_gaps.dart";
+import "package:homz/core/widgets/layout/default_app_padding.dart";
 import "package:homz/features/authentication/password_actions/forgot_password/widgets/forgot_password_body.dart";
 
 class ForgotPasswordView extends StatefulWidget {
@@ -16,7 +16,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(centerTitle: true, title: Text("Forgot Password")),
-      body: AppDefaultPadding(
+      body: DefaultPadding(
         child: ForgotPasswordBody(
           formKey: formKey,
           textEditingController: _textEditingController,
