@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gap/flutter_gap.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
-import 'package:homz/core/widgets/shared/buttons/rounded_button.dart';
 import 'package:homz/core/widgets/shared/details_widget/section_item.dart';
+import 'package:homz/shared/buttons/rounded_button.dart';
 
 class ApartmentNameAndSections extends StatelessWidget {
   const ApartmentNameAndSections({super.key});
@@ -39,15 +39,14 @@ class ApartmentNameAndSections extends StatelessWidget {
                 '450 Elm Avenue, Nissano, NY 105',
                 style: context.bodySmall.copyWith(color: AppColors.grey[400]),
               ),
-              VerticalGap(16),
-             Row(
-
-              children: [
-              SectionItem(iconPath: kIconBath, label: '4 Bath'),
-              SectionItem(iconPath: kIconBedroom, label: '6 Beds'),
-              SectionItem(iconPath: kIconRoomSize, label: '550m'),
-              ],
-             ),
+              Gap(16),
+              Row(
+                children: [
+                  SectionItem(iconPath: kIconBath, label: '4 Bath'),
+                  SectionItem(iconPath: kIconBedroom, label: '6 Beds'),
+                  SectionItem(iconPath: kIconRoomSize, label: '550m'),
+                ],
+              ),
             ],
           ),
         ),

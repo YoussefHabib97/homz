@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
 import 'package:homz/core/widgets/shared/buttons/custom_button.dart';
 import 'package:homz/core/widgets/shared/call_widget/show_call_bottom_sheet.dart';
 import 'package:homz/core/widgets/shared/details_widget/apartment_name_and_sections.dart';
@@ -12,7 +12,11 @@ import 'package:homz/core/widgets/shared/details_widget/image_carousel.dart';
 class MainDetailsScreen extends StatelessWidget {
   final List<String> imagesPath;
   final String screenNameAppBar;
-  const MainDetailsScreen({super.key, required this.imagesPath, required this.screenNameAppBar});
+  const MainDetailsScreen({
+    super.key,
+    required this.imagesPath,
+    required this.screenNameAppBar,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +37,7 @@ class MainDetailsScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          VerticalGap(70),
+          Gap(70),
           Expanded(
             child: Container(
               decoration: BoxDecoration(
@@ -65,13 +69,13 @@ class MainDetailsScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    VerticalGap(18),
+                    Gap(18),
                     ImageCarousel(imagesPaths: imagesPath),
-                    VerticalGap(16),
+                    Gap(16),
                     ApartmentNameAndSections(),
-                    VerticalGap(27),
+                    Gap(27),
                     DescriptionTextWithReadMore(),
-                    VerticalGap(19),
+                    Gap(19),
                     //Call And Message Buttons
                     Row(
                       children: [
@@ -86,7 +90,7 @@ class MainDetailsScreen extends StatelessWidget {
                             },
                           ),
                         ),
-                        HorizontalGap(25),
+                        Gap(25),
                         Expanded(
                           child: CustomButton(
                             text: "Message",

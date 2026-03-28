@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/shared/buttons/rounded_button.dart';
 import 'package:homz/core/widgets/shared/look_widget/apertments_details.dart';
-
+import 'package:homz/shared/buttons/rounded_button.dart';
 
 class BuildPageViewItem extends StatelessWidget {
   final String imagesPath;
@@ -14,7 +12,6 @@ class BuildPageViewItem extends StatelessWidget {
     super.key,
     required this.imagesPath,
     required this.currentIndex,
-    
   });
 
   @override
@@ -47,7 +44,7 @@ class BuildPageViewItem extends StatelessWidget {
             }),
           ),
         ),
-       
+
         Positioned(
           top: 64.h,
           left: 16.w,
@@ -64,7 +61,7 @@ class BuildPageViewItem extends StatelessWidget {
           left: 16.w,
           right: 16.w,
           child: ApertmentsDetails(),
-          ),
+        ),
       ],
     );
   }

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
-import 'package:homz/core/widgets/shared/buttons/rounded_button.dart';
 import 'package:homz/core/widgets/shared/look_widget/row_labeled_shared_look_icons.dart';
+import 'package:homz/shared/buttons/rounded_button.dart';
 
 class ApertmentsDetails extends StatelessWidget {
   const ApertmentsDetails({super.key});
@@ -20,21 +20,26 @@ class ApertmentsDetails extends StatelessWidget {
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-               mainAxisSize: MainAxisSize.min, 
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   'Araay\nApertments',
-                  style: context.headlineMedium.copyWith(color: AppColors.grey[50]),
+                  style: context.headlineMedium.copyWith(
+                    color: AppColors.grey[50],
+                  ),
                 ),
                 Text(
                   '\$10000,500',
-                  style: context.headlineSmall.copyWith(color: AppColors.grey[50],height: 1.5.h),
+                  style: context.headlineSmall.copyWith(
+                    color: AppColors.grey[50],
+                    height: 1.5.h,
+                  ),
                 ),
               ],
             ),
             const Spacer(),
             Column(
-              mainAxisSize: MainAxisSize.min, 
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 RoundedButton(
@@ -42,7 +47,7 @@ class ApertmentsDetails extends StatelessWidget {
                   iconPath: kIconSendTo,
                   onPressed: () {},
                 ),
-                  VerticalGap(8),
+                Gap(8),
                 RoundedButton(
                   backgroundColor: AppColors.primary[500]!,
                   iconPath: kIconCall,
@@ -52,10 +57,9 @@ class ApertmentsDetails extends StatelessWidget {
             ),
           ],
         ),
-        VerticalGap(20),
-        RowLabeledSharedLookIcons(),  
+        Gap(20),
+        RowLabeledSharedLookIcons(),
       ],
-
     );
   }
 }
