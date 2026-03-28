@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart';
-import 'package:homz/core/widgets/layout/default_app_padding.dart';
-import 'package:homz/core/widgets/shared/default_app_bar.dart';
+import 'package:homz/core/shared/layout/default_app_padding.dart';
+import 'package:homz/core/shared/widgets/buttons/change_locale_button.dart';
+import 'package:homz/core/shared/widgets/default_app_bar.dart';
 import 'package:homz/features/authentication/sign_in/ui/widgets/sign_in_view_body.dart';
-import 'package:homz/shared/buttons/change_locale_button.dart';
 
 class SignInView extends StatefulWidget {
   const SignInView({super.key});

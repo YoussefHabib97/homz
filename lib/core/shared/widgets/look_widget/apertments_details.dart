@@ -3,9 +3,9 @@ import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart';
+import 'package:homz/core/shared/widgets/buttons/rounded_button.dart';
+import 'package:homz/core/shared/widgets/look_widget/row_labeled_shared_look_icons.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/shared/look_widget/row_labeled_shared_look_icons.dart';
-import 'package:homz/shared/buttons/rounded_button.dart';
 
 class ApertmentsDetails extends StatelessWidget {
   const ApertmentsDetails({super.key});

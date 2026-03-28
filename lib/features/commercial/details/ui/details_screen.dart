@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:homz/core/widgets/shared/details_widget/main_details_screen.dart';
+import 'package:homz/core/shared/widgets/details_widget/main_details_screen.dart';
 
 class CommercilDetailsScreen extends StatelessWidget {
-   final  List<String> imagesPath = [
+  final List<String> imagesPath = [
     'assets/images/commercial1.png',
     'assets/images/commercial2.png',
     'assets/images/commercial3.png',
@@ -11,10 +11,13 @@ class CommercilDetailsScreen extends StatelessWidget {
     'assets/images/commercial6.png',
   ];
 
-   CommercilDetailsScreen({super.key});
+  CommercilDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MainDetailsScreen(imagesPath: imagesPath, screenNameAppBar: "Office Details");
+    return MainDetailsScreen(
+      imagesPath: imagesPath,
+      screenNameAppBar: "Office Details",
+    );
   }
 }

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:homz/core/widgets/shared/look_widget/build_page_view_item.dart';
+import 'package:homz/core/shared/widgets/look_widget/build_page_view_item.dart';
 
 class ShopLookScreen extends StatefulWidget {
   const ShopLookScreen({super.key});
-  
 
   @override
   State<ShopLookScreen> createState() => _LookScreenState();
@@ -25,7 +24,10 @@ class _LookScreenState extends State<ShopLookScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView.builder(
-        itemBuilder:   (context, index)=> BuildPageViewItem(imagesPath: imagesPath[index], currentIndex: currentIndex,),
+        itemBuilder: (context, index) => BuildPageViewItem(
+          imagesPath: imagesPath[index],
+          currentIndex: currentIndex,
+        ),
         controller: pageController,
         itemCount: 6,
         onPageChanged: (index) {
@@ -33,14 +35,16 @@ class _LookScreenState extends State<ShopLookScreen> {
             currentIndex = index;
           });
         },
-        ),
+      ),
     );
   }
+
   @override
   void dispose() {
     pageController.dispose();
     super.dispose();
   }
+
   @override
   void initState() {
     pageController = PageController();

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:homz/core/constants/constants.dart';
+import 'package:homz/core/shared/widgets/models/field_config_model.dart';
+import 'package:homz/core/shared/widgets/text_fields/base_text_form_field.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/theme/chat_text_theme.dart';
-import 'package:homz/shared/models/field_config_model.dart';
-import 'package:homz/shared/text_fields/base_text_form_field.dart';
 
 class CustomTextFormField extends StatefulWidget {
   final TextEditingController controller;

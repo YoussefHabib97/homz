@@ -4,8 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart';
+import 'package:homz/core/shared/widgets/buttons/custom_button.dart';
 import 'package:homz/core/utils/app_router.dart';
-import 'package:homz/shared/buttons/custom_button.dart';
 
 class SuccessAlertDialog extends StatelessWidget {
   const SuccessAlertDialog({super.key});

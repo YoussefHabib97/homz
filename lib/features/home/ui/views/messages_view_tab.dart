@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:homz/core/constants/constants.dart';
+import 'package:homz/core/shared/layout/default_app_padding.dart';
+import 'package:homz/core/shared/layout/sticky_header_delegate.dart';
+import 'package:homz/core/shared/widgets/text_fields/custom_text_form_field.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/utils/app_router.dart';
-import 'package:homz/core/widgets/layout/default_app_padding.dart';
-import 'package:homz/core/widgets/layout/sticky_header_delegate.dart';
-import 'package:homz/shared/text_fields/custom_text_form_field.dart';
 
 class MessagesViewTab extends StatelessWidget {
   const MessagesViewTab({super.key});

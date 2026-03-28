@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homz/core/widgets/layout/default_app_padding.dart';
+import 'package:homz/core/shared/layout/default_app_padding.dart';
 import 'package:homz/features/authentication/password_actions/password_verification/widgets/password_verification_body.dart';
 
 class PasswordVerificationView extends StatefulWidget {

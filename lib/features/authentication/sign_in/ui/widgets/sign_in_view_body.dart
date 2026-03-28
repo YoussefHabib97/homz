@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:homz/core/extensions/extensions.dart';
+import 'package:homz/core/shared/widgets/buttons/custom_button.dart';
+import 'package:homz/core/shared/widgets/buttons/text_with_call_to_action_button.dart';
+import 'package:homz/core/shared/widgets/buttons/third_party_authentication_buttons.dart';
+import 'package:homz/core/shared/widgets/forms/custom_form.dart';
+import 'package:homz/core/shared/widgets/text_divider.dart';
+import 'package:homz/core/shared/widgets/text_fields/custom_text_form_field.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/utils/app_router.dart';
-import 'package:homz/core/widgets/shared/text_divider.dart';
-import 'package:homz/shared/buttons/custom_button.dart';
-import 'package:homz/shared/buttons/text_with_call_to_action_button.dart';
-import 'package:homz/shared/buttons/third_party_authentication_buttons.dart';
-import 'package:homz/shared/forms/custom_form.dart';
-import 'package:homz/shared/text_fields/custom_text_form_field.dart';
 
 class SignInViewBody extends StatelessWidget {
   final GlobalKey<FormState> formKey;

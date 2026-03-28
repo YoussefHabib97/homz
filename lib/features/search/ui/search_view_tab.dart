@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:homz/core/widgets/shared/sticky_search_bar.dart';
-import 'package:homz/shared/buttons/action_tile.dart';
+import 'package:homz/core/shared/widgets/buttons/action_tile.dart';
+import 'package:homz/core/shared/widgets/sticky_search_bar.dart';
 
 class SearchViewTab extends StatelessWidget {
   const SearchViewTab({super.key});

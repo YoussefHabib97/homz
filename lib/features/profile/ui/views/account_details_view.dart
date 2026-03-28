@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:homz/core/widgets/layout/default_app_padding.dart';
-import 'package:homz/core/widgets/shared/default_app_bar.dart';
-import 'package:homz/shared/buttons/custom_button.dart';
-import 'package:homz/shared/text_fields/custom_text_form_field.dart';
+import 'package:homz/core/shared/layout/default_app_padding.dart';
+import 'package:homz/core/shared/widgets/buttons/custom_button.dart';
+import 'package:homz/core/shared/widgets/default_app_bar.dart';
+import 'package:homz/core/shared/widgets/text_fields/custom_text_form_field.dart';
 
 class AccountDetailsView extends StatelessWidget {
   const AccountDetailsView({super.key});

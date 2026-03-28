@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:homz/core/constants/constants.dart';
-import 'package:homz/core/widgets/layout/sticky_header_delegate.dart';
-import 'package:homz/shared/text_fields/custom_text_form_field.dart';
+import 'package:homz/core/shared/layout/sticky_header_delegate.dart';
+import 'package:homz/core/shared/widgets/text_fields/custom_text_form_field.dart';
 
 class StickySearchBar extends StatelessWidget {
   final TextEditingController controller;

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:homz/core/shared/layout/default_app_padding.dart';
+import 'package:homz/core/shared/widgets/default_app_bar.dart';
+import 'package:homz/core/shared/widgets/text_fields/custom_text_form_field.dart';
 import 'package:homz/core/utils/mock_messages.dart';
-import 'package:homz/core/widgets/layout/default_app_padding.dart';
-import 'package:homz/core/widgets/shared/default_app_bar.dart';
 import 'package:homz/features/chat/data/models/chat_timeline_item_model.dart';
 import 'package:homz/features/chat/ui/helpers/chat_utils.dart';
 import 'package:homz/features/chat/ui/widgets/bubbles/chat_bubble.dart';
 import 'package:homz/features/chat/ui/widgets/date_chip.dart';
-import 'package:homz/shared/text_fields/custom_text_form_field.dart';
 
 // TODO: Refactor to use Slivers & CustomScrollView
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homz/core/widgets/shared/details_widget/main_details_screen.dart';
+import 'package:homz/core/shared/widgets/details_widget/main_details_screen.dart';
 
 class DetailsScreen extends StatelessWidget {
   DetailsScreen({super.key});

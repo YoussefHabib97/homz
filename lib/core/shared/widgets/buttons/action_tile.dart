@@ -3,8 +3,8 @@ import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart';
+import 'package:homz/core/shared/layout/default_app_padding.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/layout/default_app_padding.dart';
 
 enum IconSourceType { material, svg, network }
 

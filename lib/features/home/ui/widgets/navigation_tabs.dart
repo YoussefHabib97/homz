@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:homz/app/navigation/nav_tab.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart';
-import 'package:homz/core/widgets/shared/default_app_bar.dart';
+import 'package:homz/core/shared/widgets/default_app_bar.dart';
 import 'package:homz/features/home/ui/views/messages_view_tab.dart';
 import 'package:homz/features/home/ui/widgets/home_tab.dart';
 import 'package:homz/features/profile/ui/views/profile_page_view.dart';

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gap/flutter_gap.dart';
-import 'package:homz/core/widgets/shared/text_divider.dart';
-import 'package:homz/shared/buttons/custom_button.dart';
-import 'package:homz/shared/buttons/third_party_authentication_buttons.dart';
-import 'package:homz/shared/forms/custom_form.dart';
-import 'package:homz/shared/text_fields/custom_text_form_field.dart';
+import 'package:homz/core/shared/widgets/buttons/custom_button.dart';
+import 'package:homz/core/shared/widgets/buttons/third_party_authentication_buttons.dart';
+import 'package:homz/core/shared/widgets/forms/custom_form.dart';
+import 'package:homz/core/shared/widgets/text_divider.dart';
+import 'package:homz/core/shared/widgets/text_fields/custom_text_form_field.dart';
 
 class SignUpViewBody extends StatelessWidget {
   final GlobalKey<FormState> formKey;

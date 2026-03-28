@@ -3,10 +3,10 @@ import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:homz/core/constants/constants.dart';
+import 'package:homz/core/shared/widgets/buttons/custom_button.dart';
+import 'package:homz/core/shared/widgets/buttons/rounded_button.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/utils/app_router.dart';
-import 'package:homz/shared/buttons/custom_button.dart';
-import 'package:homz/shared/buttons/rounded_button.dart';
 
 class ButtonsOverlayImage extends StatelessWidget {
   final int widgetIndex;
@@ -57,12 +57,11 @@ class ButtonsOverlayImage extends StatelessWidget {
                   onPressed: () {
                     if (widgetIndex == 0) {
                       GoRouter.of(context).push(AppRouter.kViewCommercialLook);
-                    }else if(widgetIndex == 1){
+                    } else if (widgetIndex == 1) {
                       GoRouter.of(context).push(AppRouter.kViewResidentialLook);
-                    }else{
+                    } else {
                       GoRouter.of(context).push(AppRouter.kViewShopsLook);
                     }
-                    
                   },
                 ),
               ),
@@ -72,13 +71,15 @@ class ButtonsOverlayImage extends StatelessWidget {
                 backgroundColor: AppColors.primary[500]!,
                 iconPath: kIconShare,
                 onPressed: () {
-                   if (widgetIndex == 0) {
-                      GoRouter.of(context).push(AppRouter.kViewCommercialDetails);
-                    }else if(widgetIndex == 1){
-                      GoRouter.of(context).push(AppRouter.kViewResidentialDetails);
-                    }else{
-                      GoRouter.of(context).push(AppRouter.kViewShopsDetails);
-                    }
+                  if (widgetIndex == 0) {
+                    GoRouter.of(context).push(AppRouter.kViewCommercialDetails);
+                  } else if (widgetIndex == 1) {
+                    GoRouter.of(
+                      context,
+                    ).push(AppRouter.kViewResidentialDetails);
+                  } else {
+                    GoRouter.of(context).push(AppRouter.kViewShopsDetails);
+                  }
                 },
               ),
             ],

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homz/core/extensions/extensions.dart';
+import 'package:homz/core/shared/widgets/buttons/custom_button.dart';
+import 'package:homz/core/shared/widgets/call_widget/show_call_bottom_sheet.dart';
+import 'package:homz/core/shared/widgets/details_widget/apartment_name_and_sections.dart';
+import 'package:homz/core/shared/widgets/details_widget/description_text_with_read_more.dart';
+import 'package:homz/core/shared/widgets/details_widget/image_carousel.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/shared/buttons/custom_button.dart';
-import 'package:homz/core/widgets/shared/call_widget/show_call_bottom_sheet.dart';
-import 'package:homz/core/widgets/shared/details_widget/apartment_name_and_sections.dart';
-import 'package:homz/core/widgets/shared/details_widget/description_text_with_read_more.dart';
-import 'package:homz/core/widgets/shared/details_widget/image_carousel.dart';
 
 class MainDetailsScreen extends StatelessWidget {
   final List<String> imagesPath;
@@ -80,7 +80,7 @@ class MainDetailsScreen extends StatelessWidget {
                     Row(
                       children: [
                         Expanded(
-                          child: CustomButton(
+                          child: CustomButton.primary(
                             text: "Call",
                             onPressed: () {
                               CallActionHelper.showCallBottomSheet(
@@ -92,7 +92,7 @@ class MainDetailsScreen extends StatelessWidget {
                         ),
                         Gap(25),
                         Expanded(
-                          child: CustomButton(
+                          child: CustomButton.primary(
                             text: "Message",
                             onPressed: () {},
                           ),

@@ -3,12 +3,12 @@ import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:homz/core/extensions/extensions.dart';
+import 'package:homz/core/shared/layout/default_app_padding.dart';
+import 'package:homz/core/shared/widgets/buttons/change_locale_button.dart';
+import 'package:homz/core/shared/widgets/buttons/custom_button.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/utils/app_router.dart';
-import 'package:homz/core/widgets/layout/default_app_padding.dart';
 import 'package:homz/features/onboarding/ui/views/onboarding_view.dart';
-import 'package:homz/shared/buttons/change_locale_button.dart';
-import 'package:homz/shared/buttons/custom_button.dart';
 
 class OnboardingPageViewItem extends StatelessWidget {
   final OnboardingPageModel model;

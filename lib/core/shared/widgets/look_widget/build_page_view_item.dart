@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:homz/core/constants/constants.dart';
+import 'package:homz/core/shared/widgets/buttons/rounded_button.dart';
+import 'package:homz/core/shared/widgets/look_widget/apertments_details.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/shared/look_widget/apertments_details.dart';
-import 'package:homz/shared/buttons/rounded_button.dart';
 
 class BuildPageViewItem extends StatelessWidget {
   final String imagesPath;

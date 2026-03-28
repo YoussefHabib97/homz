@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:homz/core/extensions/extensions.dart';
+import 'package:homz/core/shared/widgets/buttons/custom_button.dart';
+import 'package:homz/core/shared/widgets/forms/custom_form.dart';
+import 'package:homz/core/shared/widgets/text_fields/custom_text_form_field.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/features/authentication/password_actions/reset_password/widgets/success_alert_dialog.dart';
-import 'package:homz/shared/buttons/custom_button.dart';
-import 'package:homz/shared/forms/custom_form.dart';
-import 'package:homz/shared/text_fields/custom_text_form_field.dart';
 
 class ResetPasswordBody extends StatelessWidget {
   final GlobalKey<FormState> formKey;

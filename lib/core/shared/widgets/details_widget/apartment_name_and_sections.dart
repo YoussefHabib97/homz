@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gap/flutter_gap.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart';
+import 'package:homz/core/shared/widgets/buttons/rounded_button.dart';
+import 'package:homz/core/shared/widgets/details_widget/section_item.dart';
 import 'package:homz/core/theme/app_colors.dart';
-import 'package:homz/core/widgets/shared/details_widget/section_item.dart';
-import 'package:homz/shared/buttons/rounded_button.dart';
 
 class ApartmentNameAndSections extends StatelessWidget {
   const ApartmentNameAndSections({super.key});
