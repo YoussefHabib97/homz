@@ -5,8 +5,14 @@ import 'package:flutter_svg/svg.dart';
 class RoundedButton extends StatelessWidget {
   final Color backgroundColor;
   final String iconPath;
+  final Color? iconColor;
   final void Function() onPressed;
-  const RoundedButton({super.key, required this.backgroundColor, required this.iconPath, required this.onPressed});
+  const RoundedButton({
+    super.key,
+    required this.backgroundColor,
+    required this.iconPath,
+    required this.onPressed, this.iconColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +23,13 @@ class RoundedButton extends StatelessWidget {
       child: InkWell(
         onTap: onPressed,
         child: Padding(
-          padding:  EdgeInsets.all(8.h),
-          child: SvgPicture.asset(iconPath, height: 24.h, width: 24.w,),
+          padding: EdgeInsets.all(8.h),
+          child: SvgPicture.asset(
+            iconPath,
+            height: 24.h,
+            width: 24.w,
+            color: iconColor,
+          ),
         ),
       ),
     );

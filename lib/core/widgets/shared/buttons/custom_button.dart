@@ -47,6 +47,8 @@ class CustomButton extends StatelessWidget {
     super.key,
     required String this.text,
     required this.onPressed,
+    this.horizontalPadding = 16,
+    this.verticalPadding = 16,
   }) : icon = null,
        type = ButtonType.secondary;
 

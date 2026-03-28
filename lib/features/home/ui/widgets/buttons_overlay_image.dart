@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:homz/core/constants/constants.dart';
-import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/utils/app_router.dart';
 import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
@@ -10,7 +9,8 @@ import 'package:homz/core/widgets/shared/buttons/custom_button.dart';
 import 'package:homz/core/widgets/shared/buttons/rounded_button.dart';
 
 class ButtonsOverlayImage extends StatelessWidget {
-  const ButtonsOverlayImage({super.key});
+  final int widgetIndex;
+  const ButtonsOverlayImage({super.key, required this.widgetIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,14 @@ class ButtonsOverlayImage extends StatelessWidget {
                   verticalPadding: 8.h,
                   horizontalPadding: 25.w,
                   onPressed: () {
-                    GoRouter.of(context).push(AppRouter.kViewResidentialLook);
+                    if (widgetIndex == 0) {
+                      GoRouter.of(context).push(AppRouter.kViewCommercialLook);
+                    }else if(widgetIndex == 1){
+                      GoRouter.of(context).push(AppRouter.kViewResidentialLook);
+                    }else{
+                      GoRouter.of(context).push(AppRouter.kViewShopsLook);
+                    }
+                    
                   },
                 ),
               ),
@@ -65,7 +72,13 @@ class ButtonsOverlayImage extends StatelessWidget {
                 backgroundColor: AppColors.primary[500]!,
                 iconPath: kIconShare,
                 onPressed: () {
-                  GoRouter.of(context).push(AppRouter.kViewResidentialDetails);
+                   if (widgetIndex == 0) {
+                      GoRouter.of(context).push(AppRouter.kViewCommercialDetails);
+                    }else if(widgetIndex == 1){
+                      GoRouter.of(context).push(AppRouter.kViewResidentialDetails);
+                    }else{
+                      GoRouter.of(context).push(AppRouter.kViewShopsDetails);
+                    }
                 },
               ),
             ],

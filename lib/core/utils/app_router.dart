@@ -5,11 +5,14 @@ import 'package:homz/features/authentication/password_actions/presentation/views
 import 'package:homz/features/authentication/sign_in/presentation/views/sign_in_view.dart';
 import 'package:homz/features/authentication/sign_up/presentation/views/sign_up_view.dart';
 import 'package:homz/features/chat/presentation/views/chat_view.dart';
-import 'package:homz/features/home/presentation/views/home_view.dart';
-
+import 'package:homz/features/commercial/details/ui/details_screen.dart';
+import 'package:homz/features/commercial/look/ui/look_screen.dart';
+import 'package:homz/features/home/ui/home_view.dart';
 import 'package:homz/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:homz/features/residential/details/ui/details_screen.dart';
 import 'package:homz/features/residential/look/ui/look_screen.dart';
+import 'package:homz/features/shop/details/ui/details_screen.dart';
+import 'package:homz/features/shop/look/ui/shop_look_screen.dart';
 
 abstract class AppRouter {
   static const kViewHome = '/homeView';
@@ -20,7 +23,12 @@ abstract class AppRouter {
   static const kViewResetPassword = '/resetPasswordView';
   static const kViewPasswordVerification = '/passwordVerificationView';
   static const kViewResidentialLook = '/residentialLookScreen';
+  static const kViewCommercialLook = '/commercialLookScreen';
+  static const kViewShopsLook = '/shopsLookScreen';
+  
   static const kViewResidentialDetails = '/residentialDetailsScreen';
+  static const kViewCommercialDetails = '/commercialDetailsScreen';
+  static const kViewShopsDetails = '/shopsDetailsScreen';
   static const kViewChat = '/chatView';
 
   static final router = GoRouter(
@@ -56,8 +64,24 @@ abstract class AppRouter {
         builder: (context, state) => const LookScreen(),
       ),
       GoRoute(
+        path: kViewCommercialLook,
+        builder: (context, state) => const CommercialLookScreen(),
+      ),
+      GoRoute(
+        path: kViewShopsLook,
+        builder: (context, state) =>const ShopLookScreen(),
+      ),
+      GoRoute(
         path: kViewResidentialDetails,
         builder: (context, state) =>  DetailsScreen(),
+      ),
+      GoRoute(
+        path: kViewCommercialDetails,
+        builder: (context, state) =>  CommercilDetailsScreen(),
+      ),
+      GoRoute(
+        path: kViewShopsDetails,
+        builder: (context, state) =>  ShopDetailsScreen(),
       ),
     ],
   );

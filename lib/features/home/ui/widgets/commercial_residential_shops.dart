@@ -49,7 +49,7 @@ class _CommercialResidentialShopsState
             child: IndexedStack(
             index: _selectedIndex,
             children: List.generate(_categoryImages.length, (index) {
-              return BuildCarouselSlider(imagePaths: _categoryImages[index]);
+              return BuildCarouselSlider(imagePaths: _categoryImages[index], widgetIndex: index,);
             }),
                   ),
           ),

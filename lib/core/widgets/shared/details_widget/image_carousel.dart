@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:homz/core/constants/constants.dart';
+import 'package:homz/core/theme/app_colors.dart';
+import 'package:homz/core/widgets/shared/buttons/rounded_button.dart' show RoundedButton;
 
 class ImageCarousel extends StatefulWidget {
   final List<String> imagesPaths;
@@ -73,7 +76,6 @@ class _ImageCarouselState extends State<ImageCarousel> {
                   height: 6.w,
                   width: 6.w,
                   decoration: BoxDecoration(
-                  
                     color: isActive ? Colors.white : Colors.white.withOpacity(0.4),
                     shape: BoxShape.circle,
                   ),
@@ -85,14 +87,8 @@ class _ImageCarouselState extends State<ImageCarousel> {
           Positioned(
             bottom: 16.h,
             right: 16.w,
-            child: Container(
-              padding: EdgeInsets.all(12.w),
-              decoration: const BoxDecoration(
-                color: Color(0xFF4A6DA7), // Your primary blue
-                shape: BoxShape.circle,
-              ),
-              child: Icon(Icons.near_me_outlined, color: Colors.white, size: 22.w),
-            ),
+            child: RoundedButton(backgroundColor: AppColors.primary[500]!, iconPath: kIconSendTo, onPressed: (){}),
+
           )
         ],
       ),

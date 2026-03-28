@@ -6,8 +6,8 @@ import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 
-class RowLabeledIcon extends StatelessWidget {
-  const RowLabeledIcon({super.key});
+class RowLabeledSharedLookIcons extends StatelessWidget {
+  const RowLabeledSharedLookIcons({super.key});
 
   @override
   Widget build(BuildContext context) {

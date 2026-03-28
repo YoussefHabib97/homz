@@ -5,7 +5,7 @@ import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
 import 'package:homz/core/widgets/shared/app_padding_and_gaps.dart';
 import 'package:homz/core/widgets/shared/buttons/rounded_button.dart';
-import 'package:homz/features/residential/look/ui/widgets/row_labeled_icon.dart';
+import 'package:homz/core/widgets/shared/look_widget/row_labeled_shared_look_icons.dart';
 
 class ApertmentsDetails extends StatelessWidget {
   const ApertmentsDetails({super.key});
@@ -53,7 +53,7 @@ class ApertmentsDetails extends StatelessWidget {
           ],
         ),
         VerticalGap(20),
-        RowLabeledIcon(),  
+        RowLabeledSharedLookIcons(),  
       ],
 
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:homz/features/chat/presentation/views/chat_view.dart';
 import 'package:homz/features/home/ui/widgets/custom_bottom_nav_bar.dart';
 import 'package:homz/features/home/ui/widgets/home_body.dart';
 
@@ -17,7 +18,7 @@ class _HomeViewState extends State<HomeView> {
     HomeBody(),
     Center(child: Text("Search Body")),
     Center(child: Text("Saved Body")),
-    Center(child: Text("Messages Body")),
+    ChatView(),
     Center(child: Text("Profile Body")),
   ];
 

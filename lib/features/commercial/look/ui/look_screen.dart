@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:homz/core/widgets/shared/look_widget/build_page_view_item.dart';
 
-class LookScreen extends StatefulWidget {
-  const LookScreen({super.key});
+class CommercialLookScreen extends StatefulWidget {
+  const CommercialLookScreen({super.key});
   
 
   @override
-  State<LookScreen> createState() => _LookScreenState();
+  State<CommercialLookScreen> createState() => _LookScreenState();
 }
 
-class _LookScreenState extends State<LookScreen> {
+class _LookScreenState extends State<CommercialLookScreen> {
   late final PageController pageController;
   int currentIndex = 0;
   //will reblace with api data only for testing
   List<String> imagesPath = [
-    'assets/images/res1.png',
-    'assets/images/res2.png',
-    'assets/images/res3.png',
-    'assets/images/res4.png',
-    'assets/images/res5.png',
-    'assets/images/res6.png',
+    'assets/images/commercial1.png',
+    'assets/images/commercial2.png',
+    'assets/images/commercial3.png',
+    'assets/images/commercial4.png',
+    'assets/images/commercial5.png',
+    'assets/images/commercial6.png',
   ];
   @override
   Widget build(BuildContext context) {
