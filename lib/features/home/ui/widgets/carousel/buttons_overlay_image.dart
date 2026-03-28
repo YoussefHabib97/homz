@@ -9,7 +9,8 @@ import 'package:homz/shared/buttons/custom_button.dart';
 import 'package:homz/shared/buttons/rounded_button.dart';
 
 class ButtonsOverlayImage extends StatelessWidget {
-  const ButtonsOverlayImage({super.key});
+  final int widgetIndex;
+  const ButtonsOverlayImage({super.key, required this.widgetIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +55,14 @@ class ButtonsOverlayImage extends StatelessWidget {
                   verticalPadding: 8.h,
                   horizontalPadding: 25.w,
                   onPressed: () {
-                    GoRouter.of(context).push(AppRouter.kViewResidentialLook);
+                    if (widgetIndex == 0) {
+                      GoRouter.of(context).push(AppRouter.kViewCommercialLook);
+                    }else if(widgetIndex == 1){
+                      GoRouter.of(context).push(AppRouter.kViewResidentialLook);
+                    }else{
+                      GoRouter.of(context).push(AppRouter.kViewShopsLook);
+                    }
+                    
                   },
                 ),
               ),
@@ -64,7 +72,13 @@ class ButtonsOverlayImage extends StatelessWidget {
                 backgroundColor: AppColors.primary[500]!,
                 iconPath: kIconShare,
                 onPressed: () {
-                  GoRouter.of(context).push(AppRouter.kViewResidentialDetails);
+                   if (widgetIndex == 0) {
+                      GoRouter.of(context).push(AppRouter.kViewCommercialDetails);
+                    }else if(widgetIndex == 1){
+                      GoRouter.of(context).push(AppRouter.kViewResidentialDetails);
+                    }else{
+                      GoRouter.of(context).push(AppRouter.kViewShopsDetails);
+                    }
                 },
               ),
             ],

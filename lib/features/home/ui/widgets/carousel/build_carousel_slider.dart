@@ -4,16 +4,21 @@ import 'package:homz/features/home/ui/widgets/carousel/buttons_overlay_image.dar
 
 class BuildCarouselSlider extends StatefulWidget {
   final List<String> imagePaths;
-  const BuildCarouselSlider({super.key, required this.imagePaths});
+
+  /// 0 = Commercial, 1 = Residential, 2 = Shops
+  final int widgetIndex;
+  const BuildCarouselSlider({
+    super.key,
+    required this.imagePaths,
+    required this.widgetIndex,
+  });
 
   @override
   State<BuildCarouselSlider> createState() => _BuildCarouselSliderState();
 }
 
 class _BuildCarouselSliderState extends State<BuildCarouselSlider> {
-  // Track the currently centered image
   int _currentIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -56,7 +61,9 @@ class _BuildCarouselSliderState extends State<BuildCarouselSlider> {
                         AnimatedOpacity(
                           opacity: isActive ? 1.0 : 0.0,
                           duration: const Duration(milliseconds: 300),
-                          child: ButtonsOverlayImage(),
+                          child: ButtonsOverlayImage(
+                            widgetIndex: widget.widgetIndex,
+                          ),
                         ),
                       ],
                     ),

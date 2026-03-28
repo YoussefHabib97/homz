@@ -44,3 +44,6 @@ const String kImageSearchIllustration = 'assets/images/search-illustration.png';
 final double kToolbarHeightTall = 80.h;
 const String kIconCross = 'assets/icons/cross-icon.svg';
 const String kIconFilter = 'assets/icons/filter-icon.svg';
+const String kIconBedroom = 'assets/icons/bedroom_icon.svg';
+const String kIconBath = 'assets/icons/bath_icon.svg';
+const String kIconRoomSize = 'assets/icons/room_size_icon.svg';
