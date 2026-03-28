@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+import 'package:homz/core/widgets/layout/default_app_padding.dart';
+import 'package:homz/core/widgets/shared/default_app_bar.dart';
+import 'package:homz/shared/buttons/custom_button.dart';
+import 'package:homz/shared/text_fields/custom_text_form_field.dart';
+
+class AccountDetailsView extends StatelessWidget {
+  const AccountDetailsView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: SafeArea(
+        child: DefaultPadding(
+          child: CustomButton.delete(text: "Delete Account", onPressed: () {}),
+        ),
+      ),
+      appBar: DefaultAppBar(title: Text("Account Details")),
+      body: DefaultPadding(
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              spacing: 32,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Stack(
+                  alignment: Alignment.bottomRight,
+                  children: [
+                    CircleAvatar(radius: 64),
+                    IconButton.filledTonal(
+                      onPressed: () {
+                        // TODO: Implement change profile pic logic
+                      },
+                      icon: Icon(Icons.edit),
+                    ),
+                  ],
+                ),
+                CustomTextFormField.name(controller: TextEditingController()),
+                CustomTextFormField.phone(controller: TextEditingController()),
+                CustomButton.primary(text: "Save", onPressed: () {}),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

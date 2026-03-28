@@ -67,13 +67,15 @@ class FieldConfig {
           },
         );
       case FieldType.search:
-        return const FieldConfig(
-          hint: 'Search...',
+        return FieldConfig(
+          prefix: SvgPicture.asset(kIconSearch, fit: BoxFit.scaleDown),
+          hint: 'Search',
           keyboardType: TextInputType.text,
         );
       case FieldType.searchWithFilter:
-        return const FieldConfig(
-          hint: 'Search...',
+        return FieldConfig(
+          prefix: SvgPicture.asset(kIconSearch, fit: BoxFit.scaleDown),
+          hint: 'Search',
           keyboardType: TextInputType.text,
         );
       case FieldType.chat:

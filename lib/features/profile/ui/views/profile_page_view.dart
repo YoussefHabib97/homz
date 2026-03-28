@@ -14,7 +14,12 @@ class ProfileViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ActionTile.profile(title: "Name Placeholder", onTap: () {}),
+        ActionTile.profile(
+          title: "Name Placeholder",
+          onTap: () {
+            GoRouter.of(context).push(AppRouter.kViewAccountDetails);
+          },
+        ),
         const Gap(8),
         ActionTile.normal(
           iconSource: IconSource.svg(kIconNotification),
@@ -51,7 +56,7 @@ class ProfileViewBody extends StatelessWidget {
           iconSource: IconSource.svg(kIconLogin),
           title: "Sign Out",
           onTap: () {
-            GoRouter.of(context).replace(AppRouter.kViewSignIn);
+            GoRouter.of(context).go(AppRouter.kViewSignIn);
           },
         ),
       ],

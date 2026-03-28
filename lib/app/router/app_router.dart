@@ -7,6 +7,7 @@ import 'package:homz/features/authentication/sign_up/ui/views/sign_up_view.dart'
 import 'package:homz/features/chat/ui/views/chat_view.dart';
 import 'package:homz/features/home/ui/views/home_view.dart';
 import 'package:homz/features/onboarding/ui/views/onboarding_view.dart';
+import 'package:homz/features/profile/ui/views/account_details_view.dart';
 import 'package:homz/features/residential/details/ui/views/details_view.dart';
 import 'package:homz/features/residential/look/ui/views/look_screen.dart';
 
@@ -21,12 +22,13 @@ abstract class AppRouter {
   static const kViewResidentialLook = '/residentialLookScreen';
   static const kViewResidentialDetails = '/residentialDetailsScreen';
   static const kViewChat = '/chatView';
+  static const kViewAccountDetails = '/accountDetailsView';
 
   static final router = GoRouter(
     routes: [
-      GoRoute(path: kViewHome, builder: (context, state) => const HomeView()),
+      GoRoute(path: '/', builder: (context, state) => const HomeView()),
       GoRoute(
-        path: '/',
+        path: kViewOnboarding,
         // path: kViewOnboarding,
         builder: (context, state) => const OnboardingView(),
       ),
@@ -58,6 +60,10 @@ abstract class AppRouter {
       GoRoute(
         path: kViewResidentialDetails,
         builder: (context, state) => DetailsView(),
+      ),
+      GoRoute(
+        path: kViewAccountDetails,
+        builder: (context, state) => AccountDetailsView(),
       ),
     ],
   );

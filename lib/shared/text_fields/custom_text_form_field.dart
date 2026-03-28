@@ -230,23 +230,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           );
         },
       );
-    } else if (widget.fieldType == FieldType.search) {
-      return ListenableBuilder(
-        listenable: widget.controller,
-        builder: (context, _) {
-          if (widget.controller.text.isEmpty) return SizedBox.shrink();
-          return IconButton(
-            icon: SvgPicture.asset(
-              kIconSearch,
-              colorFilter: ColorFilter.mode(
-                AppColors.grey[50]!,
-                BlendMode.srcATop,
-              ),
-            ),
-            onPressed: widget.onFilterTap,
-          );
-        },
-      );
     } else if (widget.fieldType == FieldType.searchWithFilter) {
       return ListenableBuilder(
         listenable: widget.controller,
@@ -254,10 +237,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           return IconButton(
             icon: SvgPicture.asset(
               kIconFilter,
-              colorFilter: ColorFilter.mode(
-                AppColors.grey[50]!,
-                BlendMode.srcATop,
-              ),
+              colorFilter: widget.controller.text.isNotEmpty
+                  ? ColorFilter.mode(AppColors.grey[50]!, BlendMode.srcATop)
+                  : ColorFilter.mode(AppColors.grey[400]!, BlendMode.srcATop),
             ),
             onPressed: widget.onFilterTap,
           );
