@@ -7,8 +7,8 @@ import 'package:homz/core/shared/widgets/buttons/rounded_button.dart';
 import 'package:homz/core/shared/widgets/look_widget/row_labeled_shared_look_icons.dart';
 import 'package:homz/core/theme/app_colors.dart';
 
-class ApertmentsDetails extends StatelessWidget {
-  const ApertmentsDetails({super.key});
+class ApartmentDetails extends StatelessWidget {
+  const ApartmentDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class ApertmentsDetails extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'Araay\nApertments',
+                  'Array\nApartments',
                   style: context.headlineMedium.copyWith(
                     color: AppColors.grey[50],
                   ),
