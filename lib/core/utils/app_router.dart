@@ -8,8 +8,6 @@ import 'package:homz/features/chat/ui/views/chat_view.dart';
 import 'package:homz/features/home/ui/views/home_view.dart';
 import 'package:homz/features/onboarding/ui/views/onboarding_view.dart';
 import 'package:homz/features/profile/ui/views/account_details_view.dart';
-import 'package:homz/features/residential/details/ui/views/details_view.dart';
-import 'package:homz/features/residential/look/ui/views/look_screen.dart';
 
 abstract class AppRouter {
   static const kViewHome = '/homeView';
@@ -52,14 +50,6 @@ abstract class AppRouter {
       GoRoute(
         path: kViewPasswordVerification,
         builder: (context, state) => const PasswordVerificationView(),
-      ),
-      GoRoute(
-        path: kViewResidentialLook,
-        builder: (context, state) => const LookView(),
-      ),
-      GoRoute(
-        path: kViewResidentialDetails,
-        builder: (context, state) => DetailsView(),
       ),
       GoRoute(
         path: kViewAccountDetails,

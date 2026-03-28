@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:homz/app/router/app_router.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/theme/app_colors.dart';
+import 'package:homz/core/utils/app_router.dart';
 import 'package:homz/shared/buttons/text_with_call_to_action_button.dart';
 import 'package:homz/shared/forms/custom_form.dart';
 import 'package:homz/shared/text_fields/base_text_form_field.dart';

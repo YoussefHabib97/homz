@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:homz/app/router/app_router.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/theme/app_colors.dart';
+import 'package:homz/core/utils/app_router.dart';
 import 'package:homz/shared/buttons/custom_button.dart';
 import 'package:homz/shared/buttons/rounded_button.dart';
 
