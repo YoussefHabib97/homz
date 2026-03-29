@@ -47,3 +47,4 @@ const String kIconFilter = 'assets/icons/filter-icon.svg';
 const String kIconBedroom = 'assets/icons/bedroom_icon.svg';
 const String kIconBath = 'assets/icons/bath_icon.svg';
 const String kIconRoomSize = 'assets/icons/room_size_icon.svg';
+const String kIconMoreNotifications = 'assets/icons/notification-dots-icon.svg';

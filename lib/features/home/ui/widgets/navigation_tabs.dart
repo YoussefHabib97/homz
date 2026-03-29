@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:homz/app/navigation/nav_tab.dart';
 import 'package:homz/core/constants/constants.dart';
 import 'package:homz/core/extensions/extensions.dart';
 import 'package:homz/core/shared/widgets/default_app_bar.dart';
+import 'package:homz/core/utils/app_router.dart';
 import 'package:homz/features/home/ui/views/messages_view_tab.dart';
 import 'package:homz/features/home/ui/widgets/home_tab.dart';
 import 'package:homz/features/profile/ui/views/profile_page_view.dart';
@@ -20,7 +22,9 @@ class NavTabs {
           centerTitle: false,
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                GoRouter.of(context).push(AppRouter.kViewNotifications);
+              },
               icon: SvgPicture.asset(kIconNotification, width: 24),
             ),
           ],

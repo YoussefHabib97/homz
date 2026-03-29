@@ -30,7 +30,14 @@ class IconSource {
       assetPath = null;
 }
 
-enum ActionTileType { normal, locale, withoutSuffix, profile, searchResult }
+enum ActionTileType {
+  normal,
+  locale,
+  withoutSuffix,
+  profile,
+  searchResult,
+  notification,
+}
 
 class ActionTile extends StatelessWidget {
   final ActionTileType type;
@@ -119,14 +126,28 @@ class ActionTile extends StatelessWidget {
     );
   }
 
+  factory ActionTile.notification({
+    required String title,
+    VoidCallback? onTap,
+    VoidCallback? onSuffixTap,
+  }) {
+    return ActionTile._(
+      type: ActionTileType.notification,
+      title: title,
+      onTap: onTap,
+      onSuffixTap: onSuffixTap,
+    );
+  }
+
   /// Builds the prefix widget: icon or avatar
   Widget? _buildPrefix(BuildContext context) {
     switch (type) {
-      case ActionTileType.profile:
+      case ActionTileType.profile || ActionTileType.notification:
         return CircleAvatar(
-          radius: 32,
+          radius: type == ActionTileType.profile ? 32 : 24,
           // backgroundImage: NetworkImage(profileImageUrl!),
         );
+
       default:
         if (iconSource == null) return null;
         switch (iconSource!.type) {
@@ -177,6 +198,11 @@ class ActionTile extends StatelessWidget {
           kIconCross,
           colorFilter: ColorFilter.mode(AppColors.grey[50]!, BlendMode.srcIn),
         );
+      case ActionTileType.notification:
+        return SvgPicture.asset(
+          kIconMoreNotifications,
+          colorFilter: ColorFilter.mode(AppColors.grey[50]!, BlendMode.srcIn),
+        );
       default:
         return const Icon(Icons.chevron_right, size: 32);
     }
@@ -187,7 +213,7 @@ class ActionTile extends StatelessWidget {
     final prefix = _buildPrefix(context);
     final suffix = _buildSuffix(context);
 
-    final children = <Widget>[];
+    final List<Widget> children = [];
 
     // Prefix (leading)
     if (prefix != null) {
@@ -195,8 +221,29 @@ class ActionTile extends StatelessWidget {
       children.add(const Gap(12));
     }
 
-    // Title (always expands)
-    children.add(Expanded(child: Text(title)));
+    if (type != ActionTileType.notification) {
+      // Title (always expands)
+      children.add(
+        Expanded(
+          child: Text(title, maxLines: 2, overflow: TextOverflow.ellipsis),
+        ),
+      );
+    } else {
+      children.add(
+        Expanded(
+          child: Row(
+            spacing: 8,
+            children: [
+              Text(title, maxLines: 2, overflow: TextOverflow.ellipsis),
+              Text(
+                "1h",
+                style: context.bodySmall.copyWith(color: AppColors.grey[300]),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
 
     // Suffix (trailing)
     if (suffix != null) {

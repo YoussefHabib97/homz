@@ -8,6 +8,7 @@ import 'package:homz/features/chat/ui/views/chat_view.dart';
 import 'package:homz/features/commercial/details/ui/details_screen.dart';
 import 'package:homz/features/commercial/look/ui/look_screen.dart';
 import 'package:homz/features/home/ui/views/home_view.dart';
+import 'package:homz/features/notifications/ui/views/notifications_view.dart';
 import 'package:homz/features/onboarding/ui/views/onboarding_view.dart';
 import 'package:homz/features/profile/ui/views/account_details_view.dart';
 import 'package:homz/features/residential/details/ui/details_screen.dart';
@@ -16,7 +17,7 @@ import 'package:homz/features/shop/details/ui/details_screen.dart';
 import 'package:homz/features/shop/look/ui/shop_look_screen.dart';
 
 abstract class AppRouter {
-  static const kViewHome = '/homeView';
+  static const kViewHome = '/';
   static const kViewOnboarding = '/onboardingView';
   static const kViewSignIn = '/signInView';
   static const kViewSignUp = '/signUpView';
@@ -26,7 +27,7 @@ abstract class AppRouter {
   static const kViewResidentialLook = '/residentialLookScreen';
   static const kViewCommercialLook = '/commercialLookScreen';
   static const kViewShopsLook = '/shopsLookScreen';
-
+  static const String kViewNotifications = '/notificationsView';
   static const kViewResidentialDetails = '/residentialDetailsScreen';
   static const kViewCommercialDetails = '/commercialDetailsScreen';
   static const kViewShopsDetails = '/shopsDetailsScreen';
@@ -89,6 +90,10 @@ abstract class AppRouter {
       GoRoute(
         path: kViewShopsDetails,
         builder: (context, state) => ShopDetailsScreen(),
+      ),
+      GoRoute(
+        path: kViewNotifications,
+        builder: (context, state) => NotificationsView(),
       ),
     ],
   );
