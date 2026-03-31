@@ -48,7 +48,7 @@ class BuildPageViewItem extends StatelessWidget {
         Positioned(
           top: 64.h,
           left: 16.w,
-          child: RoundedButton(
+          child: RoundedButton.icon(
             backgroundColor: Colors.black,
             iconPath: kIconArrowLeft,
             onPressed: () {

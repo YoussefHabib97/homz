@@ -89,7 +89,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
           Positioned(
             bottom: 16.h,
             right: 16.w,
-            child: RoundedButton(
+            child: RoundedButton.icon(
               backgroundColor: AppColors.primary[500]!,
               iconPath: kIconSendTo,
               onPressed: () {},

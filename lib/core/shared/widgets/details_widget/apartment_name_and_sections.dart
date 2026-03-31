@@ -27,7 +27,7 @@ class ApartmentNameAndSections extends StatelessWidget {
                     ),
                   ),
                   Spacer(),
-                  RoundedButton(
+                  RoundedButton.icon(
                     backgroundColor: Colors.transparent,
                     iconPath: kIconHeart,
                     iconColor: AppColors.grey[50],

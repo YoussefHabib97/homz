@@ -7,12 +7,13 @@ import 'package:homz/features/authentication/sign_up/ui/views/sign_up_view.dart'
 import 'package:homz/features/chat/ui/views/chat_view.dart';
 import 'package:homz/features/commercial/details/ui/details_screen.dart';
 import 'package:homz/features/commercial/look/ui/look_screen.dart';
-import 'package:homz/features/home/ui/views/home_view.dart';
 import 'package:homz/features/notifications/ui/views/notifications_view.dart';
 import 'package:homz/features/onboarding/ui/views/onboarding_view.dart';
 import 'package:homz/features/profile/ui/views/account_details_view.dart';
+import 'package:homz/features/profile/ui/views/legal_and_policies/ui/views/legal_and_policies_view.dart';
 import 'package:homz/features/residential/details/ui/details_screen.dart';
 import 'package:homz/features/residential/look/ui/look_screen.dart';
+import 'package:homz/features/search/ui/test.dart';
 import 'package:homz/features/shop/details/ui/details_screen.dart';
 import 'package:homz/features/shop/look/ui/shop_look_screen.dart';
 
@@ -27,16 +28,18 @@ abstract class AppRouter {
   static const kViewResidentialLook = '/residentialLookScreen';
   static const kViewCommercialLook = '/commercialLookScreen';
   static const kViewShopsLook = '/shopsLookScreen';
-  static const String kViewNotifications = '/notificationsView';
+  static const kViewNotifications = '/notificationsView';
   static const kViewResidentialDetails = '/residentialDetailsScreen';
   static const kViewCommercialDetails = '/commercialDetailsScreen';
   static const kViewShopsDetails = '/shopsDetailsScreen';
   static const kViewChat = '/chatView';
   static const kViewAccountDetails = '/accountDetailsView';
+  static const kViewLegalAndPolicies = '/legalAndPoliciesView';
 
   static final router = GoRouter(
     routes: [
-      GoRoute(path: '/', builder: (context, state) => const HomeView()),
+      GoRoute(path: '/', builder: (context, state) => const Test()),
+      // GoRoute(path: '/', builder: (context, state) => const HomeView()),
       GoRoute(
         path: kViewOnboarding,
         // path: kViewOnboarding,
@@ -94,6 +97,10 @@ abstract class AppRouter {
       GoRoute(
         path: kViewNotifications,
         builder: (context, state) => NotificationsView(),
+      ),
+      GoRoute(
+        path: kViewLegalAndPolicies,
+        builder: (context, state) => const LegalAndPoliciesView(),
       ),
     ],
   );

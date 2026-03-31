@@ -42,13 +42,13 @@ class ApartmentDetails extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                RoundedButton(
+                RoundedButton.icon(
                   backgroundColor: AppColors.primary[500]!,
                   iconPath: kIconSendTo,
                   onPressed: () {},
                 ),
                 Gap(8),
-                RoundedButton(
+                RoundedButton.icon(
                   backgroundColor: AppColors.primary[500]!,
                   iconPath: kIconCall,
                   onPressed: () {},

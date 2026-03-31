@@ -50,7 +50,9 @@ class ProfileViewBody extends StatelessWidget {
         ActionTile.normal(
           iconSource: IconSource.svg(kIconShield),
           title: "Legal & Policies",
-          onTap: () {},
+          onTap: () {
+            GoRouter.of(context).push(AppRouter.kViewLegalAndPolicies);
+          },
         ),
         ActionTile.withoutSuffix(
           iconSource: IconSource.svg(kIconLogin),

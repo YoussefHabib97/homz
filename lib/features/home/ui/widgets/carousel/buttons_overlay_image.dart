@@ -34,7 +34,7 @@ class ButtonsOverlayImage extends StatelessWidget {
         Positioned(
           top: 16.h,
           right: 16.w,
-          child: RoundedButton(
+          child: RoundedButton.icon(
             backgroundColor: AppColors.grey[900]!,
             iconPath: kIconFavorite,
             onPressed: () {},
@@ -67,7 +67,7 @@ class ButtonsOverlayImage extends StatelessWidget {
               ),
               const Gap(8),
               // Details Button
-              RoundedButton(
+              RoundedButton.icon(
                 backgroundColor: AppColors.primary[500]!,
                 iconPath: kIconShare,
                 onPressed: () {
